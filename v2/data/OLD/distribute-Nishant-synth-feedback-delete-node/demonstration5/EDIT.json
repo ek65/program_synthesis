@@ -1,0 +1,4537 @@
+{
+  "scene": {
+    "timeSeries": [
+      {
+        "timestep": 0,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605752,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.113380842,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.90877962,
+              "y": 2.77420568
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.00002432,
+              "y": 1.73234189
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.6945768,
+              "y": 3.93925428
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.736093,
+              "y": 7.517578
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11334956,
+              "y": 7.92216
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213536
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.000287162547
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.98799658,
+              "y": 0.655832231
+            },
+            "rot": {
+              "angle": 164.70163
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 1,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605657,
+              "y": 9.249659
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.113379233,
+              "y": 9.654226
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.90878057,
+              "y": 2.77420521
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.000024,
+              "y": 1.7323395
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.694573939,
+              "y": 3.93925548
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.73609328,
+              "y": 7.517579
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.113351,
+              "y": 7.92216
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213619
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.000001,
+              "y": 0.0002845711
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.97924387,
+              "y": 0.632465959
+            },
+            "rot": {
+              "angle": 161.679672
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 2,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605585,
+              "y": 9.249656
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.113379806,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.90878,
+              "y": 2.77420449
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.00002527,
+              "y": 1.73233962
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.6945744,
+              "y": 3.93925524
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.73609352,
+              "y": 7.5175786
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11335051,
+              "y": 7.92216
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213619
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.00028455368
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.97049141,
+              "y": 0.6090997
+            },
+            "rot": {
+              "angle": 159.4652
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 3,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605585,
+              "y": 9.249656
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.113379806,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.90878,
+              "y": 2.77420449
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.00002527,
+              "y": 1.73233962
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.6945744,
+              "y": 3.93925524
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.73609352,
+              "y": 7.5175786
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11335051,
+              "y": 7.92216
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213619
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.000284553651
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.961739,
+              "y": 0.5857334
+            },
+            "rot": {
+              "angle": 159.465179
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 4,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605752,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.113380946,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.90877962,
+              "y": 2.7742064
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.00002432,
+              "y": 1.73234236
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.69457674,
+              "y": 3.93925548
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.736093,
+              "y": 7.517579
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11334944,
+              "y": 7.92216
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213536
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.000286661845
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.95150793,
+              "y": 0.562866032
+            },
+            "rot": {
+              "angle": 156.526062
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 5,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605752,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.113380946,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.90877962,
+              "y": 2.7742064
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.00002432,
+              "y": 1.73234236
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.69457674,
+              "y": 3.93925548
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.736093,
+              "y": 7.517579
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11334944,
+              "y": 7.92216
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213536
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.000286661845
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.94127691,
+              "y": 0.5399986
+            },
+            "rot": {
+              "angle": 155.895981
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 6,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605776,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.113382027,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.90877962,
+              "y": 2.774207
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.00002337,
+              "y": 1.73234534
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.694578,
+              "y": 3.939256
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.736092,
+              "y": 7.51758051
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11334836,
+              "y": 7.92216
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213512
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.000288197829
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.92960715,
+              "y": 0.517825544
+            },
+            "rot": {
+              "angle": 152.87413
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 7,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605776,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.113382027,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.90877962,
+              "y": 2.774207
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.00002337,
+              "y": 1.73234534
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.694578,
+              "y": 3.939256
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.736092,
+              "y": 7.51758051
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11334836,
+              "y": 7.92216
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213512
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.000288197829
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.9179374,
+              "y": 0.4956526
+            },
+            "rot": {
+              "angle": 152.241943
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 8,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605776,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.113382027,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.90877962,
+              "y": 2.774207
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.00002337,
+              "y": 1.73234534
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.694578,
+              "y": 3.939256
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.736092,
+              "y": 7.51758051
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11334836,
+              "y": 7.92216
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213512
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.000288197829
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.90626764,
+              "y": 0.473479569
+            },
+            "rot": {
+              "angle": 152.241943
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 9,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605776,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.113382027,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.90877962,
+              "y": 2.774207
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.00002337,
+              "y": 1.73234534
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.694578,
+              "y": 3.939256
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.736092,
+              "y": 7.51758051
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11334836,
+              "y": 7.92216
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213512
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.000288197829
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.89459789,
+              "y": 0.451306522
+            },
+            "rot": {
+              "angle": 152.241943
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 10,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605824,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.113383882,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.908779,
+              "y": 2.77420831
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.00002146,
+              "y": 1.73235059
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.69457984,
+              "y": 3.93925643
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.73608947,
+              "y": 7.51758242
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11334658,
+              "y": 7.92216063
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.042135
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.000290734926
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.8808049,
+              "y": 0.430425078
+            },
+            "rot": {
+              "angle": 149.303467
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 11,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605824,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.113383882,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.908779,
+              "y": 2.77420831
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.00002146,
+              "y": 1.73235059
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.69457984,
+              "y": 3.93925643
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.73608947,
+              "y": 7.51758242
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11334658,
+              "y": 7.92216063
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.042135
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.000290734926
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.8670119,
+              "y": 0.409543663
+            },
+            "rot": {
+              "angle": 146.553635
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 12,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605824,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.113383882,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.908779,
+              "y": 2.77420831
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.00002146,
+              "y": 1.73235059
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.69457984,
+              "y": 3.93925643
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.73608947,
+              "y": 7.51758242
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11334658,
+              "y": 7.92216063
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.042135
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.000290734926
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.85321891,
+              "y": 0.3886622
+            },
+            "rot": {
+              "angle": 146.553635
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 13,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605728,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.113380305,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.90878,
+              "y": 2.77420664
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.000025,
+              "y": 1.73234046
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.6945763,
+              "y": 3.93925786
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.736095,
+              "y": 7.517581
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11335015,
+              "y": 7.92216
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.0421356
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.000285886548
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.83816814,
+              "y": 0.368742466
+            },
+            "rot": {
+              "angle": 143.615067
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 14,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605728,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.113380305,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.90878,
+              "y": 2.77420664
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.000025,
+              "y": 1.73234046
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.6945763,
+              "y": 3.93925786
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.736095,
+              "y": 7.517581
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11335015,
+              "y": 7.92216
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.0421356
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.000285886548
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.82311738,
+              "y": 0.3488228
+            },
+            "rot": {
+              "angle": 142.926254
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 15,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605728,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.113380305,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.90878,
+              "y": 2.77420664
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.000025,
+              "y": 1.73234046
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.6945763,
+              "y": 3.93925786
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.736095,
+              "y": 7.517581
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11335015,
+              "y": 7.92216
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.0421356
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.000285886548
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.80806661,
+              "y": 0.3289031
+            },
+            "rot": {
+              "angle": 142.926254
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 16,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605728,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.113381267,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.90877962,
+              "y": 2.774208
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.000024,
+              "y": 1.732343
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.6945775,
+              "y": 3.93925786
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.73609185,
+              "y": 7.51758242
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.1133492,
+              "y": 7.92216
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213512
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.000287333067
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.791354,
+              "y": 0.3104155
+            },
+            "rot": {
+              "angle": 142.854752
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 17,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605728,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.113381267,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.90877962,
+              "y": 2.774208
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.000024,
+              "y": 1.732343
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.6945775,
+              "y": 3.93925786
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.73609185,
+              "y": 7.51758242
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.1133492,
+              "y": 7.92216
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213512
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.000287333067
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.77464128,
+              "y": 0.291927874
+            },
+            "rot": {
+              "angle": 142.783936
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 18,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605728,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.113381267,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.90877962,
+              "y": 2.774208
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.000024,
+              "y": 1.732343
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.6945775,
+              "y": 3.93925786
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.73609185,
+              "y": 7.51758242
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.1133492,
+              "y": 7.92216
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213512
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.000287333067
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.75792861,
+              "y": 0.273440182
+            },
+            "rot": {
+              "angle": 142.385651
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 19,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605728,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.11338,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.90878057,
+              "y": 2.77420664
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.000025,
+              "y": 1.73233986
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.6945758,
+              "y": 3.93925881
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.73609614,
+              "y": 7.517582
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11335039,
+              "y": 7.92216
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213583
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.0002854461
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.753802,
+              "y": 0.2680293
+            },
+            "rot": {
+              "angle": 142.456482
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 20,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605728,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.11338,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.90878057,
+              "y": 2.77420664
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.000025,
+              "y": 1.73233986
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.6945758,
+              "y": 3.93925881
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.73609614,
+              "y": 7.517582
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11335039,
+              "y": 7.92216
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213583
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.0002854461
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.74967527,
+              "y": 0.262618423
+            },
+            "rot": {
+              "angle": 142.627533
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 21,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605728,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.11338,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.90878057,
+              "y": 2.77420664
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.000025,
+              "y": 1.73233986
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.6945758,
+              "y": 3.93925881
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.73609614,
+              "y": 7.517582
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11335039,
+              "y": 7.92216
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213583
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.0002854461
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.74554861,
+              "y": 0.257207572
+            },
+            "rot": {
+              "angle": 142.66832
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 22,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605728,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.113381051,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.90878,
+              "y": 2.77420831
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.000024,
+              "y": 1.73234224
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.694577932,
+              "y": 3.93925858
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.73609185,
+              "y": 7.51758337
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11334932,
+              "y": 7.92216
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213536
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.000287019822
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.74176574,
+              "y": 0.254819274
+            },
+            "rot": {
+              "angle": 135.475555
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 23,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605728,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.113381051,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.90878,
+              "y": 2.77420831
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.000024,
+              "y": 1.73234224
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.694577932,
+              "y": 3.93925858
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.73609185,
+              "y": 7.51758337
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11334932,
+              "y": 7.92216
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213536
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.000287019822
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.73798287,
+              "y": 0.252430975
+            },
+            "rot": {
+              "angle": 128.274826
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 24,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605728,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.113381051,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.90878,
+              "y": 2.77420831
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.000024,
+              "y": 1.73234224
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.694577932,
+              "y": 3.93925858
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.73609185,
+              "y": 7.51758337
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11334932,
+              "y": 7.92216
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213536
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.000287019822
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.7342,
+              "y": 0.250042677
+            },
+            "rot": {
+              "angle": 122.26593
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 25,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605728,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.113381051,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.90878,
+              "y": 2.77420831
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.000024,
+              "y": 1.73234224
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.694577932,
+              "y": 3.93925858
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.73609185,
+              "y": 7.51758337
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11334932,
+              "y": 7.92216
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213536
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.000287019822
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.73041713,
+              "y": 0.247654408
+            },
+            "rot": {
+              "angle": 122.26593
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 26,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605728,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.11338219,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.908779,
+              "y": 2.77421069
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.000023,
+              "y": 1.7323451
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.694580436,
+              "y": 3.93925858
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.73608661,
+              "y": 7.51758575
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11334825,
+              "y": 7.92216
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213512
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.0002887192
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.72145367,
+              "y": 0.24573724
+            },
+            "rot": {
+              "angle": 115.072815
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 27,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605728,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.11338219,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.908779,
+              "y": 2.77421069
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.000023,
+              "y": 1.7323451
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.694580436,
+              "y": 3.93925858
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.73608661,
+              "y": 7.51758575
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11334825,
+              "y": 7.92216
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213512
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.0002887192
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.71249008,
+              "y": 0.2438201
+            },
+            "rot": {
+              "angle": 107.87204
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 28,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605728,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.11338219,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.908779,
+              "y": 2.77421069
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.000023,
+              "y": 1.7323451
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.694580436,
+              "y": 3.93925858
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.73608661,
+              "y": 7.51758575
+            },
+            "rot": {
+              "angle": 199.9994
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11334825,
+              "y": 7.92216
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213512
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.0002887192
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.7035265,
+              "y": 0.241902962
+            },
+            "rot": {
+              "angle": 102.0729
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 29,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605728,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.113380194,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.90878057,
+              "y": 2.77420688
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.000025,
+              "y": 1.73234034
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.6945759,
+              "y": 3.93925953
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.73609614,
+              "y": 7.51758242
+            },
+            "rot": {
+              "angle": 199.99942
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11335015,
+              "y": 7.92215967
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213583
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.000285736925
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.690753,
+              "y": 0.241532356
+            },
+            "rot": {
+              "angle": 94.8717346
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 30,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605728,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.113380194,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.90878057,
+              "y": 2.77420688
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.000025,
+              "y": 1.73234034
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.6945759,
+              "y": 3.93925953
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.73609614,
+              "y": 7.517582
+            },
+            "rot": {
+              "angle": 199.99942
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11335015,
+              "y": 7.92215967
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213583
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.000285736925
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.67797947,
+              "y": 0.241161749
+            },
+            "rot": {
+              "angle": 91.66201
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 31,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605728,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.11337921,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.908781,
+              "y": 2.77420568
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.00002575,
+              "y": 1.73233819
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.694573045,
+              "y": 3.93926024
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.736101,
+              "y": 7.517581
+            },
+            "rot": {
+              "angle": 199.99942
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11335063,
+              "y": 7.92215967
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213667
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.0002842606
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.66311622,
+              "y": 0.24334152
+            },
+            "rot": {
+              "angle": 84.46084
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      },
+      {
+        "timestep": 32,
+        "objects": [
+          {
+            "objectName": "Defender5",
+            "pos": {
+              "x": 3.73605728,
+              "y": 9.249655
+            },
+            "rot": {
+              "angle": 201.994461
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender4",
+            "pos": {
+              "x": -0.11337921,
+              "y": 9.654223
+            },
+            "rot": {
+              "angle": 179.327148
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender3",
+            "pos": {
+              "x": -6.908781,
+              "y": 2.77420568
+            },
+            "rot": {
+              "angle": 111.877785
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender2",
+            "pos": {
+              "x": 5.00002575,
+              "y": 1.73233819
+            },
+            "rot": {
+              "angle": 250.8905
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Defender1",
+            "pos": {
+              "x": -0.694573045,
+              "y": 3.93926024
+            },
+            "rot": {
+              "angle": 170.00029
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": 2.44520736,
+              "y": 6.529014
+            },
+            "rot": {
+              "angle": 55.84638
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "RightStriker",
+            "pos": {
+              "x": 2.736101,
+              "y": 7.517581
+            },
+            "rot": {
+              "angle": 199.99942
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftStriker",
+            "pos": {
+              "x": -1.11335063,
+              "y": 7.92215967
+            },
+            "rot": {
+              "angle": 172.000244
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "RightWinger",
+            "pos": {
+              "x": -5.90880442,
+              "y": 1.04213667
+            },
+            "rot": {
+              "angle": 100.002357
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "LeftWinger",
+            "pos": {
+              "x": 6.00000143,
+              "y": 0.0002842606
+            },
+            "rot": {
+              "angle": 269.997345
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -1.648253,
+              "y": 0.2455213
+            },
+            "rot": {
+              "angle": 81.65672
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          }
+        ]
+      }
+    ],
+    "stoppedTimes": [
+      {
+        "timestopped": 33,
+        "narration": "[0]I have possession. (ball kicks) Right striker is open. After you move to the left winger and don't receive the ball, move to the left striker."
+      },
+      {
+        "timestopped": 33,
+        "narration": "[0]I have possession. (ball kicks) Right striker is open. After you move to the left winger and don't receive the ball, move to the left striker."
+      }
+    ]
+  }
+}

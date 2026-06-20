@@ -1,0 +1,68 @@
+{
+  "states": [
+    {
+      "id": 1,
+      "name": "MoveTo(lambda_target_overlap_right(), True)",
+      "description": "Create overlap on the right or left with angle 38 deg and distance about 5 or 4 meters so teammate can pass."
+    },
+    {
+      "id": 2,
+      "name": "MoveTo(lambda_target_overlap_left(), True)",
+      "description": "Create overlap on the right or left with angle 38 deg and distance about 5 or 4 meters so teammate can pass."
+    },
+    {
+      "id": 3,
+      "name": "Pass('teammate')",
+      "description": "Passing the ball back to teammate."
+    },
+    {
+      "id": 4,
+      "name": "Shoot('goal')",
+      "description": "Take the shot towards the goal."
+    }
+  ],
+  "transitions": [
+    {
+      "id": 1001,
+      "from": 0,
+      "to": 1,
+      "condition": "after 3 seconds && lambda_precondition_receive()",
+      "description": "Initial Transition"
+    },
+    {
+      "id": 1002,
+      "from": 1,
+      "to": 3,
+      "condition": "lambda_precondition_possession() && lambda_precondition_opponent_close() && lambda_precondition_pass_clear()",
+      "description": "Opponent is very close, look for a clear passing path back to teammate, path width 2 meters."
+    },
+    {
+      "id": 1003,
+      "from": 1,
+      "to": 4,
+      "condition": "lambda_precondition_possession() && !lambda_precondition_opponent_close() && lambda_precondition_shot_clear()",
+      "description": "Opponent is not too close, check for a clear shot to goal, path width 2 meters."
+    },
+    {
+      "id": 1004,
+      "from": 0,
+      "to": 2,
+      "condition": "after 3 seconds && lambda_precondition_receive()",
+      "description": "Initial Transition"
+    },
+    {
+      "id": 1005,
+      "from": 2,
+      "to": 3,
+      "condition": "lambda_precondition_possession() && lambda_precondition_opponent_close() && lambda_precondition_pass_clear()",
+      "description": "Opponent is very close, look for a clear passing path back to teammate, path width 2 meters."
+    },
+    {
+      "id": 1006,
+      "from": 2,
+      "to": 4,
+      "condition": "lambda_precondition_possession() && !lambda_precondition_opponent_close() && lambda_precondition_shot_clear()",
+      "description": "Opponent is not too close, check for a clear shot to goal, path width 2 meters."
+    }
+  ]
+}

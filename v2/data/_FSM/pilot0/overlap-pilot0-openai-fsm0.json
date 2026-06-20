@@ -1,0 +1,54 @@
+{
+  "states": [
+    {
+      "id": 1,
+      "name": "MoveTo(\u03bb_target_overlap(), True)",
+      "description": "Move to overlap to side, about 33 degrees, 5 meters from ball. Call for ball from teammate."
+    },
+    {
+      "id": 2,
+      "name": "StopAndReceiveBall()",
+      "description": "Now get ready to receive the ball from teammate. Wait until ball arrives and you have possession."
+    },
+    {
+      "id": 3,
+      "name": "Shoot(goal)",
+      "description": "Take a shot towards goal now."
+    },
+    {
+      "id": 4,
+      "name": "Pass(teammate)",
+      "description": "Pass the ball to your teammate so they can shoot."
+    }
+  ],
+  "transitions": [
+    {
+      "id": 1001,
+      "from": 0,
+      "to": 1,
+      "condition": "after 3 seconds",
+      "description": "Initial Transition"
+    },
+    {
+      "id": 1002,
+      "from": 1,
+      "to": 2,
+      "condition": "\u03bb_precondition_pass_from_teammate()",
+      "description": "Wait for teammate to pass you the ball before moving again."
+    },
+    {
+      "id": 1003,
+      "from": 2,
+      "to": 3,
+      "condition": "\u03bb_precondition_clear_path_shot()",
+      "description": "The path to the goal is clear. Prepare to shoot."
+    },
+    {
+      "id": 1004,
+      "from": 2,
+      "to": 4,
+      "condition": "else",
+      "description": "Path to the goal is blocked by teammate or opponent."
+    }
+  ]
+}

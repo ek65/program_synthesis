@@ -1,0 +1,163 @@
+{
+    "outline": "Perform a give-and-go maneuver where the coach gains possession of the ball, passes it to a teammate, and then strategically positions to receive the ball back from the teammate. The coach can either move around the opponent or position near the goal, based on the tactical situation.",
+    "nodes": [
+        {
+            "id": "0",
+            "action": "GetBallPossession",
+            "info": "Coach gains possession of the ball.",
+            "t": {
+                "demo_0": 4,
+                "demo_1": 2,
+                "demo_2": 0
+            },
+            "termination": "Coach has control of the ball."
+        },
+        {
+            "target": {
+                "obj": null,
+                "through": false,
+                "info": "Coach passes the ball to the teammate."
+            },
+            "id": "1",
+            "action": "Pass",
+            "info": "Coach passes the ball to the teammate.",
+            "t": {
+                "demo_0": 14,
+                "demo_1": 10,
+                "demo_2": 2
+            },
+            "termination": "Ball is successfully passed to the teammate."
+        },
+        {
+            "target": {
+                "info": "Coach moves around the opponent.",
+                "logic": null,
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            },
+            "id": "2",
+            "action": "MoveTo",
+            "info": "Coach moves around the opponent.",
+            "t": {
+                "demo_0": 32
+            },
+            "termination": "Coach is in a clear position to receive the ball from the teammate."
+        },
+        {
+            "target": {
+                "info": "Coach moves to a position near the right goal post.",
+                "logic": null,
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            },
+            "id": "3",
+            "action": "MoveTo",
+            "info": "Coach moves to a position near the right goal post.",
+            "t": {
+                "demo_1": 26
+            },
+            "termination": "Coach is near the goal ready to receive the ball back."
+        },
+        {
+            "target": {
+                "info": "Coach positions around to receive the ball.",
+                "logic": null,
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            },
+            "id": "4",
+            "action": "MoveTo",
+            "info": "Coach positions around to receive the ball.",
+            "t": {
+                "demo_2": 10
+            },
+            "termination": "Coach is in position at (3.24477053, 10.0046186)."
+        },
+        {
+            "id": "5",
+            "action": "GetBallPossession",
+            "info": "Coach receives the ball from the teammate.",
+            "t": {
+                "demo_0": 40,
+                "demo_1": 42
+            },
+            "termination": "Coach regains possession of the ball."
+        }
+    ],
+    "edges": [
+        {
+            "id": 6,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 2,
+                "demo_2": 2
+            },
+            "condition": "Coach has possession of the ball."
+        },
+        {
+            "id": 7,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 12
+            },
+            "condition": "The opponent starts pressuring the coach."
+        },
+        {
+            "id": 8,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 22
+            },
+            "condition": "The teammate receives the ball from the coach."
+        },
+        {
+            "id": 9,
+            "prev": "1",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 12
+            },
+            "condition": "Ball is passed to the teammate."
+        },
+        {
+            "id": 10,
+            "prev": "1",
+            "next": "4",
+            "priority": "precondition",
+            "t": {
+                "demo_2": 6
+            },
+            "condition": "Ball is successfully passed to the teammate."
+        },
+        {
+            "id": 11,
+            "prev": "2",
+            "next": "5",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 36
+            },
+            "condition": "The coach is in a clear position to receive the ball back from the teammate."
+        },
+        {
+            "id": 12,
+            "prev": "3",
+            "next": "5",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 28
+            },
+            "condition": "Coach is positioned near the goal for receiving ball back."
+        }
+    ]
+}

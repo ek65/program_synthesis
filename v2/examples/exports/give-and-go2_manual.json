@@ -1,0 +1,118 @@
+{
+    "outline": "",
+    "nodes": [
+        {
+            "id": "0",
+            "action": "Wait",
+            "info": "Wait until the opponent starts pressuring the teammate.",
+            "t": {
+                "demo_0": 12,
+                "demo_1": 0
+            },
+            "termination": "The opponent is moving towards the teammate."
+        },
+        {
+            "id": "1",
+            "action": "MoveTo",
+            "info": "Move to either side of the opponent such that there is a clear angle of pass with the teammate.",
+            "t": {
+                "demo_0": 16,
+                "demo_1": 14
+            },
+            "termination": "Coach is at either side of the opponent and there is a clear angle of pass with the teammate."
+        },
+        {
+            "id": "2",
+            "action": "GetBall",
+            "info": "Receive or gain possession of the ball from the teammate.",
+            "t": {
+                "demo_0": 17,
+                "demo_1": 17
+            },
+            "termination": "Stop when possession of the ball is secured."
+        },
+        {
+            "id": "3",
+            "action": "MoveTo",
+            "info": "Dribble the ball upwards to the goal while focusing on positioning for a potential pass and/or shot.",
+            "t": {
+                "demo_0": 35,
+                "demo_1": 18
+            },
+            "termination": "Stop when there is an opportunity to shoot or if being pressured by the opponent."
+        },
+        {
+            "id": "4",
+            "action": "Shoot",
+            "info": "Shoot the ball if in a good position to do so.",
+            "t": {
+                "demo_1": 37
+            },
+            "termination": "Ball was shot."
+        },
+        {
+            "id": "5",
+            "action": "Pass",
+            "info": "Make a through pass to teammate.",
+            "t": {
+                "demo_1": 42
+            },
+            "termination": "Teammate has the ball posession."
+        }
+    ],
+    "edges": [
+        {
+            "id": 6,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 12,
+                "demo_1": 0
+            },
+            "condition": "Opponent pressures (is moving towards) the teammate."
+        },
+        {
+            "id": 7,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 17,
+                "demo_1": 16
+            },
+            "condition": "True"
+        },
+        {
+            "id": 8,
+            "prev": "2",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 18,
+                "demo_1": 17
+            },
+            "condition": "The Coach has possession of the ball."
+        },
+        {
+            "id": 9,
+            "prev": "3",
+            "next": "4",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 36
+            },
+            "condition": "There is an opportunity of goal."
+        },
+        {
+            "id": 10,
+            "prev": "3",
+            "next": "5",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 42
+            },
+            "condition": "The Coach is being pressured by opponent and there is an angle of pass between the coach and teammate."
+        }
+    ]
+}

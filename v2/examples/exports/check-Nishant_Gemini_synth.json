@@ -1,0 +1,455 @@
+{
+    "nodes": [
+        {
+            "target": {
+                "info": "Coach performs a checking run by moving at an angle (either right or left) and potentially varying speed, to draw the opponent away from the center, create space for a teammate, and become open to receive the ball.",
+                "logic": "A1 AND (A2 OR A3)",
+                "map": [
+                    "A2",
+                    "A1",
+                    "A3"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "DistanceTo",
+                        "args": {
+                            "from": "opponent",
+                            "to": "Coach",
+                            "min": {
+                                "avg": 3.451763371483149,
+                                "std": 1.725656741133802
+                            },
+                            "max": null,
+                            "operator": "greater_than"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent",
+                            "relation": "left",
+                            "horizontal_threshold": {
+                                "avg": -0.003190793626806085,
+                                "std": 0.003190793596762052
+                            }
+                        }
+                    },
+                    {
+                        "id": "A3",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent",
+                            "relation": "right",
+                            "horizontal_threshold": {
+                                "avg": 0.00011355556107532107,
+                                "std": 0.00016059147286031345
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "For a checking run the coach must move into open space away from the defender and off the center line. We use DistanceTo (A1) to ensure the target location is sufficiently far from the opponent, creating space. We then use HorizontalRelation relative to the opponent (A2 or A3) to ensure the run is angled to either the left or right flank. Since the run can go in either direction, we combine the two horizontal relations with OR, and require both space and lateral offset with AND."
+            },
+            "id": "0",
+            "action": "MoveTo",
+            "info": "Coach performs a checking run by moving at an angle (either right or left) and potentially varying speed, to draw the opponent away from the center, create space for a teammate, and become open to receive the ball.",
+            "t": {
+                "demo_0": 45,
+                "demo_1": 60,
+                "demo_2": 14,
+                "demo_3": 20,
+                "demo_4": 6
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Completion of the checking run to create space and become open.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "DistanceTo",
+                        "args": {
+                            "from": "Opponent",
+                            "to": "Coach",
+                            "min": {
+                                "avg": 3.451763371483149,
+                                "std": 1.725656741133802
+                            },
+                            "max": null,
+                            "operator": "greater_than"
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition for Node 0 is 'Completion of the checking run to create space and become open.' The primary goal of a checking run in soccer is for the player (Coach) to move away from defenders (Opponent) to create open space for themselves, making them available to receive a pass. Therefore, the key aspect of this termination is that the Coach is no longer closely marked by the Opponent and has created a significant distance.\n\n- The phrase 'create space' directly implies that the Coach should be sufficiently far from the Opponent. The `DistanceTo` API with the `greater_than` operator is suitable for modeling this. The `min` distance threshold will be learned from the demonstration data, indicating the minimum distance required for space to be considered 'created'.\n- The phrase 'become open to receive the ball' also implies that the Coach is no longer under tight defensive pressure. Being 'open' is inherently tied to the absence of close marking by an opponent. If the Coach has successfully created space (i.e., is far from the Opponent), they are effectively 'open'.\n\nOther APIs were considered but deemed less appropriate or unusable:\n- `HasBallPossession`: The Coach is becoming open *to receive* the ball, not possessing it yet.\n- `MovingTowards(Coach, Ball)`: While the Coach aims to receive the ball, the termination signifies the completion of the *run* to *become open*, not necessarily the act of moving directly towards a ball that may not yet be passed. The actual reception happens in the next state (Node 1).\n- `HasPath`: This would be ideal for 'open to receive the ball' if a 'Teammate' object was available, but it is not listed in the provided objects, making this API unusable for establishing a path for a pass.\n- `Pressure(Opponent, Coach)`: Using `NOT(Pressure(Opponent, Coach))` would also indicate the Coach is not being chased. However, `DistanceTo` captures the core concept of 'space' and 'openness' more directly and comprehensively as a single constraint, fulfilling the requirement for the minimum number of APIs.\n\nThus, a single `DistanceTo` constraint, asserting that the Coach's distance from the Opponent is greater than a certain threshold, effectively models both 'creating space' and 'becoming open' as a result of the checking run."
+            }
+        },
+        {
+            "id": "1",
+            "action": "GetBallPossession",
+            "info": "Coach receives possession of the ball from the teammate.",
+            "t": {
+                "demo_0": 58,
+                "demo_1": 69,
+                "demo_2": 28,
+                "demo_3": 28,
+                "demo_4": 16
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Coach successfully gains possession of the ball.",
+                "logic": null,
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            }
+        },
+        {
+            "target": {
+                "player": "Center Back",
+                "info": ""
+            },
+            "id": "2",
+            "action": "Pass",
+            "info": "Coach passes the ball back to the teammate due to tight defensive pressure from the opponent, further facilitating space creation.",
+            "t": {
+                "demo_0": 63,
+                "demo_1": 74,
+                "demo_2": 33
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Ball is successfully passed to the teammate.",
+                "logic": null,
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            }
+        },
+        {
+            "target": {
+                "info": "Coach dribbles the ball forward with possession towards the goal, exploiting available space when the opponent is far.",
+                "logic": "A1 AND A2",
+                "map": [
+                    "A2",
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "DistanceTo",
+                        "args": {
+                            "from": "Coach",
+                            "to": "opponent",
+                            "min": {
+                                "avg": 5.536048504500264,
+                                "std": 0.31394888549973654
+                            },
+                            "max": null,
+                            "operator": "greater_than"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HeightRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent",
+                            "relation": "above",
+                            "height_threshold": {
+                                "avg": NaN,
+                                "std": NaN
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "To dribble forward into open space, the chosen destination must be sufficiently far from the opponent (A1) and lie closer to the opponent\u2019s goal than the opponent (A2). Combining these ensures the Coach moves ahead of the defender into a region with space to drive toward the goal."
+            },
+            "id": "3",
+            "action": "MoveTo",
+            "info": "Coach dribbles the ball forward with possession towards the goal, exploiting available space when the opponent is far.",
+            "t": {
+                "demo_3": 39,
+                "demo_4": 25
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Coach reaches a strategic position for a shot or a pass towards the goal.",
+                "logic": "A1 AND A2 AND A3",
+                "map": [
+                    "A2",
+                    "A1",
+                    "A3"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "DistanceTo",
+                        "args": {
+                            "from": "Coach",
+                            "to": "goal",
+                            "min": null,
+                            "max": {
+                                "avg": 9.350000000000001,
+                                "std": 0.0
+                            },
+                            "operator": "less_than"
+                        }
+                    },
+                    {
+                        "id": "A3",
+                        "constraint": "HasPath",
+                        "args": {
+                            "obj1": "Coach",
+                            "obj2": "goal",
+                            "path_width": {
+                                "avg": 0.00017033321871846174,
+                                "std": 0.00017033298128022026
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition 'Coach reaches a strategic position for a shot or a pass towards the goal' requires several aspects to be met:\n1.  **Possession**: Since the Coach is dribbling in the current state (Node 3's action is 'MoveTo' by dribbling), they must maintain possession of the ball to execute a shot or pass. This is modeled by `HasBallPossession('Coach')` (A1).\n2.  **Proximity to Goal**: A 'strategic position' for a shot or pass towards the goal implies being within an effective shooting or passing range. Being too far from the goal would not be considered strategic. This is captured by `DistanceTo('Coach', 'goal', 'less_than')` (A2), indicating the Coach is sufficiently close to the goal.\n3.  **Clear Opportunity**: For a shot or a pass 'towards the goal', there must be an unobstructed path to the goal. Opponents blocking the path would prevent an effective shot or pass. This is modeled by `HasPath('Coach', 'goal')` (A3), ensuring a clear line of action to the goal.\n\nCombining these conditions with an 'AND' operator ensures that the Coach has the ball, is close enough to the goal, and has a clear line of sight, which collectively defines a 'strategic position for a shot or a pass towards the goal'."
+            }
+        },
+        {
+            "target": {
+                "player": "Opponent",
+                "info": ""
+            },
+            "id": "4",
+            "action": "Pass",
+            "info": "Coach passes the ball towards the goal area.",
+            "t": 40,
+            "synthesized": true,
+            "termination": {
+                "info": "Ball is successfully passed towards the goal area.",
+                "logic": null,
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            }
+        },
+        {
+            "id": "5",
+            "action": "Shoot",
+            "info": "Coach shoots the ball towards the opponent's goal.",
+            "t": 26,
+            "synthesized": true,
+            "termination": {
+                "info": "Ball is successfully shot towards the opponent's goal.",
+                "logic": null,
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            }
+        }
+    ],
+    "edges": [
+        {
+            "id": 0,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 45,
+                "demo_1": 61,
+                "demo_2": 27,
+                "demo_3": 27,
+                "demo_4": 7
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "Teammate passes the ball to the Coach after the check run creates space.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 1,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 59,
+                "demo_1": 74,
+                "demo_2": 29
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "The opponent is close to Coach, preventing a forward dribble.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "Opponent",
+                            "ref": "Coach",
+                            "max": {
+                                "avg": 2.5205154937987926,
+                                "std": 0.3245324784141452
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "prev": "1",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_3": 29,
+                "demo_4": 17
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "The opponent is far from Coach, or Coach has significant open space to dribble forward.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "DistanceTo",
+                        "args": {
+                            "from": "Coach",
+                            "to": "opponent",
+                            "min": {
+                                "avg": 5.536048504500264,
+                                "std": 0.31394888549973654
+                            },
+                            "max": null,
+                            "operator": "greater_than"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "prev": "3",
+            "next": "4",
+            "priority": "precondition",
+            "t": 39,
+            "synthesized": true,
+            "condition": {
+                "info": "Coach reaches an optimal position to pass the ball towards the goal area.",
+                "logic": "A1 AND A2 AND A3",
+                "map": [
+                    "A2",
+                    "A1",
+                    "A3"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "DistanceTo",
+                        "args": {
+                            "from": "Coach",
+                            "to": "goal",
+                            "min": null,
+                            "max": {
+                                "avg": 9.350000000000001,
+                                "std": 0.0
+                            },
+                            "operator": "less_than"
+                        }
+                    },
+                    {
+                        "id": "A3",
+                        "constraint": "HasPath",
+                        "args": {
+                            "obj1": "Coach",
+                            "obj2": "goal",
+                            "path_width": {
+                                "avg": 0.000340666199998682,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 4,
+            "prev": "3",
+            "next": "5",
+            "priority": "precondition",
+            "t": 26,
+            "synthesized": true,
+            "condition": {
+                "info": "Coach reaches an optimal position to shoot towards the opponent's goal.",
+                "logic": "A1 AND A2",
+                "map": [
+                    "A2",
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "DistanceTo",
+                        "args": {
+                            "from": "Coach",
+                            "to": "goal",
+                            "min": null,
+                            "max": {
+                                "avg": 9.350000000000001,
+                                "std": 0.0
+                            },
+                            "operator": "less_than"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HasPath",
+                        "args": {
+                            "obj1": "Coach",
+                            "obj2": "goal",
+                            "path_width": {
+                                "avg": 2.3743824150095e-10,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

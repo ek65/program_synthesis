@@ -1,0 +1,173 @@
+{
+    "outline": "The Coach supports a pressured teammate by moving to an open position to receive a pass. Upon receiving the ball, the Coach assesses opponent pressure: if pressured, the Coach either creates space by moving away from the opponent before making a through pass to a goal-bound teammate, or, if the teammate is open for an immediate shot, makes an immediate pass back for a shot on goal. If not pressured, the Coach advances with the ball directly towards the goal and takes a shot when a clear scoring opportunity arises.",
+    "nodes": [
+        {
+            "target": {
+                "info": "Move to an open position to make self available for a pass from the pressured teammate, creating an optimal passing angle.",
+                "logic": "",
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            },
+            "id": "0",
+            "action": "MoveTo",
+            "info": "Move to an open position to make self available for a pass from the pressured teammate, creating an optimal passing angle.",
+            "t": {
+                "demo_0": 18,
+                "demo_1": 11,
+                "demo_2": 12,
+                "demo_3": 15
+            },
+            "synthesized": false,
+            "termination": "Coach reaches an optimal position to receive a pass."
+        },
+        {
+            "id": "1",
+            "action": "GetBallPossession",
+            "info": "Receive the ball from the teammate.",
+            "t": {
+                "demo_0": 24,
+                "demo_1": 17,
+                "demo_2": 16,
+                "demo_3": 27
+            },
+            "synthesized": false,
+            "termination": "Coach gains possession of the ball."
+        },
+        {
+            "target": {
+                "info": "Move away from the opponent to create space and avoid pressure.",
+                "logic": "",
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            },
+            "id": "2",
+            "action": "MoveTo",
+            "info": "Move away from the opponent to create space and avoid pressure.",
+            "t": 46,
+            "synthesized": false,
+            "termination": "Coach has created sufficient space from the opponent's pressure."
+        },
+        {
+            "target": {
+                "player": "",
+                "info": ""
+            },
+            "id": "3",
+            "action": "Pass",
+            "info": "Pass the ball to the teammate who has a clear line of shot to the goal.",
+            "t": 37,
+            "synthesized": false,
+            "termination": "Ball is successfully passed to the teammate."
+        },
+        {
+            "target": {
+                "player": "",
+                "info": ""
+            },
+            "id": "4",
+            "action": "Pass",
+            "info": "Make a through pass to the teammate moving towards the goal for a scoring opportunity.",
+            "t": 53,
+            "synthesized": false,
+            "termination": "Ball is successfully passed to the teammate."
+        },
+        {
+            "target": {
+                "info": "Approach the Goal while maintaining possession of the ball.",
+                "logic": "",
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            },
+            "id": "5",
+            "action": "MoveTo",
+            "info": "Approach the Goal while maintaining possession of the ball.",
+            "t": {
+                "demo_1": 36,
+                "demo_2": 26
+            },
+            "synthesized": false,
+            "termination": "Coach is in a clear shooting position with an open opportunity."
+        },
+        {
+            "id": "6",
+            "action": "Shoot",
+            "info": "Shoot the ball towards the goal.",
+            "t": {
+                "demo_1": 37,
+                "demo_2": 27
+            },
+            "synthesized": false,
+            "termination": "Ball is shot towards the goal."
+        }
+    ],
+    "edges": [
+        {
+            "id": 0,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 20,
+                "demo_1": 14,
+                "demo_2": 13,
+                "demo_3": 16
+            },
+            "synthesized": false,
+            "condition": "Teammate passes the ball to Coach."
+        },
+        {
+            "id": 1,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": 26,
+            "synthesized": false,
+            "condition": "Opponent is pressuring Coach after Coach receives the ball, and Coach has space to move away (as shown in demo_0)."
+        },
+        {
+            "id": 2,
+            "prev": "1",
+            "next": "3",
+            "priority": "precondition",
+            "t": 30,
+            "synthesized": false,
+            "condition": "Opponent is pressuring Coach after Coach receives the ball, and teammate is open for an immediate pass (as shown in demo_3)."
+        },
+        {
+            "id": 3,
+            "prev": "1",
+            "next": "5",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 17,
+                "demo_2": 16
+            },
+            "synthesized": false,
+            "condition": "Coach is not being pressured by an opponent after receiving the ball."
+        },
+        {
+            "id": 4,
+            "prev": "2",
+            "next": "4",
+            "priority": "precondition",
+            "t": 47,
+            "synthesized": false,
+            "condition": "Teammate makes himself available by moving towards the goal."
+        },
+        {
+            "id": 5,
+            "prev": "5",
+            "next": "6",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 36,
+                "demo_2": 26
+            },
+            "synthesized": false,
+            "condition": "Coach is in a clear shooting position."
+        }
+    ]
+}

@@ -1,0 +1,112 @@
+{
+    "outline": "When a teammate receives the ball and faces pressure from an opponent, move to create passing and shooting options. Either receive the ball and dribble upwards to take a shot, or pass the ball ahead to assist in further play, depending on the situation.",
+    "nodes": [
+        {
+            "target": {
+                "info": "Move to the side to create a clear passing path and a potential shooting angle.",
+                "logic": "",
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            },
+            "id": "0",
+            "action": "MoveTo",
+            "info": "Move to the side to create a clear passing path and a potential shooting angle.",
+            "t": {
+                "demo_0": 3,
+                "demo_1": 5
+            },
+            "termination": "Position yourself with a clear pass option for your teammate while maintaining a shooting angle."
+        },
+        {
+            "id": "1",
+            "action": "Wait",
+            "info": "Wait to receive the ball from the teammate.",
+            "t": {
+                "demo_0": 5
+            },
+            "termination": "Receive the pass from the teammate."
+        },
+        {
+            "target": {
+                "info": "Dribble the ball upwards after receiving it.",
+                "logic": "",
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            },
+            "id": "2",
+            "action": "MoveTo",
+            "info": "Dribble the ball upwards after receiving it.",
+            "t": {
+                "demo_0": 18
+            },
+            "termination": "Position yourself for a shot after moving upwards."
+        },
+        {
+            "id": "3",
+            "action": "Shoot",
+            "info": "Take a shot at the goal.",
+            "t": {
+                "demo_0": 19
+            },
+            "termination": "After positioning for a shot."
+        },
+        {
+            "target": {
+                "obj": "",
+                "through": "",
+                "info": ""
+            },
+            "id": "4",
+            "action": "Pass",
+            "info": "Pass the ball ahead of the teammate to facilitate further play.",
+            "t": {
+                "demo_1": 16
+            },
+            "termination": "Stop when the ball is successfully passed to the teammate."
+        }
+    ],
+    "edges": [
+        {
+            "id": 5,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 4
+            },
+            "condition": "Teammate passes the ball to you."
+        },
+        {
+            "id": 6,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 6
+            },
+            "condition": "Receive the ball from the teammate."
+        },
+        {
+            "id": 7,
+            "prev": "2",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 18
+            },
+            "condition": "Positioned appropriately for a shot after dribbling."
+        },
+        {
+            "id": 8,
+            "prev": "0",
+            "next": "4",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 10
+            },
+            "condition": "Coach has possession of the ball after receiving a pass from the teammate."
+        }
+    ]
+}

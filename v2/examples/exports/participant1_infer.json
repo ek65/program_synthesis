@@ -1,0 +1,119 @@
+{
+    "outline": "Coach creates a passing angle, receives the ball, and can either choose to shoot at an open goal or wait to pass to a teammate who is in a better position.",
+    "nodes": [
+        {
+            "target": {
+                "info": "Move to the side to create an angle for a pass.",
+                "logic": "",
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            },
+            "id": "0",
+            "action": "MoveTo",
+            "info": "Move to the side to create an angle for a pass.",
+            "t": {
+                "demo_0": 1,
+                "demo_1": 3
+            },
+            "synthesized": false,
+            "termination": "Stop when a clear passing angle has been formed."
+        },
+        {
+            "id": "1",
+            "action": "GetBallPossession",
+            "info": "Receive the ball from the teammate.",
+            "t": {
+                "demo_0": 5,
+                "demo_2": 2
+            },
+            "synthesized": false,
+            "termination": "Stop when possession of the ball is secured."
+        },
+        {
+            "id": "2",
+            "action": "Wait",
+            "info": "Wait for the teammate to be in position for a pass or until an opportunity to shoot arises.",
+            "t": {
+                "demo_1": 10,
+                "demo_2": 6
+            },
+            "synthesized": false,
+            "termination": "Stop when the teammate is in position or there is an open goal."
+        },
+        {
+            "target": {
+                "player": "",
+                "info": ""
+            },
+            "id": "3",
+            "action": "Pass",
+            "info": "Pass the ball to the teammate.",
+            "t": {
+                "demo_1": 12,
+                "demo_2": 10
+            },
+            "synthesized": false,
+            "termination": "Stop when the pass has been made to the teammate."
+        },
+        {
+            "id": "4",
+            "action": "Shoot",
+            "info": "Shoot at the open goal.",
+            "t": {
+                "demo_0": 10
+            },
+            "synthesized": false,
+            "termination": "Stop when the ball is shot towards the goal."
+        }
+    ],
+    "edges": [
+        {
+            "id": 0,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 4,
+                "demo_2": 3
+            },
+            "synthesized": false,
+            "condition": "Teammate passes the ball to the coach."
+        },
+        {
+            "id": 1,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 3,
+                "demo_2": 3
+            },
+            "synthesized": false,
+            "condition": "Coach has possession of the ball."
+        },
+        {
+            "id": 2,
+            "prev": "2",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 10,
+                "demo_2": 6
+            },
+            "synthesized": false,
+            "condition": "The teammate is in position and the goal is open."
+        },
+        {
+            "id": 3,
+            "prev": "2",
+            "next": "4",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 9
+            },
+            "synthesized": false,
+            "condition": "Coach has the ball and sees an open goal."
+        }
+    ]
+}

@@ -1,0 +1,787 @@
+{
+  "scene": {
+    "id": 0,
+    "language": "[0][1]Okay, so in this case, the defender is blocking the right striker and the left striker, and so we correctly choose to pass to the left winger. However, we could also pass to the right winger. And in case the defender is blocking only one of these two,[2] of the left strike and right[3] striker, then we could and should prefer to pass to the [4]one that is not being, uh, blocked by the defender. And currently, we are always passing[5] to the left winger, which is incorrect behavior. We prefer whenever possible to pass to left [6]striker or right[7] striker.",
+    "step": 0.02,
+    "objects": [
+      {
+        "id": "LeftWinger",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "RightWinger",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "LeftStriker",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "RightStriker",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender1",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender2",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender3",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender4",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender5",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "Coach",
+        "type": "Coach",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "expert",
+        "orientation": []
+      },
+      {
+        "id": "ball",
+        "type": "Ball",
+        "position": [],
+        "velocity": [],
+        "orientation": []
+      },
+      {
+        "id": "goal",
+        "type": "Goal",
+        "position": [],
+        "velocity": [],
+        "orientation": []
+      }
+    ],
+    "annotations": [
+      {
+        "id": "0",
+        "type": "ReceiveBall",
+        "player": "Coach"
+      },
+      {
+        "id": "1",
+        "type": "PauseAction"
+      },
+      {
+        "id": "2",
+        "type": "Reference",
+        "obj": "LeftStriker"
+      },
+      {
+        "id": "3",
+        "type": "Reference",
+        "obj": "RightStriker"
+      },
+      {
+        "id": "4",
+        "type": "Reference",
+        "obj": "LeftStriker"
+      },
+      {
+        "id": "5",
+        "type": "Reference",
+        "obj": "LeftWinger"
+      },
+      {
+        "id": "6",
+        "type": "Reference",
+        "obj": "LeftStriker"
+      },
+      {
+        "id": "7",
+        "type": "Reference",
+        "obj": "RightStriker"
+      }
+    ],
+    "tokens": {
+      "0": [
+        "[0]"
+      ],
+      "20.153223": [
+        "[1]"
+      ],
+      "21.92": [
+        "Okay,"
+      ],
+      "22.2": [
+        " "
+      ],
+      "22.26": [
+        "so"
+      ],
+      "22.479": [
+        " "
+      ],
+      "22.559": [
+        "in"
+      ],
+      "22.659": [
+        " "
+      ],
+      "22.68": [
+        "this"
+      ],
+      "22.899": [
+        " "
+      ],
+      "23.1": [
+        "case,"
+      ],
+      "23.6": [
+        " "
+      ],
+      "23.76": [
+        "the"
+      ],
+      "23.86": [
+        " "
+      ],
+      "23.879": [
+        "defender"
+      ],
+      "24.519": [
+        " "
+      ],
+      "25.519": [
+        "is"
+      ],
+      "25.719": [
+        " "
+      ],
+      "25.779": [
+        "blocking"
+      ],
+      "26.239": [
+        " "
+      ],
+      "26.299": [
+        "the"
+      ],
+      "26.399": [
+        " "
+      ],
+      "26.459": [
+        "right"
+      ],
+      "26.699": [
+        " "
+      ],
+      "26.76": [
+        "striker"
+      ],
+      "27.299": [
+        " "
+      ],
+      "27.579": [
+        "and"
+      ],
+      "27.879": [
+        " "
+      ],
+      "27.899": [
+        "the"
+      ],
+      "27.96": [
+        " "
+      ],
+      "27.979": [
+        "left"
+      ],
+      "28.179": [
+        " "
+      ],
+      "28.239": [
+        "striker,"
+      ],
+      "28.739": [
+        " "
+      ],
+      "29.719": [
+        "and"
+      ],
+      "29.879": [
+        " "
+      ],
+      "29.939": [
+        "so"
+      ],
+      "30.079": [
+        " "
+      ],
+      "30.099": [
+        "we"
+      ],
+      "30.239": [
+        " "
+      ],
+      "30.26": [
+        "correctly"
+      ],
+      "30.639": [
+        " "
+      ],
+      "30.719": [
+        "choose"
+      ],
+      "30.979": [
+        " "
+      ],
+      "31.059": [
+        "to"
+      ],
+      "31.279": [
+        " "
+      ],
+      "31.479": [
+        "pass"
+      ],
+      "31.679": [
+        " "
+      ],
+      "31.699": [
+        "to"
+      ],
+      "31.799": [
+        " "
+      ],
+      "31.819": [
+        "the"
+      ],
+      "31.919": [
+        " "
+      ],
+      "31.959": [
+        "left"
+      ],
+      "32.139": [
+        " "
+      ],
+      "32.2": [
+        "winger."
+      ],
+      "32.6": [
+        " "
+      ],
+      "33.7": [
+        "However,"
+      ],
+      "34.239": [
+        " "
+      ],
+      "35.139": [
+        "we"
+      ],
+      "35.499": [
+        " "
+      ],
+      "35.639": [
+        "could"
+      ],
+      "35.84": [
+        " "
+      ],
+      "35.86": [
+        "also"
+      ],
+      "36.1": [
+        " "
+      ],
+      "36.18": [
+        "pass"
+      ],
+      "36.419": [
+        " "
+      ],
+      "36.439": [
+        "to"
+      ],
+      "36.54": [
+        " "
+      ],
+      "36.559": [
+        "the"
+      ],
+      "36.719": [
+        " "
+      ],
+      "36.759": [
+        "right"
+      ],
+      "36.94": [
+        " "
+      ],
+      "36.979": [
+        "winger."
+      ],
+      "37.499": [
+        " "
+      ],
+      "38.86": [
+        "And"
+      ],
+      "39.1": [
+        " "
+      ],
+      "39.159": [
+        "in"
+      ],
+      "39.319": [
+        " "
+      ],
+      "39.36": [
+        "case"
+      ],
+      "39.739": [
+        " "
+      ],
+      "39.84": [
+        "the"
+      ],
+      "39.979": [
+        " "
+      ],
+      "40": [
+        "defender"
+      ],
+      "40.699": [
+        " "
+      ],
+      "40.899": [
+        "is"
+      ],
+      "41.159": [
+        " "
+      ],
+      "41.2": [
+        "blocking"
+      ],
+      "41.56": [
+        " "
+      ],
+      "41.619": [
+        "only"
+      ],
+      "42.019": [
+        " "
+      ],
+      "42.939": [
+        "one"
+      ],
+      "43.18": [
+        " "
+      ],
+      "43.639": [
+        "of"
+      ],
+      "43.76": [
+        " "
+      ],
+      "43.86": [
+        "these"
+      ],
+      "44.119": [
+        " "
+      ],
+      "44.18": [
+        "two,"
+      ],
+      "44.4532242": [
+        "[2]"
+      ],
+      "44.479": [
+        " "
+      ],
+      "44.659": [
+        "of"
+      ],
+      "44.759": [
+        " ",
+        "the"
+      ],
+      "44.84": [
+        " "
+      ],
+      "44.879": [
+        "left"
+      ],
+      "45.02": [
+        " "
+      ],
+      "45.039": [
+        "strike"
+      ],
+      "45.299": [
+        " "
+      ],
+      "45.319": [
+        "and"
+      ],
+      "45.419": [
+        " "
+      ],
+      "45.52": [
+        "right"
+      ],
+      "45.6532249": [
+        "[3]"
+      ],
+      "45.72": [
+        " "
+      ],
+      "45.759": [
+        "striker,"
+      ],
+      "46.259": [
+        " "
+      ],
+      "46.979": [
+        "then"
+      ],
+      "47.299": [
+        " "
+      ],
+      "47.319": [
+        "we"
+      ],
+      "47.42": [
+        " "
+      ],
+      "47.459": [
+        "could"
+      ],
+      "47.659": [
+        " "
+      ],
+      "48.259": [
+        "and"
+      ],
+      "48.539": [
+        " "
+      ],
+      "48.779": [
+        "should"
+      ],
+      "49": [
+        " "
+      ],
+      "49.059": [
+        "prefer"
+      ],
+      "49.399": [
+        " "
+      ],
+      "49.459": [
+        "to"
+      ],
+      "49.599": [
+        " "
+      ],
+      "49.619": [
+        "pass"
+      ],
+      "49.879": [
+        " ",
+        "to"
+      ],
+      "50.02": [
+        " "
+      ],
+      "50.039": [
+        "the"
+      ],
+      "50.279": [
+        " "
+      ],
+      "52.1532249": [
+        "[4]"
+      ],
+      "52.279": [
+        "one"
+      ],
+      "52.459": [
+        " "
+      ],
+      "52.5": [
+        "that"
+      ],
+      "52.639": [
+        " "
+      ],
+      "52.68": [
+        "is"
+      ],
+      "52.839": [
+        " "
+      ],
+      "52.86": [
+        "not"
+      ],
+      "53.08": [
+        " "
+      ],
+      "53.099": [
+        "being,"
+      ],
+      "53.5": [
+        " "
+      ],
+      "54.919": [
+        "uh,"
+      ],
+      "55.02": [
+        " "
+      ],
+      "55.139": [
+        "blocked"
+      ],
+      "55.419": [
+        " "
+      ],
+      "55.619": [
+        "by"
+      ],
+      "55.74": [
+        " "
+      ],
+      "55.759": [
+        "the"
+      ],
+      "55.819": [
+        " "
+      ],
+      "55.84": [
+        "defender."
+      ],
+      "56.339": [
+        " "
+      ],
+      "57.659": [
+        "And"
+      ],
+      "57.819": [
+        " "
+      ],
+      "57.879": [
+        "currently,"
+      ],
+      "58.279": [
+        " "
+      ],
+      "58.319": [
+        "we"
+      ],
+      "58.439": [
+        " "
+      ],
+      "58.459": [
+        "are"
+      ],
+      "58.659": [
+        " "
+      ],
+      "59.779": [
+        "always"
+      ],
+      "60.06": [
+        " "
+      ],
+      "60.079": [
+        "passing"
+      ],
+      "60.08656": [
+        "[5]"
+      ],
+      "60.36": [
+        " "
+      ],
+      "60.379": [
+        "to"
+      ],
+      "60.459": [
+        " "
+      ],
+      "60.479": [
+        "the"
+      ],
+      "60.56": [
+        " "
+      ],
+      "60.579": [
+        "left"
+      ],
+      "60.76": [
+        " "
+      ],
+      "60.799": [
+        "winger,"
+      ],
+      "61.179": [
+        " "
+      ],
+      "61.279": [
+        "which"
+      ],
+      "61.439": [
+        " "
+      ],
+      "61.479": [
+        "is"
+      ],
+      "61.619": [
+        " "
+      ],
+      "61.779": [
+        "incorrect"
+      ],
+      "62.119": [
+        " "
+      ],
+      "62.159": [
+        "behavior."
+      ],
+      "62.619": [
+        " "
+      ],
+      "62.639": [
+        "We"
+      ],
+      "62.779": [
+        " "
+      ],
+      "62.799": [
+        "prefer"
+      ],
+      "63.339": [
+        " "
+      ],
+      "63.919": [
+        "whenever"
+      ],
+      "64.279": [
+        " ",
+        "possible"
+      ],
+      "64.66": [
+        " "
+      ],
+      "64.68": [
+        "to"
+      ],
+      "64.739": [
+        " "
+      ],
+      "64.799": [
+        "pass"
+      ],
+      "65": [
+        " "
+      ],
+      "65.019": [
+        "to"
+      ],
+      "65.08": [
+        " "
+      ],
+      "65.119": [
+        "left"
+      ],
+      "65.3": [
+        " "
+      ],
+      "65.3198853": [
+        "[6]"
+      ],
+      "65.379": [
+        "striker"
+      ],
+      "65.959": [
+        " "
+      ],
+      "65.979": [
+        "or"
+      ],
+      "66.2": [
+        " "
+      ],
+      "66.319": [
+        "right"
+      ],
+      "66.4532242": [
+        "[7]"
+      ],
+      "66.539": [
+        " "
+      ],
+      "66.599": [
+        "striker."
+      ]
+    },
+    "clickTimes": {
+      "0": 0.0,
+      "1": 20.153223,
+      "2": 44.4532242,
+      "3": 45.6532249,
+      "4": 52.1532249,
+      "5": 60.08656,
+      "6": 65.3198853,
+      "7": 66.4532242
+    }
+  }
+}

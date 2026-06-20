@@ -1,0 +1,405 @@
+{
+    "nodes": [
+        {
+            "target": {
+                "info": "Move to an open space to be available for a pass when the teammate is under pressure.",
+                "logic": "(A1 AND NOT(A2))",
+                "map": [
+                    "A2",
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasPath",
+                        "args": {
+                            "obj1": "teammate",
+                            "obj2": "Coach",
+                            "path_width": {
+                                "avg": 0.019984180689753536,
+                                "std": 0.021522945690285906
+                            }
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent",
+                            "max": {
+                                "avg": 7.237641577316482,
+                                "std": 0.22519142838828687
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "To be available for a pass, the coach must be positioned in an open space. This means that there should be an unobstructed passing lane from the teammate to the coach, which we model with the HasPath API (A1). At the same time, the coach should be away from the immediate influence of the opponent, i.e. not too close, which we enforce by negating the CloseTo API (A2). Together, these constraints ensure the coach moves to a spot where a pass can successfully be received."
+            },
+            "id": "0",
+            "action": "MoveTo",
+            "info": "Move to an open space to be available for a pass when the teammate is under pressure.",
+            "t": {
+                "demo_0": 19,
+                "demo_1": 9,
+                "demo_2": 12
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "You are in an open space ready to receive the ball.",
+                "logic": "(A1 AND NOT(A2))",
+                "map": [
+                    "A2",
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasPath",
+                        "args": {
+                            "obj1": "teammate",
+                            "obj2": "Coach",
+                            "path_width": {
+                                "avg": 0.019984180689753536,
+                                "std": 0.021522945690285906
+                            }
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent",
+                            "max": {
+                                "avg": 7.237641577316482,
+                                "std": 0.22519142838828687
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "To ensure the termination condition 'You are in an open space ready to receive the ball' is met, we require that there is an unobstructed path from the teammate to the coach, implying a clear passing lane (modeled by HasPath, A1). At the same time, the coach must not be too close to the opponent, ensuring that the agent is in an open, unpressured space (modeled by NOT(CloseTo), A2). This combination fulfills the condition using minimal APIs."
+            }
+        },
+        {
+            "id": "1",
+            "action": "GetBallPossession",
+            "info": "Receive the ball from the teammate.",
+            "t": {
+                "demo_0": 22,
+                "demo_1": 11,
+                "demo_2": 15
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "You have possession of the ball.",
+                "logic": ""
+            }
+        },
+        {
+            "target": {
+                "info": "Move away from the opponent to create space for a through pass.",
+                "logic": "NOT(A1)",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent",
+                            "max": {
+                                "avg": 7.543873210636117,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "To create space for a through pass, the coach must not be too close to the opponent. Using NOT on the CloseTo API ensures that if the coach is not near the opponent, there is sufficient space to execute a through pass."
+            },
+            "id": "2",
+            "action": "MoveTo",
+            "info": "Move away from the opponent to create space for a through pass.",
+            "t": {
+                "demo_0": 48
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "You have created sufficient space for a through pass.",
+                "logic": "NOT(A1)",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent",
+                            "max": {
+                                "avg": 7.543873210636117,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "To determine if sufficient space has been created for a through pass, we need to ensure that the Coach is not too close to the opponent. This is modeled using the CloseTo API, and by negating it, we capture the condition that the Coach is not in close proximity to the opponent, thus providing enough passing space."
+            }
+        },
+        {
+            "target": {
+                "info": "Move towards the goal as the opponent is running after the teammate and unable to apply pressure.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HeightRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": null,
+                            "relation": "above",
+                            "height_threshold": {
+                                "avg": 12.43099925,
+                                "std": 0.014001350000000025
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "For node 3 the coach should move towards the goal. In soccer terms this means moving upward on the field (closer to the opponent's goal). The HeightRelation API with the 'above' relation ensures that when the coach reaches the target destination, his vertical (y-axis) position is sufficiently advanced, i.e. near the goal area. This constraint models the termination condition by ensuring the coach moves into an offensive position."
+            },
+            "id": "3",
+            "action": "MoveTo",
+            "info": "Move towards the goal as the opponent is running after the teammate and unable to apply pressure.",
+            "t": {
+                "demo_1": 35,
+                "demo_2": 25
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "You are near the goal with a potential to shoot.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HeightRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": null,
+                            "relation": "above",
+                            "height_threshold": {
+                                "avg": 12.43099925,
+                                "std": 0.014001350000000025
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition 'You are near the goal with a potential to shoot' indicates that the coach has advanced into the offensive zone. In soccer, moving 'above' in the vertical axis is equivalent to approaching the opponent's goal. Therefore, the HeightRelation API is selected to check whether the coach\u2019s y-coordinate is above the learned threshold, signaling that the coach is near the goal and in a position to shoot."
+            }
+        },
+        {
+            "target": {
+                "player": "Teammate",
+                "info": ""
+            },
+            "id": "4",
+            "action": "Pass",
+            "info": "Make a through pass to a teammate moving towards the goal.",
+            "t": {
+                "demo_0": 50
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "The ball has been passed to the teammate.",
+                "logic": ""
+            }
+        },
+        {
+            "id": "5",
+            "action": "Shoot",
+            "info": "Shoot the ball at the goal.",
+            "t": {
+                "demo_1": 38,
+                "demo_2": 28
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Shooting action has been completed.",
+                "logic": ""
+            }
+        }
+    ],
+    "edges": [
+        {
+            "id": 6,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 19,
+                "demo_1": 9,
+                "demo_2": 12
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "Teammate makes the pass.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "MakePass",
+                        "args": {
+                            "player": "teammate"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 7,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 21
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "The opponent is pressuring you.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "Pressure",
+                        "args": {
+                            "player1": "opponent",
+                            "player2": "Coach"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 8,
+            "prev": "1",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 12,
+                "demo_2": 15
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "The opponent is running after the teammate and not pressuring you.",
+                "logic": "(A1 AND NOT(A2))",
+                "map": [
+                    "A2",
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "MovingTowards",
+                        "args": {
+                            "obj": "opponent",
+                            "ref": "teammate"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "Pressure",
+                        "args": {
+                            "player1": "opponent",
+                            "player2": "Coach"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 9,
+            "prev": "2",
+            "next": "4",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 48
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "You have created space for the through pass.",
+                "logic": "NOT(A1)",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent",
+                            "max": {
+                                "avg": 7.543873210636117,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 10,
+            "prev": "3",
+            "next": "5",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 35,
+                "demo_2": 25
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "You have a clear opportunity to shoot near the goal.",
+                "logic": "(A1 AND A2)",
+                "map": [
+                    "A2",
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HasPath",
+                        "args": {
+                            "obj1": "Coach",
+                            "obj2": "goal",
+                            "path_width": {
+                                "avg": 2.0,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

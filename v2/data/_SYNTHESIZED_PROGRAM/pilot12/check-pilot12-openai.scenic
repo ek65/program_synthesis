@@ -1,0 +1,158 @@
+from scenic.simulators.unity.actions import *
+from scenic.simulators.unity.behaviors import *
+from scenic.simulators.unity.constraints import *
+model scenic.simulators.unity.model
+import trimesh
+from scenic.core.regions import MeshVolumeRegion
+import random
+####HEADER ENDS####
+
+# Target constraints for moving to create a passing lane and receive the ball
+A1target_0 = HeightRelation({'obj': 'Coach', 'ref': 'teammate', 'relation': 'above', 'height_threshold': {'avg': 9.0, 'std': 1.0}})
+A2target_0 = HasPath({'obj1': 'teammate', 'obj2': 'Coach', 'path_width': {'avg': 1.0, 'std': 0.2}})
+A3target_0 = DistanceTo({'from': 'Coach', 'to': 'opponent', 'min': {'avg': 6.0, 'std': 1.0}, 'max': None, 'operator': 'greater_than'})
+
+# Preconditions for the FSM
+P1precondition_0 = MakePass({'player': 'teammate'})  # teammate initiates pass
+P2precondition_0 = HasBallPossession({'player': 'Coach'})  # coach gains possession
+P3precondition_0 = Pressure({'player1': 'opponent', 'player2': 'Coach'})  # defender pressures coach
+P4precondition_0 = MovingTowards({'obj': 'teammate', 'ref': 'goal'})  # teammate runs toward goal
+P5precondition_0 = HasBallPossession({'player': 'teammate'})  # teammate controls ball after give-and-go
+
+def λ_target0():
+    cond = A1target_0 and A2target_0 and A3target_0
+    return cond.dist(simulation(), ego=True)
+
+def λ_precondition_0():
+    return P1precondition_0.bool(simulation())
+
+def λ_precondition_1():
+    return P2precondition_0.bool(simulation())
+
+def λ_precondition_2():
+    cond = P3precondition_0 and P4precondition_0
+    return cond.bool(simulation())
+
+def λ_precondition_3():
+    return P5precondition_0.bool(simulation())
+
+behavior CoachBehavior():
+    do Idle() for 3 seconds
+
+    do Speak("Move 9 meters above teammate, open 1 m lane, 6 m from opponent. Call pass.")
+    do MoveTo(λ_target0(), True)
+
+    do Speak("Wait until teammate passes toward me.")
+    do Idle() until λ_precondition_0()
+
+    do Speak("Stop and receive the pass cleanly.")
+    do StopAndReceiveBall()
+
+    do Speak("Wait until I have ball possession.")
+    do Idle() until λ_precondition_1()
+
+    do Speak("Wait for defender pressure and teammate running toward goal.")
+    do Idle() until λ_precondition_2()
+
+    do Speak("Pass back to teammate into space.")
+    do Pass(teammate)
+
+    do Speak("Wait until teammate controls the ball.")
+    do Idle() until λ_precondition_3()
+
+    do Idle()
+
+####Environment Behavior START####
+# Parameters for variance
+coach_start_dist = Range(5, 6)  # initial distance from teammate
+opponent_dist = Range(4, 6)         # distance behind coach
+
+# Behaviors
+behavior TeammatePass():
+    # Double checking gotBall to ensure the pass is triggered correctly
+    # since MoveToBallAndGetPossession() might get interrupted
+    gotBall = False
+    try:
+        do Idle() for 1.0 seconds  # Give coach time to start 
+        do MoveToBallAndGetPossession()
+        print("got ball")
+        gotBall = True
+        do Idle()
+    interrupt when ego.triggerPass and self.gameObject.ballPossession and gotBall:
+        ego.triggerPass = False
+        print("trigger pass")
+        do Idle() for 1.0 seconds
+        do Pass(ego.xMark)
+        # Idle after the pass happens
+        do Idle() for 1.0 seconds
+        
+        # move forward to opposite side of field
+        # Determine which side coach and opponent are on
+        coach_x = ego.position.x
+        opponent_x = opponent.position.x
+        
+        # Calculate target position on opposite side
+        # X-axis ranges from -10 to +10, with 0 at center
+        # If coach and opponent are on positive side, go to negative side
+        # If coach and opponent are on negative side, go to positive side
+        if coach_x > 0 and opponent_x > 0:
+            # Both on positive side (right), go to negative side (left)
+            target_x = -6.0
+        elif coach_x < 0 and opponent_x < 0:
+            # Both on negative side (left), go to positive side (right)
+            target_x = 6.0
+        else:
+            # Mixed positions, go to the side with more space
+            # If coach is on left (negative), go right (positive)
+            # If coach is on right (positive), go left (negative)
+            target_x = 6.0 if coach_x < 0 else -6.0
+        
+        # Move forward to the target position (toward goal, so positive Y)
+        target_position = Vector(target_x, ego.position.y, 0)
+        do MoveToBehavior(target_position, distance=0.5)
+        do Idle() for 1.0 seconds
+
+        do Idle() until self.gameObject.ballPossession
+        do Shoot(goal)
+        do Idle() for 1.0 seconds
+        do Shoot(goal)
+
+    do Idle()
+
+behavior OpponentFollowCoach():
+
+    do Idle() until ego.gameObject.ballPossession
+    
+    # Set opponent speed
+    do SetPlayerSpeed(4.0)
+    
+    while True:
+        # Follow coach only until coach receives the ball
+        do MoveToBehavior(ego.position, distance=4)
+            
+    
+
+
+
+
+
+# Place teammate (AI) at origin
+teammate = new Player at (0, 0, 0), with name "teammate", with team "blue", with behavior TeammatePass()
+
+# Place coach (human) in front of teammate
+ego = new Coach ahead of teammate by coach_start_dist, 
+    with name "Coach", 
+    with team "blue", 
+    with behavior CoachBehavior(),
+    with xMark Vector(0, 0, 0),  # Set initial xMark position
+    with triggerPass False  # Initialize triggerPass to False
+
+# Place opponent ahead of coach (closer to goal than coach)
+opponent = new Player ahead of ego by opponent_dist, facing toward ego, with name "opponent", with team "red", with behavior OpponentFollowCoach()
+
+# Ball at teammate's feet
+ball = new Ball ahead of teammate by 0.5
+
+goal = new Goal at (0, 17, 0)
+
+terminate when (ego.gameObject.stopButton)

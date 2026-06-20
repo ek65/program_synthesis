@@ -1,0 +1,636 @@
+{
+  "scene": {
+    "id": 0,
+    "language": "[0][1][2]All right, and this is overall correct. Uh, but overall, in the other scenarios, we want the coach to move to the supporting position to either of his teammates that has the ball in a way that he should be a little bit closer to the, the teammate that has the ball. So like,[3] either go here or[4] here or here.[5] This case is not that bad, but in other cases, um, it was quite bad, so please fix that.",
+    "step": 0.02,
+    "objects": [
+      {
+        "id": "LeftWinger",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "RightWinger",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "LeftStriker",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "RightStriker",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender1",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender2",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender3",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender4",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender5",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "Coach",
+        "type": "Coach",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "expert",
+        "orientation": []
+      },
+      {
+        "id": "ball",
+        "type": "Ball",
+        "position": [],
+        "velocity": [],
+        "orientation": []
+      },
+      {
+        "id": "goal",
+        "type": "Goal",
+        "position": [],
+        "velocity": [],
+        "orientation": []
+      }
+    ],
+    "annotations": [
+      {
+        "id": "0",
+        "type": "ReceiveBall",
+        "player": "Coach"
+      },
+      {
+        "id": "1",
+        "type": "ReceiveBall",
+        "player": "RightStriker"
+      },
+      {
+        "id": "2",
+        "type": "PauseAction"
+      },
+      {
+        "id": "3",
+        "type": "Point",
+        "point": {
+          "x": 1.0444442,
+          "y": 7.6888876
+        }
+      },
+      {
+        "id": "4",
+        "type": "Point",
+        "point": {
+          "x": 3.68888831,
+          "y": 6.799998
+        }
+      },
+      {
+        "id": "5",
+        "type": "Point",
+        "point": {
+          "x": 6.644447,
+          "y": 8.688889
+        }
+      }
+    ],
+    "tokens": {
+      "0": [
+        "[0]"
+      ],
+      "35.2606163": [
+        "[1]"
+      ],
+      "48.1519127": [
+        "[2]"
+      ],
+      "48.879": [
+        "All"
+      ],
+      "48.979": [
+        " "
+      ],
+      "49.02": [
+        "right,"
+      ],
+      "49.239": [
+        " "
+      ],
+      "50.099": [
+        "and"
+      ],
+      "50.419": [
+        " "
+      ],
+      "50.479": [
+        "this"
+      ],
+      "50.619": [
+        " "
+      ],
+      "50.659": [
+        "is"
+      ],
+      "50.76": [
+        " "
+      ],
+      "50.779": [
+        "overall"
+      ],
+      "51.099": [
+        " "
+      ],
+      "51.139": [
+        "correct."
+      ],
+      "51.659": [
+        " "
+      ],
+      "52.939": [
+        "Uh,"
+      ],
+      "53.36": [
+        " "
+      ],
+      "53.439": [
+        "but"
+      ],
+      "53.639": [
+        " "
+      ],
+      "53.779": [
+        "overall,"
+      ],
+      "54.299": [
+        " "
+      ],
+      "55.699": [
+        "in"
+      ],
+      "55.979": [
+        " "
+      ],
+      "56": [
+        "the"
+      ],
+      "56.079": [
+        " "
+      ],
+      "56.099": [
+        "other"
+      ],
+      "56.279": [
+        " "
+      ],
+      "56.299": [
+        "scenarios,"
+      ],
+      "56.92": [
+        " "
+      ],
+      "58.02": [
+        "we"
+      ],
+      "58.239": [
+        " "
+      ],
+      "58.259": [
+        "want"
+      ],
+      "58.479": [
+        " "
+      ],
+      "58.5": [
+        "the"
+      ],
+      "58.599": [
+        " "
+      ],
+      "58.719": [
+        "coach"
+      ],
+      "59.239": [
+        " "
+      ],
+      "59.919": [
+        "to"
+      ],
+      "60.219": [
+        " "
+      ],
+      "60.359": [
+        "move"
+      ],
+      "60.5": [
+        " "
+      ],
+      "60.52": [
+        "to"
+      ],
+      "60.619": [
+        " "
+      ],
+      "60.639": [
+        "the"
+      ],
+      "60.719": [
+        " ",
+        "supporting"
+      ],
+      "61.2": [
+        " "
+      ],
+      "61.379": [
+        "position"
+      ],
+      "61.899": [
+        " "
+      ],
+      "62.079": [
+        "to"
+      ],
+      "62.399": [
+        " "
+      ],
+      "63.219": [
+        "either"
+      ],
+      "63.419": [
+        " "
+      ],
+      "63.439": [
+        "of"
+      ],
+      "63.559": [
+        " ",
+        "his"
+      ],
+      "63.699": [
+        " ",
+        "teammates"
+      ],
+      "64.04": [
+        " "
+      ],
+      "64.059": [
+        "that"
+      ],
+      "64.219": [
+        " "
+      ],
+      "64.26": [
+        "has"
+      ],
+      "64.419": [
+        " "
+      ],
+      "64.439": [
+        "the"
+      ],
+      "64.519": [
+        " ",
+        "ball"
+      ],
+      "64.779": [
+        " "
+      ],
+      "65.779": [
+        "in"
+      ],
+      "65.919": [
+        " "
+      ],
+      "65.939": [
+        "a"
+      ],
+      "65.979": [
+        " "
+      ],
+      "66.019": [
+        "way"
+      ],
+      "66.139": [
+        " "
+      ],
+      "66.18": [
+        "that"
+      ],
+      "66.379": [
+        " "
+      ],
+      "67.08": [
+        "he"
+      ],
+      "67.34": [
+        " "
+      ],
+      "67.379": [
+        "should"
+      ],
+      "67.539": [
+        " "
+      ],
+      "67.58": [
+        "be"
+      ],
+      "67.66": [
+        " "
+      ],
+      "67.72": [
+        "a"
+      ],
+      "67.8": [
+        " "
+      ],
+      "67.839": [
+        "little"
+      ],
+      "68.019": [
+        " "
+      ],
+      "68.04": [
+        "bit"
+      ],
+      "68.179": [
+        " "
+      ],
+      "68.199": [
+        "closer"
+      ],
+      "68.599": [
+        " "
+      ],
+      "68.639": [
+        "to"
+      ],
+      "68.719": [
+        " "
+      ],
+      "68.779": [
+        "the,"
+      ],
+      "69.119": [
+        " "
+      ],
+      "70.939": [
+        "the"
+      ],
+      "71.139": [
+        " "
+      ],
+      "71.199": [
+        "teammate"
+      ],
+      "71.579": [
+        " "
+      ],
+      "71.939": [
+        "that"
+      ],
+      "72.059": [
+        " "
+      ],
+      "72.099": [
+        "has"
+      ],
+      "72.239": [
+        " ",
+        "the"
+      ],
+      "72.319": [
+        " "
+      ],
+      "72.339": [
+        "ball."
+      ],
+      "72.619": [
+        " "
+      ],
+      "72.76": [
+        "So"
+      ],
+      "72.86": [
+        " "
+      ],
+      "72.919": [
+        "like,"
+      ],
+      "72.9852448": [
+        "[3]"
+      ],
+      "73.239": [
+        " ",
+        "either"
+      ],
+      "73.479": [
+        " ",
+        "go"
+      ],
+      "73.639": [
+        " "
+      ],
+      "73.699": [
+        "here"
+      ],
+      "74.04": [
+        " "
+      ],
+      "75.059": [
+        "or"
+      ],
+      "75.2185745": [
+        "[4]"
+      ],
+      "75.239": [
+        " ",
+        "here"
+      ],
+      "75.62": [
+        " "
+      ],
+      "76": [
+        "or"
+      ],
+      "76.12": [
+        " "
+      ],
+      "76.199": [
+        "here."
+      ],
+      "76.2185745": [
+        "[5]"
+      ],
+      "76.519": [
+        " "
+      ],
+      "77.259": [
+        "This"
+      ],
+      "77.459": [
+        " "
+      ],
+      "77.5": [
+        "case"
+      ],
+      "77.659": [
+        " ",
+        "is"
+      ],
+      "77.759": [
+        " ",
+        "not"
+      ],
+      "77.919": [
+        " ",
+        "that"
+      ],
+      "78.08": [
+        " "
+      ],
+      "78.099": [
+        "bad,"
+      ],
+      "78.399": [
+        " "
+      ],
+      "78.479": [
+        "but"
+      ],
+      "78.699": [
+        " "
+      ],
+      "79.119": [
+        "in"
+      ],
+      "79.239": [
+        " "
+      ],
+      "79.279": [
+        "other"
+      ],
+      "79.44": [
+        " "
+      ],
+      "79.519": [
+        "cases,"
+      ],
+      "80.059": [
+        " "
+      ],
+      "80.959": [
+        "um,"
+      ],
+      "81.299": [
+        " "
+      ],
+      "82.619": [
+        "it"
+      ],
+      "82.72": [
+        " "
+      ],
+      "82.739": [
+        "was"
+      ],
+      "82.86": [
+        " "
+      ],
+      "82.879": [
+        "quite"
+      ],
+      "83.019": [
+        " "
+      ],
+      "83.059": [
+        "bad,"
+      ],
+      "83.339": [
+        " "
+      ],
+      "83.559": [
+        "so"
+      ],
+      "83.699": [
+        " "
+      ],
+      "83.759": [
+        "please"
+      ],
+      "83.959": [
+        " "
+      ],
+      "83.979": [
+        "fix"
+      ],
+      "84.2": [
+        " "
+      ],
+      "84.22": [
+        "that."
+      ]
+    },
+    "clickTimes": {
+      "0": 0.0,
+      "1": 35.2606163,
+      "2": 48.1519127,
+      "3": 72.9852448,
+      "4": 75.2185745,
+      "5": 76.2185745
+    }
+  }
+}

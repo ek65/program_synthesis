@@ -1,0 +1,210 @@
+{
+    "nodes": [
+        {
+            "target": {
+                "info": "Move to a position that creates an optimal passing angle after receiving the ball.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "InZone",
+                        "args": {
+                            "obj": "coach",
+                            "zone": [
+                                "C5",
+                                "C5",
+                                "C5"
+                            ]
+                        }
+                    }
+                ],
+                "reasoning": "The FSM\u2019s first node requires that the coach moves to a position that not only allows him to receive the ball but also creates an optimal passing angle. The demonstration images in demo 1 show that the coach is positioned in a specific area of the field that affords him a clear passing lane. In our API library, InZone is designed to check if a player is in a specific zone of the field. By using InZone for the Coach against a learned zone (here labelled 'optimal_passing_zone' which will be determined from demonstration data), we satisfy the requirement using the minimum number of APIs and logical operators."
+            },
+            "id": "0",
+            "action": "MoveTo",
+            "info": "Move to a position that creates an optimal passing angle after receiving the ball.",
+            "t": {
+                "demo_0": 13,
+                "demo_1": 6,
+                "demo_2": 6
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop when in the desired position with ball possession established.",
+                "logic": "(A1 AND A2)",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "InZone",
+                        "args": {
+                            "obj": "coach",
+                            "zone": [
+                                "C5",
+                                "C5",
+                                "C5"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition requires the coach to be in the desired position while having ball possession. 'InZone' (A1) checks that the Coach is in the optimal passing zone (here identified as zone 'C5'), and 'HasBallPossession' (A2) confirms that the Coach has secured possession of the ball. The logical AND ensures both conditions are satisfied before the task terminates."
+            }
+        },
+        {
+            "id": "1",
+            "action": "Shoot",
+            "info": "Shoot the ball because an open goal opportunity is detected while in possession.",
+            "t": {
+                "demo_0": 24
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Successfully shooting the ball towards the goal.",
+                "logic": ""
+            }
+        },
+        {
+            "target": {
+                "player": "teammate",
+                "info": ""
+            },
+            "id": "3",
+            "action": "Pass",
+            "info": "Pass the ball to the teammate to create a scoring opportunity.",
+            "t": {
+                "demo_1": 27,
+                "demo_2": 13
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Ball is successfully passed to the teammate.",
+                "logic": ""
+            }
+        },
+        {
+            "id": "4",
+            "action": "GetBallPossession",
+            "info": "Once in a position to receive the ball, receive the ball from the teammate.",
+            "t": {
+                "demo_0": 14,
+                "demo_1": 10,
+                "demo_2": 9
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "When the ball is received.",
+                "logic": ""
+            }
+        }
+    ],
+    "edges": [
+        {
+            "id": 3,
+            "prev": "0",
+            "next": "4",
+            "priority": "precondition",
+            "t": {},
+            "synthesized": true,
+            "condition": {
+                "info": "Coach is in position and ready to receive the ball.",
+                "logic": "A1 AND NOT(A2)",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "InZone",
+                        "args": {
+                            "obj": "coach",
+                            "zone": []
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 5,
+            "prev": "4",
+            "next": "1",
+            "priority": "precondition",
+            "t": {},
+            "synthesized": true,
+            "condition": {
+                "info": "If the goal is open and coach has possession.",
+                "logic": "A1 AND A2",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HasPath",
+                        "args": {
+                            "obj1": "Coach",
+                            "obj2": "goal",
+                            "path_width": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 6,
+            "prev": "4",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 22,
+                "demo_2": 12
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "If the teammate is open.",
+                "logic": "NOT(A1)",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "Pressure",
+                        "args": {
+                            "player1": "opponent",
+                            "player2": "teammate"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

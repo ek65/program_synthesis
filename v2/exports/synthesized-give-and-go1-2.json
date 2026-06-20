@@ -1,0 +1,322 @@
+{
+    "outline": "Execute a give-and-go movement to acquire possession of the ball, pass to a teammate, and position oneself effectively to receive a return pass back from the teammate.",
+    "nodes": [
+        {
+            "id": "0",
+            "action": "GetBallPossession",
+            "info": "Get possession of the ball.",
+            "t": {
+                "demo_0": 2,
+                "demo_1": 0,
+                "demo_2": 5
+            },
+            "termination": {
+                "info": "Stop when the Coach has the ball.",
+                "logic": ""
+            }
+        },
+        {
+            "target": {
+                "obj": "teammate",
+                "through": false,
+                "info": "Pass the ball to the teammate, located on the left side."
+            },
+            "id": "1",
+            "action": "Pass",
+            "info": "Pass the ball to the teammate, located on the left side.",
+            "t": {
+                "demo_0": 12,
+                "demo_1": 6,
+                "demo_2": 9
+            },
+            "termination": {
+                "info": "Stop once the ball is successfully passed to the teammate.",
+                "logic": ""
+            }
+        },
+        {
+            "target": {
+                "info": "Position oneself in front of the goal post for the return pass.",
+                "logic": "(A1 AND A2) OR A3",
+                "map": [
+                    "A3",
+                    "A2",
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "InZone",
+                        "args": {
+                            "obj": "coach",
+                            "zone": [
+                                "B3",
+                                "B3",
+                                "B3"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HeightRelation",
+                        "args": {
+                            "obj": "teammate",
+                            "ref": "goal",
+                            "relation": "ahead",
+                            "height_threshold": {
+                                "avg": -5.499977553333333,
+                                "std": 3.740123467960493e-05
+                            }
+                        }
+                    },
+                    {
+                        "id": "A3",
+                        "constraint": "DistanceTo",
+                        "args": {
+                            "from": "goal",
+                            "to": "teammate",
+                            "min": {
+                                "avg": 6.6897182079259325,
+                                "std": 1.9205635971050155e-05
+                            },
+                            "max": {
+                                "avg": 8.176322254131696,
+                                "std": 2.3473555075900073e-05
+                            },
+                            "operator": "within"
+                        }
+                    }
+                ],
+                "reasoning": "To effectively position oneself in front of the goal post for a return pass, the following conditions must be satisfied: (1) The teammate must either be in the goal zone (A1), or (2) the teammate must be ahead of the goal in height (A2), or (3) the teammate must be within 5 meters of the goal (A3). The combination of these conditions ensures the player can successfully receive a return pass from the teammate."
+            },
+            "id": "2",
+            "action": "MoveTo",
+            "info": "Position oneself in front of the goal post for the return pass.",
+            "t": {
+                "demo_1": 12,
+                "demo_0": 18,
+                "demo_2": 12
+            },
+            "termination": {
+                "info": "Stop when in position in front of the goal post.",
+                "logic": "(A1 AND A2) OR A3",
+                "map": [
+                    "A3",
+                    "A2",
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "InZone",
+                        "args": {
+                            "obj": "coach",
+                            "zone": [
+                                "B3",
+                                "B3",
+                                "B3"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "DistanceTo",
+                        "args": {
+                            "from": "teammate",
+                            "to": "goal",
+                            "min": {
+                                "avg": 6.6897182079259325,
+                                "std": 1.9205635971050155e-05
+                            },
+                            "max": {
+                                "avg": 8.176322254131696,
+                                "std": 2.3473555075900073e-05
+                            },
+                            "operator": "within"
+                        }
+                    },
+                    {
+                        "id": "A3",
+                        "constraint": "HeightRelation",
+                        "args": {
+                            "obj": "teammate",
+                            "ref": "goal",
+                            "relation": "ahead",
+                            "height_threshold": {
+                                "avg": -5.499977553333333,
+                                "std": 3.740123467960493e-05
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "To determine if the player has successfully positioned themselves in front of the goal post, we check the following conditions: (1) The Coach (the player initiating the movement) should be in the goal zone (A1), ensuring they are positioned correctly relative to the goal. (2) The teammate should be positioned within 5 meters of the goal (A2), indicating that they are close enough to receive a return pass. Lastly, (3) we check if the teammate is ahead of the goal (A3), ensuring that the player is appropriately aligned for receiving the pass. The logical combination ensures comprehensive coverage for confirming the completion of the positioning task."
+            }
+        },
+        {
+            "id": "3",
+            "action": "GetBallPossession",
+            "info": "Receive the ball back from the teammate.",
+            "t": {
+                "demo_0": 24,
+                "demo_1": 18,
+                "demo_2": 15
+            },
+            "termination": {
+                "info": "Stop when the Coach has possession of the ball from the teammate.",
+                "logic": ""
+            }
+        }
+    ],
+    "edges": [
+        {
+            "id": 4,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 6,
+                "demo_1": 0,
+                "demo_2": 5
+            },
+            "condition": {
+                "info": "The Coach has successfully acquired the ball.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 5,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 15,
+                "demo_1": 6,
+                "demo_2": 10
+            },
+            "condition": {
+                "info": "The ball is successfully passed to the teammate.",
+                "logic": "A1 AND A2 AND A3",
+                "map": [
+                    "A3",
+                    "A2",
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "passer"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HasPathToPass",
+                        "args": {
+                            "passer": "passer",
+                            "receiver": "teammate",
+                            "radius": {
+                                "avg": 1,
+                                "std": 1
+                            }
+                        }
+                    },
+                    {
+                        "id": "A3",
+                        "constraint": "DistanceTo",
+                        "args": {
+                            "from": "ball",
+                            "to": "teammate",
+                            "min": {
+                                "avg": 6.316428186995734,
+                                "std": 2.9671300668480287e-05
+                            },
+                            "max": {
+                                "avg": 7.720078895217007,
+                                "std": 3.626492303972451e-05
+                            },
+                            "operator": "within"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 6,
+            "prev": "2",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 25,
+                "demo_1": 12,
+                "demo_2": 12
+            },
+            "condition": {
+                "info": "The Coach has moved into position to receive the return pass.",
+                "logic": "(A1 AND A2) OR A3",
+                "map": [
+                    "A3",
+                    "A2",
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "InZone",
+                        "args": {
+                            "obj": "coach",
+                            "zone": [
+                                "B3",
+                                "B3",
+                                "B3"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HeightRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate",
+                            "relation": "ahead",
+                            "height_threshold": {
+                                "avg": -7.00002244666667,
+                                "std": 3.740123467960493e-05
+                            }
+                        }
+                    },
+                    {
+                        "id": "A3",
+                        "constraint": "DistanceTo",
+                        "args": {
+                            "from": "goal",
+                            "to": "teammate",
+                            "min": {
+                                "avg": 6.6897182079259325,
+                                "std": 1.9205635971050155e-05
+                            },
+                            "max": {
+                                "avg": 8.176322254131696,
+                                "std": 2.3473555075900073e-05
+                            },
+                            "operator": "within"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "id": "synthesized-give-and-go1-2"
+}

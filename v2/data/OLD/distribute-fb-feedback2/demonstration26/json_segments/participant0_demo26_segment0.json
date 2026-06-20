@@ -1,0 +1,624 @@
+{
+  "scene": {
+    "id": 0,
+    "language": "[0][1]Create something. [2]I'm the center mid with the ball. Do you remember (whispers)? No one is open for a pass right now. Okay. I will wait. [3]Right now, you're right that your left striker and right striker are not open. However, there, there is a pass to your right winger. If you look at the ball, the path the ball would make if you pass to your right winger, no defender is there. So, they are open in this scenario and you should have passed.",
+    "step": 0.02,
+    "objects": [
+      {
+        "id": "LeftWinger",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "RightWinger",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "LeftStriker",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "RightStriker",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender1",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender2",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender3",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender4",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender5",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "Coach",
+        "type": "Coach",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "expert",
+        "orientation": []
+      },
+      {
+        "id": "ball",
+        "type": "Ball",
+        "position": [],
+        "velocity": [],
+        "orientation": []
+      },
+      {
+        "id": "goal",
+        "type": "Goal",
+        "position": [],
+        "velocity": [],
+        "orientation": []
+      }
+    ],
+    "annotations": [
+      {
+        "id": "0",
+        "type": "ReceiveBall",
+        "player": "Coach"
+      },
+      {
+        "id": "1",
+        "type": "ReceiveBall",
+        "player": "RightStriker"
+      },
+      {
+        "id": "2",
+        "type": "ReceiveBall",
+        "player": "Coach"
+      },
+      {
+        "id": "3",
+        "type": "PauseAction"
+      }
+    ],
+    "tokens": {
+      "0": [
+        "[0]",
+        "[1]"
+      ],
+      "0.099": [
+        "Create"
+      ],
+      "0.359": [
+        " "
+      ],
+      "0.399": [
+        "something."
+      ],
+      "1.159": [
+        " "
+      ],
+      "1.4599992": [
+        "[2]"
+      ],
+      "4.119": [
+        "I'm"
+      ],
+      "5.119": [
+        " ",
+        "the"
+      ],
+      "5.219": [
+        " "
+      ],
+      "5.279": [
+        "center"
+      ],
+      "5.519": [
+        " "
+      ],
+      "5.539": [
+        "mid"
+      ],
+      "5.719": [
+        " ",
+        "with"
+      ],
+      "5.839": [
+        " "
+      ],
+      "5.859": [
+        "the"
+      ],
+      "5.939": [
+        " "
+      ],
+      "5.96": [
+        "ball."
+      ],
+      "6.399": [
+        " "
+      ],
+      "8.899": [
+        "Do"
+      ],
+      "9.279": [
+        " "
+      ],
+      "9.3": [
+        "you"
+      ],
+      "9.359": [
+        " "
+      ],
+      "9.38": [
+        "remember"
+      ],
+      "9.699": [
+        " "
+      ],
+      "9.739": [
+        "(whispers)"
+      ],
+      "10.96": [
+        "?"
+      ],
+      "11.06": [
+        " "
+      ],
+      "11.8": [
+        "No"
+      ],
+      "11.92": [
+        " "
+      ],
+      "11.979": [
+        "one"
+      ],
+      "12.06": [
+        " "
+      ],
+      "12.079": [
+        "is"
+      ],
+      "12.179": [
+        " "
+      ],
+      "12.219": [
+        "open"
+      ],
+      "12.42": [
+        " "
+      ],
+      "12.439": [
+        "for"
+      ],
+      "12.539": [
+        " "
+      ],
+      "12.579": [
+        "a"
+      ],
+      "12.64": [
+        " "
+      ],
+      "12.679": [
+        "pass"
+      ],
+      "12.92": [
+        " ",
+        "right"
+      ],
+      "13.119": [
+        " "
+      ],
+      "13.139": [
+        "now."
+      ],
+      "13.419": [
+        " "
+      ],
+      "13.88": [
+        "Okay."
+      ],
+      "13.9": [
+        " ",
+        "I"
+      ],
+      "13.96": [
+        " ",
+        "will"
+      ],
+      "14.1": [
+        " "
+      ],
+      "14.159": [
+        "wait."
+      ],
+      "14.48": [
+        " "
+      ],
+      "15.4227982": [
+        "[3]"
+      ],
+      "16.119": [
+        "Right"
+      ],
+      "16.86": [
+        " "
+      ],
+      "16.959": [
+        "now,"
+      ],
+      "17.2": [
+        " "
+      ],
+      "17.34": [
+        "you're"
+      ],
+      "17.479": [
+        " "
+      ],
+      "17.52": [
+        "right"
+      ],
+      "17.739": [
+        " ",
+        "that"
+      ],
+      "17.879": [
+        " "
+      ],
+      "17.899": [
+        "your"
+      ],
+      "18.039": [
+        " ",
+        "left"
+      ],
+      "18.239": [
+        " "
+      ],
+      "18.26": [
+        "striker"
+      ],
+      "18.539": [
+        " "
+      ],
+      "18.559": [
+        "and"
+      ],
+      "18.639": [
+        " ",
+        "right"
+      ],
+      "18.819": [
+        " "
+      ],
+      "18.879": [
+        "striker"
+      ],
+      "19.159": [
+        " ",
+        "are"
+      ],
+      "19.319": [
+        " "
+      ],
+      "19.34": [
+        "not"
+      ],
+      "19.499": [
+        " "
+      ],
+      "19.539": [
+        "open."
+      ],
+      "19.94": [
+        " "
+      ],
+      "20.1": [
+        "However,"
+      ],
+      "20.519": [
+        " "
+      ],
+      "21.079": [
+        "there,"
+      ],
+      "21.319": [
+        " "
+      ],
+      "21.42": [
+        "there"
+      ],
+      "21.52": [
+        " "
+      ],
+      "21.559": [
+        "is"
+      ],
+      "21.659": [
+        " "
+      ],
+      "21.699": [
+        "a"
+      ],
+      "21.719": [
+        " "
+      ],
+      "21.799": [
+        "pass"
+      ],
+      "22.02": [
+        " "
+      ],
+      "22.039": [
+        "to"
+      ],
+      "22.1": [
+        " ",
+        "your"
+      ],
+      "22.219": [
+        " "
+      ],
+      "22.239": [
+        "right"
+      ],
+      "22.399": [
+        " "
+      ],
+      "22.439": [
+        "winger."
+      ],
+      "22.839": [
+        " "
+      ],
+      "23.1": [
+        "If"
+      ],
+      "23.2": [
+        " "
+      ],
+      "23.219": [
+        "you"
+      ],
+      "23.299": [
+        " "
+      ],
+      "23.319": [
+        "look"
+      ],
+      "23.439": [
+        " "
+      ],
+      "23.459": [
+        "at"
+      ],
+      "23.539": [
+        " "
+      ],
+      "23.559": [
+        "the"
+      ],
+      "23.62": [
+        " "
+      ],
+      "23.68": [
+        "ball,"
+      ],
+      "23.939": [
+        " ",
+        "the"
+      ],
+      "24": [
+        " "
+      ],
+      "24.059": [
+        "path"
+      ],
+      "24.299": [
+        " ",
+        "the"
+      ],
+      "24.419": [
+        " "
+      ],
+      "24.42": [
+        "ball"
+      ],
+      "24.579": [
+        " "
+      ],
+      "24.619": [
+        "would"
+      ],
+      "24.76": [
+        " "
+      ],
+      "24.799": [
+        "make"
+      ],
+      "24.94": [
+        " "
+      ],
+      "24.979": [
+        "if"
+      ],
+      "25.079": [
+        " "
+      ],
+      "25.1": [
+        "you"
+      ],
+      "25.18": [
+        " "
+      ],
+      "25.199": [
+        "pass"
+      ],
+      "25.399": [
+        " ",
+        "to"
+      ],
+      "25.479": [
+        " ",
+        "your"
+      ],
+      "25.619": [
+        " "
+      ],
+      "25.639": [
+        "right"
+      ],
+      "25.78": [
+        " "
+      ],
+      "25.84": [
+        "winger,"
+      ],
+      "26.219": [
+        " "
+      ],
+      "26.519": [
+        "no"
+      ],
+      "26.739": [
+        " "
+      ],
+      "26.779": [
+        "defender"
+      ],
+      "27.159": [
+        " ",
+        "is"
+      ],
+      "27.279": [
+        " ",
+        "there."
+      ],
+      "27.579": [
+        " "
+      ],
+      "28.979": [
+        "So,"
+      ],
+      "29.119": [
+        " "
+      ],
+      "29.539": [
+        "they"
+      ],
+      "29.619": [
+        " ",
+        "are"
+      ],
+      "29.76": [
+        " "
+      ],
+      "29.779": [
+        "open"
+      ],
+      "30.019": [
+        " ",
+        "in"
+      ],
+      "30.079": [
+        " "
+      ],
+      "30.099": [
+        "this"
+      ],
+      "30.199": [
+        " ",
+        "scenario"
+      ],
+      "30.68": [
+        " "
+      ],
+      "30.699": [
+        "and"
+      ],
+      "30.84": [
+        " "
+      ],
+      "30.879": [
+        "you"
+      ],
+      "30.979": [
+        " "
+      ],
+      "31": [
+        "should"
+      ],
+      "31.079": [
+        " "
+      ],
+      "31.099": [
+        "have"
+      ],
+      "31.239": [
+        " "
+      ],
+      "31.26": [
+        "passed."
+      ]
+    },
+    "clickTimes": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 1.4599992,
+      "3": 15.4227982
+    }
+  }
+}

@@ -1,0 +1,249 @@
+{
+    "nodes": [
+        {
+            "id": "0",
+            "action": "GetBallPossession",
+            "info": "Coach gains possession of the ball.",
+            "t": {
+                "demo_0": 2,
+                "demo_1": 4,
+                "demo_2": 2
+            },
+            "termination": {
+                "info": "Coach has possession of the ball.",
+                "logic": ""
+            }
+        },
+        {
+            "target": {
+                "obj": "teammate",
+                "through": false,
+                "info": "Pass the ball to the teammate on the left."
+            },
+            "id": "1",
+            "action": "Pass",
+            "info": "Pass the ball to the teammate on the left.",
+            "t": {
+                "demo_0": 8,
+                "demo_1": 10,
+                "demo_2": 10
+            },
+            "termination": {
+                "info": "Ball is received by the teammate.",
+                "logic": ""
+            }
+        },
+        {
+            "target": {
+                "info": "Move to the side, setting up a receiving position to create a passing angle.",
+                "logic": "A AND B AND C",
+                "map": [
+                    "A",
+                    "C",
+                    "B"
+                ],
+                "constraints": [
+                    {
+                        "id": "A",
+                        "constraint": "has_angle_of_pass",
+                        "args": {
+                            "passer": "teammate",
+                            "receiver": "Coach",
+                            "radius": {
+                                "avg": 1.6434866021888948,
+                                "std": 0.8296078074051402
+                            }
+                        }
+                    },
+                    {
+                        "id": "B",
+                        "constraint": "horizontal_relation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent",
+                            "relation": "right",
+                            "x_threshold": [
+                                0.6045866450000003,
+                                1.501070125779147
+                            ]
+                        }
+                    },
+                    {
+                        "id": "C",
+                        "constraint": "height_relation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent",
+                            "relation": "ahead",
+                            "height_threshold": {
+                                "avg": 1.541493816666667,
+                                "std": 2.1926590739043146
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "In soccer, a give-and-go play requires the initial passer to reposition themselves strategically to receive a return pass effectively. The Coach must move to a position that facilitates a passing angle (checked by HasAngleOfPass API) to ensure a clear line for receiving the ball. The HorizontalRelation ensures the Coach is to the side (right in this case) of the opponent, creating a beneficial spatial relationship for receiving the ball. The HeightRelation further ensures the Coach is moving ahead in the vertical dimension, providing depth to the play, ensuring optimal position for the next move in this tactical setup."
+            },
+            "id": "2",
+            "action": "MoveTo",
+            "info": "Move to the side, setting up a receiving position to create a passing angle and ahead of the opponent in height.",
+            "t": {
+                "demo_0": 22.0,
+                "demo_1": 22.0,
+                "demo_2": 20.0
+            },
+            "termination": {
+                "info": "Coach is positioned with a good angle for the pass and ahead of the opponent in height.",
+                "logic": "A AND B AND C",
+                "map": [
+                    "A",
+                    "C",
+                    "B"
+                ],
+                "constraints": [
+                    {
+                        "id": "A",
+                        "constraint": "has_angle_of_pass",
+                        "args": {
+                            "passer": "teammate",
+                            "receiver": "Coach",
+                            "radius": {
+                                "avg": 1.6434866021888948,
+                                "std": 0.8296078074051402
+                            }
+                        }
+                    },
+                    {
+                        "id": "B",
+                        "constraint": "horizontal_relation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent",
+                            "relation": "right",
+                            "x_threshold": [
+                                0.6045866450000003,
+                                1.501070125779147
+                            ]
+                        }
+                    },
+                    {
+                        "id": "C",
+                        "constraint": "height_relation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent",
+                            "relation": "ahead",
+                            "height_threshold": {
+                                "avg": 1.541493816666667,
+                                "std": 2.1926590739043146
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition is that the Coach is positioned with a good angle for the pass and ahead of the opponent in height. In a give-and-go play, after passing the ball, the Coach needs to reposition themselves in a way that allows the teammate to pass back effectively. The Coach needs to be at the right angle for a clear return pass. This is checked by the HasAngleOfPass API to ensure there is enough of a passing lane between the teammate, who is the passer, and the Coach, who is the receiver, without opponents obstructing the line. Furthermore, the Coach must position themselves to the right of the opponent to create advantageous spatial dynamics, which is checked using the HorizontalRelation API. Finally, the HeightRelation API ensures the Coach is ahead of the opponent in terms of height, providing vertical advantage on the field for a successful pass completion, as being ahead implies better positioning between lines of opponent players."
+            }
+        },
+        {
+            "id": "3",
+            "action": "Wait",
+            "info": "Receive the ball back from the teammate.",
+            "t": {
+                "demo_0": 28.0,
+                "demo_1": 26.0,
+                "demo_2": 32.0
+            },
+            "termination": {
+                "info": "Coach regains possession of the ball.",
+                "logic": ""
+            }
+        }
+    ],
+    "edges": [
+        {
+            "id": 4,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 4,
+                "demo_1": 6,
+                "demo_2": 4
+            },
+            "condition": {
+                "info": "The Coach has possession of the ball.",
+                "logic": "A",
+                "map": [
+                    "A"
+                ],
+                "constraints": [
+                    {
+                        "id": "A",
+                        "constraint": "has_ball_possession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 5,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 10,
+                "demo_1": 14,
+                "demo_2": 12
+            },
+            "condition": {
+                "info": "The teammate gains possession of the ball.",
+                "logic": "A",
+                "map": [
+                    "A"
+                ],
+                "constraints": [
+                    {
+                        "id": "A",
+                        "constraint": "has_ball_possession",
+                        "args": {
+                            "player": "teammate"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 6,
+            "prev": "2",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 24,
+                "demo_1": 24,
+                "demo_2": 30
+            },
+            "condition": {
+                "info": "The Coach is positioned with a clear passing angle.",
+                "logic": "A",
+                "map": [
+                    "A"
+                ],
+                "constraints": [
+                    {
+                        "id": "A",
+                        "constraint": "has_angle_of_pass",
+                        "args": {
+                            "passer": "teammate",
+                            "receiver": "Coach",
+                            "radius": {
+                                "avg": 1.6434864718944204,
+                                "std": 0.8296076824871865
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

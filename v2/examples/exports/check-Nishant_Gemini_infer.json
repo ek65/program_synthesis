@@ -1,0 +1,154 @@
+{
+    "outline": "The overall behavior outlines a 'check run' scenario in soccer. The Coach player initiates by performing a strategic 'MoveTo' action to draw an opponent away and create space for a teammate. Once this space is created, the Coach receives a pass from the teammate, signifying a 'GetBallPossession' state. Following this, the Coach evaluates the defensive pressure from the opponent. If the opponent is in close proximity, the Coach makes a 'Pass' back to the teammate to maintain possession and continue facilitating space. Conversely, if the opponent is far or sufficient open space is available, the Coach chooses to 'MoveTo' by dribbling the ball forward, exploiting the newly created space. After advancing, the Coach then decides to either 'Pass' the ball towards the goal area for a scoring opportunity or 'Shoot' directly at the opponent's goal, depending on the final tactical assessment.",
+    "nodes": [
+        {
+            "target": {
+                "info": "Coach performs a checking run by moving at an angle (either right or left) and potentially varying speed, to draw the opponent away from the center, create space for a teammate, and become open to receive the ball.",
+                "logic": "",
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            },
+            "id": "0",
+            "action": "MoveTo",
+            "info": "Coach performs a checking run by moving at an angle (either right or left) and potentially varying speed, to draw the opponent away from the center, create space for a teammate, and become open to receive the ball.",
+            "t": {
+                "demo_0": 45,
+                "demo_1": 60,
+                "demo_2": 14,
+                "demo_3": 20,
+                "demo_4": 6
+            },
+            "synthesized": false,
+            "termination": "Completion of the checking run to create space and become open."
+        },
+        {
+            "id": "1",
+            "action": "GetBallPossession",
+            "info": "Coach receives possession of the ball from the teammate.",
+            "t": {
+                "demo_0": 58,
+                "demo_1": 69,
+                "demo_2": 28,
+                "demo_3": 28,
+                "demo_4": 16
+            },
+            "synthesized": false,
+            "termination": "Coach successfully gains possession of the ball."
+        },
+        {
+            "target": {
+                "player": "",
+                "info": ""
+            },
+            "id": "2",
+            "action": "Pass",
+            "info": "Coach passes the ball back to the teammate due to tight defensive pressure from the opponent, further facilitating space creation.",
+            "t": {
+                "demo_0": 63,
+                "demo_1": 74,
+                "demo_2": 33
+            },
+            "synthesized": false,
+            "termination": "Ball is successfully passed to the teammate."
+        },
+        {
+            "target": {
+                "info": "Coach dribbles the ball forward with possession towards the goal, exploiting available space when the opponent is far.",
+                "logic": "",
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            },
+            "id": "3",
+            "action": "MoveTo",
+            "info": "Coach dribbles the ball forward with possession towards the goal, exploiting available space when the opponent is far.",
+            "t": {
+                "demo_3": 39,
+                "demo_4": 25
+            },
+            "synthesized": false,
+            "termination": "Coach reaches a strategic position for a shot or a pass towards the goal."
+        },
+        {
+            "target": {
+                "player": "",
+                "info": ""
+            },
+            "id": "4",
+            "action": "Pass",
+            "info": "Coach passes the ball towards the goal area.",
+            "t": 40,
+            "synthesized": false,
+            "termination": "Ball is successfully passed towards the goal area."
+        },
+        {
+            "id": "5",
+            "action": "Shoot",
+            "info": "Coach shoots the ball towards the opponent's goal.",
+            "t": 26,
+            "synthesized": false,
+            "termination": "Ball is successfully shot towards the opponent's goal."
+        }
+    ],
+    "edges": [
+        {
+            "id": 0,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 45,
+                "demo_1": 61,
+                "demo_2": 27,
+                "demo_3": 27,
+                "demo_4": 7
+            },
+            "synthesized": false,
+            "condition": "Teammate passes the ball to the Coach after the check run creates space."
+        },
+        {
+            "id": 1,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 59,
+                "demo_1": 74,
+                "demo_2": 29
+            },
+            "synthesized": false,
+            "condition": "The opponent is close to Coach, preventing a forward dribble."
+        },
+        {
+            "id": 2,
+            "prev": "1",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_3": 29,
+                "demo_4": 17
+            },
+            "synthesized": false,
+            "condition": "The opponent is far from Coach, or Coach has significant open space to dribble forward."
+        },
+        {
+            "id": 3,
+            "prev": "3",
+            "next": "4",
+            "priority": "precondition",
+            "t": 39,
+            "synthesized": false,
+            "condition": "Coach reaches an optimal position to pass the ball towards the goal area."
+        },
+        {
+            "id": 4,
+            "prev": "3",
+            "next": "5",
+            "priority": "precondition",
+            "t": 26,
+            "synthesized": false,
+            "condition": "Coach reaches an optimal position to shoot towards the opponent's goal."
+        }
+    ]
+}

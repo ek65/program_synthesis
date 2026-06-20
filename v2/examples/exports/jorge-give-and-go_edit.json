@@ -1,0 +1,131 @@
+{
+    "outline": "Facilitate successful ball movement during pressure situations by making space, receiving the ball, and either passing to a teammate or advancing towards the goal for a shot, based on defensive pressure and control over the ball.",
+    "nodes": [
+        {
+            "target": {
+                "info": "Move to a wide-open position to make yourself available for a pass from a teammate under pressure.",
+                "logic": "",
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            },
+            "id": "0",
+            "action": "MoveTo",
+            "info": "Move to a wide-open position to make yourself available for a pass from a teammate under pressure.",
+            "t": {
+                "demo_0": 6,
+                "demo_1": 12,
+                "demo_2": 12
+            },
+            "synthesized": false,
+            "termination": "Stop when you are in a clear angle with respect to the teammate."
+        },
+        {
+            "id": "1",
+            "action": "GetBallPossession",
+            "info": "Receive the ball passed from the teammate.",
+            "t": {
+                "demo_0": 19,
+                "demo_1": 34,
+                "demo_2": 18
+            },
+            "synthesized": false,
+            "termination": "Stop when you have secure possession of the ball."
+        },
+        {
+            "target": {
+                "info": "Move away from the opponent with the ball to either prepare for a through pass or to approach the goal for a shooting opportunity.",
+                "logic": "",
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            },
+            "id": "2",
+            "action": "MoveTo",
+            "info": "Move away from the opponent with the ball to either prepare for a through pass or to approach the goal for a shooting opportunity.",
+            "t": {
+                "demo_0": 28,
+                "demo_1": 62,
+                "demo_2": 25
+            },
+            "synthesized": false,
+            "termination": "Stop if there is a clear opportunity to pass or shoot."
+        },
+        {
+            "target": {
+                "player": "",
+                "info": ""
+            },
+            "id": "3",
+            "action": "Pass",
+            "info": "Make a through pass to the teammate moving towards the goal.",
+            "t": {
+                "demo_0": 47
+            },
+            "synthesized": false,
+            "termination": "Stop upon successful execution of the pass."
+        },
+        {
+            "id": "4",
+            "action": "Shoot",
+            "info": "Take a shot at the goal.",
+            "t": {
+                "demo_1": 75,
+                "demo_2": 34
+            },
+            "synthesized": false,
+            "termination": "Stop after executing the shot."
+        }
+    ],
+    "edges": [
+        {
+            "id": 5,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 18,
+                "demo_1": 30,
+                "demo_2": 13
+            },
+            "synthesized": false,
+            "condition": "Teammate makes the pass to the open player."
+        },
+        {
+            "id": 6,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 20,
+                "demo_1": 36,
+                "demo_2": 19
+            },
+            "synthesized": false,
+            "condition": "Possession of the ball is secured."
+        },
+        {
+            "id": 7,
+            "prev": "2",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 41
+            },
+            "synthesized": false,
+            "condition": "In position to make a pass to the teammate."
+        },
+        {
+            "id": 8,
+            "prev": "2",
+            "next": "4",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 60,
+                "demo_2": 29
+            },
+            "synthesized": false,
+            "condition": "The player has a clear opportunity to shoot."
+        }
+    ]
+}

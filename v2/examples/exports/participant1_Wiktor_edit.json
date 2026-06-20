@@ -1,0 +1,116 @@
+{
+    "outline": "The Coach's behavior initiates by moving to a tactical position to receive a pass from a teammate. Once the Coach receives possession of the ball, a decision is made: if an open goal is available, the Coach will directly shoot. Otherwise, if an open goal is not immediately available, the Coach waits for a teammate to move into an advantageous scoring position, and then passes the ball to that teammate.",
+    "nodes": [
+        {
+            "target": {
+                "info": "Coach moves to a position to create a favorable angle for receiving a pass from a teammate.",
+                "logic": "",
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            },
+            "id": "0",
+            "action": "MoveTo",
+            "info": "Coach moves to a position to create a favorable angle for receiving a pass from a teammate.",
+            "t": {
+                "demo_0": 10,
+                "demo_1": 5
+            },
+            "synthesized": false,
+            "termination": "Coach has reached the target tactical position."
+        },
+        {
+            "id": "1",
+            "action": "GetBallPossession",
+            "info": "Coach receives possession of the ball from a teammate.",
+            "t": {
+                "demo_0": 16,
+                "demo_1": 9,
+                "demo_2": 5
+            },
+            "synthesized": false,
+            "termination": "Coach has gained possession of the ball."
+        },
+        {
+            "id": "2",
+            "action": "Shoot",
+            "info": "Coach shoots the ball towards the goal.",
+            "t": 22,
+            "synthesized": false,
+            "termination": "Ball has been shot towards the goal."
+        },
+        {
+            "id": "3",
+            "action": "Wait",
+            "info": "Coach waits for a teammate to move into an open position near the goal.",
+            "t": {
+                "demo_1": 22,
+                "demo_2": 9
+            },
+            "synthesized": false,
+            "termination": "Teammate is in an open position near the goal."
+        },
+        {
+            "target": {
+                "player": "",
+                "info": ""
+            },
+            "id": "4",
+            "action": "Pass",
+            "info": "Coach passes the ball to the teammate.",
+            "t": {
+                "demo_1": 24,
+                "demo_2": 11
+            },
+            "synthesized": false,
+            "termination": "Ball has been successfully passed to the teammate."
+        }
+    ],
+    "edges": [
+        {
+            "id": 0,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 12,
+                "demo_1": 6
+            },
+            "synthesized": false,
+            "condition": "Teammate passes the ball to the Coach."
+        },
+        {
+            "id": 1,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": 20,
+            "synthesized": false,
+            "condition": "Coach has an open goal."
+        },
+        {
+            "id": 2,
+            "prev": "1",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 10,
+                "demo_2": 5
+            },
+            "synthesized": false,
+            "condition": "Coach does not have an immediate open goal and/or a teammate is not yet in an advantageous position."
+        },
+        {
+            "id": 3,
+            "prev": "3",
+            "next": "4",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 23,
+                "demo_2": 9
+            },
+            "synthesized": false,
+            "condition": "Teammate is in an open position near the goal."
+        }
+    ]
+}

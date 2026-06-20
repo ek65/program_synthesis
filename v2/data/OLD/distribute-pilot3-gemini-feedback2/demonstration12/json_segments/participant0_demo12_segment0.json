@@ -1,0 +1,743 @@
+{
+  "scene": {
+    "id": 0,
+    "language": "[0][1]Clearly in this situation, the coach[2] could have passed to[3] the right striker, but he's... He will pass[4] to the left-winger. This is incorrect. The defender[5] is not blocking right[6] striker at the time. So this is incorrect. Coach should have passed to[7] the right striker. [8]This[9] is another issue. Um, look, coach ran into a position where [10]left-winger has no way to pass the[11] coach, right? The [12]defender too is blocking. Coach should have moved somewhere[13] open, like here, maybe [14]here, and not behind that defender.",
+    "step": 0.02,
+    "objects": [
+      {
+        "id": "LeftWinger",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "RightWinger",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "LeftStriker",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "RightStriker",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender1",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender2",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender3",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender4",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender5",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "Coach",
+        "type": "Coach",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "expert",
+        "orientation": []
+      },
+      {
+        "id": "ball",
+        "type": "Ball",
+        "position": [],
+        "velocity": [],
+        "orientation": []
+      },
+      {
+        "id": "goal",
+        "type": "Goal",
+        "position": [],
+        "velocity": [],
+        "orientation": []
+      }
+    ],
+    "annotations": [
+      {
+        "id": "0",
+        "type": "ReceiveBall",
+        "player": "Coach"
+      },
+      {
+        "id": "1",
+        "type": "PauseAction"
+      },
+      {
+        "id": "2",
+        "type": "Reference",
+        "obj": "Coach"
+      },
+      {
+        "id": "3",
+        "type": "Reference",
+        "obj": "RightStriker"
+      },
+      {
+        "id": "4",
+        "type": "Reference",
+        "obj": "LeftWinger"
+      },
+      {
+        "id": "5",
+        "type": "Reference",
+        "obj": "defender1"
+      },
+      {
+        "id": "6",
+        "type": "Reference",
+        "obj": "RightStriker"
+      },
+      {
+        "id": "7",
+        "type": "Reference",
+        "obj": "RightStriker"
+      },
+      {
+        "id": "8",
+        "type": "ReceiveBall",
+        "player": "LeftWinger"
+      },
+      {
+        "id": "9",
+        "type": "PauseAction"
+      },
+      {
+        "id": "10",
+        "type": "Reference",
+        "obj": "LeftWinger"
+      },
+      {
+        "id": "11",
+        "type": "Reference",
+        "obj": "Coach"
+      },
+      {
+        "id": "12",
+        "type": "Reference",
+        "obj": "defender2"
+      },
+      {
+        "id": "13",
+        "type": "Point",
+        "point": {
+          "x": 3.62222219,
+          "y": 5.08888865
+        }
+      },
+      {
+        "id": "14",
+        "type": "Point",
+        "point": {
+          "x": -5.51111174,
+          "y": -2.000001
+        }
+      }
+    ],
+    "tokens": {
+      "0": [
+        "[0]"
+      ],
+      "34.4610672": [
+        "[1]"
+      ],
+      "35.779": [
+        "Clearly"
+      ],
+      "36.159": [
+        " ",
+        "in"
+      ],
+      "36.26": [
+        " "
+      ],
+      "36.299": [
+        "this"
+      ],
+      "36.38": [
+        " "
+      ],
+      "36.419": [
+        "situation,"
+      ],
+      "37.04": [
+        " "
+      ],
+      "37.059": [
+        "the"
+      ],
+      "37.2": [
+        " "
+      ],
+      "37.219": [
+        "coach"
+      ],
+      "37.2277336": [
+        "[2]"
+      ],
+      "37.739": [
+        " ",
+        "could"
+      ],
+      "37.919": [
+        " "
+      ],
+      "37.939": [
+        "have"
+      ],
+      "38.139": [
+        " "
+      ],
+      "38.219": [
+        "passed"
+      ],
+      "38.639": [
+        " ",
+        "to"
+      ],
+      "38.7944031": [
+        "[3]"
+      ],
+      "38.88": [
+        " "
+      ],
+      "38.959": [
+        "the"
+      ],
+      "39.06": [
+        " "
+      ],
+      "39.079": [
+        "right"
+      ],
+      "39.299": [
+        " "
+      ],
+      "39.319": [
+        "striker,"
+      ],
+      "39.839": [
+        " "
+      ],
+      "40.639": [
+        "but"
+      ],
+      "40.819": [
+        " "
+      ],
+      "40.86": [
+        "he's..."
+      ],
+      "41.439": [
+        " ",
+        "He"
+      ],
+      "41.56": [
+        " "
+      ],
+      "41.599": [
+        "will"
+      ],
+      "41.719": [
+        " ",
+        "pass"
+      ],
+      "41.7944031": [
+        "[4]"
+      ],
+      "41.919": [
+        " ",
+        "to"
+      ],
+      "42": [
+        " ",
+        "the"
+      ],
+      "42.06": [
+        " "
+      ],
+      "42.079": [
+        "left-winger."
+      ],
+      "42.699": [
+        " "
+      ],
+      "42.819": [
+        "This"
+      ],
+      "42.979": [
+        " "
+      ],
+      "43": [
+        "is"
+      ],
+      "43.119": [
+        " ",
+        "incorrect."
+      ],
+      "43.659": [
+        " "
+      ],
+      "43.979": [
+        "The"
+      ],
+      "44.079": [
+        " ",
+        "defender"
+      ],
+      "44.3944": [
+        "[5]"
+      ],
+      "44.619": [
+        " "
+      ],
+      "45.119": [
+        "is"
+      ],
+      "45.28": [
+        " "
+      ],
+      "45.299": [
+        "not"
+      ],
+      "45.419": [
+        " "
+      ],
+      "45.439": [
+        "blocking"
+      ],
+      "45.819": [
+        " "
+      ],
+      "45.86": [
+        "right"
+      ],
+      "46.06107": [
+        "[6]"
+      ],
+      "46.08": [
+        " "
+      ],
+      "46.099": [
+        "striker"
+      ],
+      "46.519": [
+        " "
+      ],
+      "46.619": [
+        "at"
+      ],
+      "46.759": [
+        " "
+      ],
+      "46.779": [
+        "the"
+      ],
+      "46.88": [
+        " "
+      ],
+      "46.899": [
+        "time."
+      ],
+      "47.18": [
+        " "
+      ],
+      "48.2": [
+        "So"
+      ],
+      "48.419": [
+        " "
+      ],
+      "48.5": [
+        "this"
+      ],
+      "48.619": [
+        " "
+      ],
+      "48.659": [
+        "is"
+      ],
+      "48.779": [
+        " ",
+        "incorrect."
+      ],
+      "49.339": [
+        " "
+      ],
+      "49.659": [
+        "Coach"
+      ],
+      "49.899": [
+        " ",
+        "should"
+      ],
+      "50.08": [
+        " "
+      ],
+      "50.099": [
+        "have"
+      ],
+      "50.22": [
+        " "
+      ],
+      "50.279": [
+        "passed"
+      ],
+      "50.52": [
+        " ",
+        "to"
+      ],
+      "50.5944023": [
+        "[7]"
+      ],
+      "50.619": [
+        " "
+      ],
+      "50.639": [
+        "the"
+      ],
+      "50.7": [
+        " "
+      ],
+      "50.739": [
+        "right"
+      ],
+      "50.939": [
+        " "
+      ],
+      "50.979": [
+        "striker."
+      ],
+      "51.479": [
+        " "
+      ],
+      "63.40126": [
+        "[8]"
+      ],
+      "68.559": [
+        "This"
+      ],
+      "69.46107": [
+        "[9]"
+      ],
+      "70.479": [
+        " "
+      ],
+      "70.54": [
+        "is"
+      ],
+      "70.66": [
+        " "
+      ],
+      "70.68": [
+        "another"
+      ],
+      "71.02": [
+        " "
+      ],
+      "71.08": [
+        "issue."
+      ],
+      "71.539": [
+        " "
+      ],
+      "71.919": [
+        "Um,"
+      ],
+      "72.319": [
+        " "
+      ],
+      "72.739": [
+        "look,"
+      ],
+      "73.039": [
+        " "
+      ],
+      "73.08": [
+        "coach"
+      ],
+      "73.519": [
+        " "
+      ],
+      "73.819": [
+        "ran"
+      ],
+      "74.04": [
+        " "
+      ],
+      "74.059": [
+        "into"
+      ],
+      "74.279": [
+        " "
+      ],
+      "74.339": [
+        "a"
+      ],
+      "74.399": [
+        " "
+      ],
+      "74.419": [
+        "position"
+      ],
+      "74.959": [
+        " "
+      ],
+      "75.019": [
+        "where"
+      ],
+      "75.259": [
+        " "
+      ],
+      "75.56107": [
+        "[10]"
+      ],
+      "75.819": [
+        "left-winger"
+      ],
+      "76.319": [
+        " "
+      ],
+      "76.36": [
+        "has"
+      ],
+      "76.519": [
+        " "
+      ],
+      "76.559": [
+        "no"
+      ],
+      "76.68": [
+        " "
+      ],
+      "76.739": [
+        "way"
+      ],
+      "76.919": [
+        " "
+      ],
+      "76.939": [
+        "to"
+      ],
+      "77.039": [
+        " "
+      ],
+      "77.119": [
+        "pass"
+      ],
+      "77.319": [
+        " ",
+        "the"
+      ],
+      "77.36107": [
+        "[11]"
+      ],
+      "77.54": [
+        " ",
+        "coach,"
+      ],
+      "77.979": [
+        " "
+      ],
+      "78.119": [
+        "right?"
+      ],
+      "78.319": [
+        " ",
+        "The"
+      ],
+      "78.399": [
+        " "
+      ],
+      "78.4277344": [
+        "[12]"
+      ],
+      "78.479": [
+        "defender"
+      ],
+      "78.939": [
+        " "
+      ],
+      "79": [
+        "too"
+      ],
+      "79.099": [
+        " "
+      ],
+      "79.119": [
+        "is"
+      ],
+      "79.279": [
+        " "
+      ],
+      "79.299": [
+        "blocking."
+      ],
+      "79.76": [
+        " "
+      ],
+      "80.139": [
+        "Coach"
+      ],
+      "80.339": [
+        " ",
+        "should"
+      ],
+      "80.479": [
+        " "
+      ],
+      "80.5": [
+        "have"
+      ],
+      "80.639": [
+        " "
+      ],
+      "80.72": [
+        "moved"
+      ],
+      "81.019": [
+        " "
+      ],
+      "81.36": [
+        "somewhere"
+      ],
+      "81.76107": [
+        "[13]"
+      ],
+      "81.9": [
+        " "
+      ],
+      "81.979": [
+        "open,"
+      ],
+      "82.399": [
+        " "
+      ],
+      "82.659": [
+        "like"
+      ],
+      "82.86": [
+        " "
+      ],
+      "82.9": [
+        "here,"
+      ],
+      "83.179": [
+        " "
+      ],
+      "84.119": [
+        "maybe"
+      ],
+      "84.5": [
+        " "
+      ],
+      "85.1944046": [
+        "[14]"
+      ],
+      "85.299": [
+        "here,"
+      ],
+      "85.619": [
+        " "
+      ],
+      "87.939": [
+        "and"
+      ],
+      "88.139": [
+        " "
+      ],
+      "88.159": [
+        "not"
+      ],
+      "88.419": [
+        " "
+      ],
+      "88.779": [
+        "behind"
+      ],
+      "89.099": [
+        " ",
+        "that"
+      ],
+      "89.219": [
+        " "
+      ],
+      "89.279": [
+        "defender."
+      ]
+    },
+    "clickTimes": {
+      "0": 0.0,
+      "1": 34.4610672,
+      "2": 37.2277336,
+      "3": 38.7944031,
+      "4": 41.7944031,
+      "5": 44.3944,
+      "6": 46.06107,
+      "7": 50.5944023,
+      "8": 63.40126,
+      "9": 69.46107,
+      "10": 75.56107,
+      "11": 77.36107,
+      "12": 78.4277344,
+      "13": 81.76107,
+      "14": 85.1944046
+    }
+  }
+}

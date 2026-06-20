@@ -1,0 +1,281 @@
+{
+  "scene": {
+    "id": "overlap-gautham",
+    "language": "[0]Okay, this time I'm going to overlap and run past the teammate, find an open space, um, away from the opponent to receive the ball, and then turn around and score. (breathing heavily)[1][2][3][4]",
+    "step": 0.02,
+    "objects": [
+      {
+        "id": "teammate",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "opponent",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "Coach",
+        "type": "Coach",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "expert",
+        "orientation": []
+      },
+      {
+        "id": "ball",
+        "type": "Ball",
+        "position": [],
+        "velocity": [],
+        "orientation": []
+      },
+      {
+        "id": "goal",
+        "type": "Goal",
+        "position": [],
+        "velocity": [],
+        "orientation": []
+      }
+    ],
+    "annotations": [
+      {
+        "id": "0",
+        "type": "ReceiveBall",
+        "player": "teammate"
+      },
+      {
+        "id": "1",
+        "type": "Reference",
+        "obj": "teammate"
+      },
+      {
+        "id": "2",
+        "type": "Through Pass",
+        "from": "teammate",
+        "to": {
+          "x": 2.05372334,
+          "y": 9.053059
+        }
+      },
+      {
+        "id": "3",
+        "type": "ReceiveBall",
+        "player": "Coach"
+      },
+      {
+        "id": "4",
+        "type": "Shoot Goal",
+        "from": "Coach",
+        "to": "Goal"
+      }
+    ],
+    "tokens": {
+      "0": [
+        "[0]"
+      ],
+      "1.799": [
+        "Okay,"
+      ],
+      "2.119": [
+        " ",
+        "this"
+      ],
+      "2.319": [
+        " "
+      ],
+      "2.339": [
+        "time"
+      ],
+      "2.62": [
+        " "
+      ],
+      "2.72": [
+        "I'm"
+      ],
+      "2.959": [
+        " "
+      ],
+      "2.96": [
+        "going"
+      ],
+      "3.24": [
+        " "
+      ],
+      "3.259": [
+        "to"
+      ],
+      "3.419": [
+        " "
+      ],
+      "3.579": [
+        "overlap"
+      ],
+      "4.139": [
+        " "
+      ],
+      "4.44": [
+        "and"
+      ],
+      "4.579": [
+        " "
+      ],
+      "4.599": [
+        "run"
+      ],
+      "4.839": [
+        " ",
+        "past"
+      ],
+      "5.179": [
+        " "
+      ],
+      "5.219": [
+        "the"
+      ],
+      "5.339": [
+        " ",
+        "teammate,"
+      ],
+      "5.879": [
+        " "
+      ],
+      "6.299": [
+        "find"
+      ],
+      "6.539": [
+        " "
+      ],
+      "6.559": [
+        "an"
+      ],
+      "6.639": [
+        " "
+      ],
+      "6.679": [
+        "open"
+      ],
+      "6.899": [
+        " "
+      ],
+      "6.98": [
+        "space,"
+      ],
+      "7.659": [
+        " "
+      ],
+      "7.719": [
+        "um,"
+      ],
+      "7.939": [
+        " "
+      ],
+      "7.96": [
+        "away"
+      ],
+      "8.179": [
+        " "
+      ],
+      "8.26": [
+        "from"
+      ],
+      "8.399": [
+        " ",
+        "the"
+      ],
+      "8.479": [
+        " "
+      ],
+      "8.5": [
+        "opponent"
+      ],
+      "8.96": [
+        " ",
+        "to"
+      ],
+      "9.099": [
+        " "
+      ],
+      "9.119": [
+        "receive"
+      ],
+      "9.479": [
+        " ",
+        "the"
+      ],
+      "9.56": [
+        " "
+      ],
+      "9.599": [
+        "ball,"
+      ],
+      "9.919": [
+        " "
+      ],
+      "10.199": [
+        "and"
+      ],
+      "10.28": [
+        " "
+      ],
+      "10.3": [
+        "then"
+      ],
+      "10.479": [
+        " ",
+        "turn"
+      ],
+      "10.659": [
+        " "
+      ],
+      "10.699": [
+        "around"
+      ],
+      "10.98": [
+        " "
+      ],
+      "11": [
+        "and"
+      ],
+      "11.119": [
+        " "
+      ],
+      "11.139": [
+        "score."
+      ],
+      "11.56": [
+        " "
+      ],
+      "15.5": [
+        "(breathing heavily)"
+      ],
+      "18.5961914": [
+        "[1]"
+      ],
+      "20.4202766": [
+        "[2]"
+      ],
+      "22.3803215": [
+        "[3]"
+      ],
+      "27.12043": [
+        "[4]"
+      ]
+    },
+    "clickTimes": {
+      "0": 0.0,
+      "1": 18.5961914,
+      "2": 20.4202766,
+      "3": 22.3803215,
+      "4": 27.12043
+    }
+  }
+}

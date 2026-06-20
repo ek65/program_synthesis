@@ -1,0 +1,369 @@
+{
+    "outline": "Coach repositions to create an optimal passing angle and relieve pressure situations. Upon observing a teammate\u2019s pass, Coach secures ball possession. Then, depending on the situation, Coach can either advance the attack by dribbling upward under opponent pressure to get into a shooting position and take a shot (possibly aimed with a target coordinate) or, if an open teammate is available, pass the ball forward to continue the play.",
+    "nodes": [
+        {
+            "target": {
+                "info": "Coach repositions laterally to create an optimal passing angle and to relieve pressure on the teammate.",
+                "logic": "(A1 OR A2)",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate",
+                            "relation": "left",
+                            "horizontal_threshold": {
+                                "avg": -0.047132188766666666,
+                                "std": 0.046622037131346904
+                            }
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate",
+                            "relation": "right",
+                            "horizontal_threshold": {
+                                "avg": -0.047132188766666666,
+                                "std": 0.046622037131346904
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "Since the termination condition requires that the Coach repositions laterally to create an optimal passing angle and relieve pressure on the teammate, we use the HorizontalRelation API. The coach can be either to the left or to the right of the teammate. Therefore, we combine these two constraints using an OR operator."
+            },
+            "id": "0",
+            "action": "MoveTo",
+            "info": "Coach either moves to the left or to the right to create an optimal passing angle and to relieve pressure on the teammate.",
+            "t": {
+                "demo_0": 20,
+                "demo_1": 18,
+                "demo_2": 14
+            },
+            "termination": {
+                "info": "",
+                "logic": "A1 OR A2",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate",
+                            "relation": "left",
+                            "horizontal_threshold": {
+                                "avg": {
+                                    "avg": -0.047132188766666666,
+                                    "std": 0.046622037131346904
+                                },
+                                "std": 0.0
+                            }
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate",
+                            "relation": "right",
+                            "horizontal_threshold": {
+                                "avg": {
+                                    "avg": -0.047132188766666666,
+                                    "std": 0.046622037131346904
+                                },
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition for node 0 indicates that the Coach has repositioned laterally to create an optimal passing angle and to relieve pressure on the teammate. The demonstration shows that the coach can be either to the left or the right of the teammate, which aligns with the provided constraints using the HorizontalRelation API. Therefore, we use two constraints (A1 and A2) combined with an OR operator to model the condition."
+            }
+        },
+        {
+            "id": "1",
+            "action": "GetBallPossession",
+            "info": "Coach secures ball possession after receiving a pass from the teammate.",
+            "t": {
+                "demo_0": 23,
+                "demo_1": 21,
+                "demo_2": 18
+            },
+            "termination": {
+                "info": "",
+                "logic": ""
+            }
+        },
+        {
+            "target": {
+                "info": "Coach dribbles the ball upward, advancing into a better shooting position while under opponent pressure.",
+                "logic": "(A1 AND A2)",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HeightRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "goal",
+                            "relation": "ahead",
+                            "height_threshold": {
+                                "avg": -4.492499550000001,
+                                "std": 0.14449954999999992
+                            }
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent",
+                            "max": {
+                                "avg": 8.534579252827735,
+                                "std": 0.5416486850561646
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "To model the termination condition for Node 2, we need to ensure that the Coach is moving upward into a better shooting position while under opponent pressure. The upward, advanced positioning is captured by using HeightRelation with the 'ahead' relation relative to the goal. The opponent pressure is modeled by ensuring that the opponent is close to the Coach using the CloseTo API. These two constraints together capture the desired condition."
+            },
+            "id": "2",
+            "action": "MoveTo",
+            "info": "Coach dribbles the ball upward near the goal",
+            "t": {
+                "demo_0": 43,
+                "demo_1": 28
+            },
+            "termination": {
+                "info": "",
+                "logic": "A1 AND A2",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HeightRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "goal",
+                            "relation": "ahead",
+                            "height_threshold": {
+                                "avg": {
+                                    "avg": -4.492499550000001,
+                                    "std": 0.14449954999999992
+                                },
+                                "std": 0.0
+                            }
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent",
+                            "max": {
+                                "avg": {
+                                    "avg": 8.534579252827735,
+                                    "std": 0.5416486850561646
+                                },
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "For node ID 2, the termination condition is that the Coach dribbles upward into a better shooting position while under opponent pressure. The HeightRelation API (A1) is used to ensure that the Coach is positioned ahead relative to the goal using the learned height threshold. The CloseTo API (A2) confirms that the Coach is close to the opponent, indicating pressure. Both conditions must be met together, so they are combined using an AND operator."
+            }
+        },
+        {
+            "id": "3",
+            "action": "Shoot",
+            "info": "Coach shoots towards the goal",
+            "t": {
+                "demo_0": 44,
+                "demo_1": 29
+            },
+            "termination": {
+                "info": "",
+                "logic": ""
+            }
+        },
+        {
+            "target": {
+                "obj": "teammate",
+                "through": false,
+                "info": "Coach passes the ball to an open teammate to shift the play forward and advance the attack."
+            },
+            "id": "4",
+            "action": "Pass",
+            "info": "Coach passes the ball to teammate to progress the play upfield.",
+            "t": {
+                "demo_2": 26
+            },
+            "termination": {
+                "info": "",
+                "logic": ""
+            }
+        }
+    ],
+    "edges": [
+        {
+            "id": 0,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 21,
+                "demo_1": 19,
+                "demo_2": 15
+            },
+            "condition": {
+                "info": "Teammate passes the ball to coach under pressure.",
+                "logic": "(A1 AND A2)",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "teammate",
+                            "ref": "opponent",
+                            "max": {
+                                "avg": 4.134530787556577,
+                                "std": 0.30574283264607205
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 1,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 25,
+                "demo_1": 24
+            },
+            "condition": {
+                "info": "Opponent pressures the teammate ",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "opponent",
+                            "ref": "teammate",
+                            "max": {
+                                "avg": {
+                                    "avg": 24.5,
+                                    "std": 0.5
+                                },
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "prev": "2",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 43,
+                "demo_1": 28
+            },
+            "condition": {
+                "info": "Coach is close enough to the goal/shooting position to attempt a shot.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "DistanceTo",
+                        "args": {
+                            "from": "Coach",
+                            "to": "goal",
+                            "min": null,
+                            "max": {
+                                "avg": 10.0,
+                                "std": 0.0
+                            },
+                            "operator": "less_than"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "prev": "1",
+            "next": "4",
+            "priority": "precondition",
+            "t": {
+                "demo_2": 20
+            },
+            "condition": {
+                "info": "Opponent pressures the coach",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent",
+                            "max": {
+                                "avg": {
+                                    "avg": 8.534579252827735,
+                                    "std": 0.5416486850561646
+                                },
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "id": "synthesized-real-give-and-go2-1"
+}

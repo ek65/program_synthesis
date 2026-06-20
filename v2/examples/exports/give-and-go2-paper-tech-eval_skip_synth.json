@@ -1,0 +1,337 @@
+{
+    "nodes": [
+        {
+            "target": {
+                "info": "Move to the side to create a passing path or shot angle for the teammate under pressure from the opponent.",
+                "logic": "(A1 AND A2)",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HasPathToPass",
+                        "args": {
+                            "passer": "Coach",
+                            "receiver": "teammate",
+                            "radius": {
+                                "avg": 0.06862761841259545,
+                                "std": 0.0613215939770897
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "The condition for moving to the side and creating a passing path or shot angle for the teammate requires two key elements: the Coach must have possession of the ball (A1), and there must be an unobstructed path to the teammate to effectively make the pass (A2). The passing path check includes the path width to ensure safety from opponents. Thus, the combined logical requirements are that both conditions must be satisfied for the action to be valid."
+            },
+            "id": "0",
+            "action": "MoveTo",
+            "info": "Move to the side to create a passing path or shot angle for the teammate under pressure from the opponent.",
+            "t": {
+                "demo_0": 4,
+                "demo_1": 2
+            },
+            "termination": {
+                "info": "Stop once a passing path or shooting angle is established.",
+                "logic": "(A1 AND A2)",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HasPathToPass",
+                        "args": {
+                            "passer": "Coach",
+                            "receiver": "teammate",
+                            "radius": {
+                                "avg": 0.06862761841259545,
+                                "std": 0.0613215939770897
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition states that the action stops once a passing path or shooting angle is established. To establish this condition, two key factors must be met: the Coach must have possession of the ball (API A1), and there must be an unobstructed path to the teammate to effectively make a pass (API A2). The width of the path is defined to ensure opponents do not obstruct the pass. Therefore, both conditions (possession and clear path) must be satisfied for the termination condition to be met."
+            }
+        },
+        {
+            "id": "1",
+            "action": "Wait",
+            "info": "Wait to receive the ball from the teammate.",
+            "t": {
+                "demo_0": 5,
+                "demo_1": 7
+            },
+            "termination": {
+                "info": "Stop waiting once the ball is received.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition for stopping the wait action is directly linked to the possession of the ball by the Coach. Specifically, once the Coach receives the ball from the teammate, the waiting should cease. Therefore, the API 'HasBallPossession' is used to determine if the Coach has the ball, which satisfies the termination condition."
+            }
+        },
+        {
+            "target": {
+                "info": "Dribble the ball upwards as the opponent is chasing the teammate.",
+                "logic": "(A1 AND A2)",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "MovingTowards",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate"
+                        }
+                    }
+                ],
+                "reasoning": "The Coach must have the ball (A1) to dribble upwards. Additionally, since the action states that the opponent is chasing the teammate, it is also essential that the Coach is moving towards the teammate (A2), indicating that the Coach is aware of the current gameplay dynamics and fulfilling the requirement of assisting the teammate while executing the dribble. Therefore, both conditions must be satisfied for the action to be valid."
+            },
+            "id": "2",
+            "action": "MoveTo",
+            "info": "Dribble the ball upwards as the opponent is chasing the teammate.",
+            "t": {
+                "demo_0": 18
+            },
+            "termination": {
+                "info": "Stop dribbling when in a position for a shot.",
+                "logic": "(A1 AND A2)",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "DistanceTo",
+                        "args": {
+                            "from": "Coach",
+                            "to": "goal",
+                            "min": null,
+                            "max": {
+                                "avg": 20.0,
+                                "std": 0.0
+                            },
+                            "operator": "less_than"
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition for stopping dribbling is satisfied when the Coach has possession of the ball (A1) and is within a distance of 20 units from the goal (A2). This indicates that the Coach is in a favorable position to take a shot, meeting the requirement to stop dribbling. The distance of 20 units is a reasonable parameter to show that the opportunity to shoot is present."
+            }
+        },
+        {
+            "id": "3",
+            "action": "Shoot",
+            "info": "Take a shot at the target location (-0.121315, 20.3833923).",
+            "t": {
+                "demo_0": 20
+            },
+            "termination": {
+                "info": "Stop once the ball is shot.",
+                "logic": ""
+            }
+        },
+        {
+            "target": {
+                "obj": "teammate",
+                "through": true,
+                "info": "Pass the ball ahead of the teammate moving into space."
+            },
+            "id": "4",
+            "action": "Pass",
+            "info": "Pass the ball ahead of the teammate moving into space.",
+            "t": {
+                "demo_1": 16
+            },
+            "termination": {
+                "info": "Stop when the pass has been successfully made to the teammate.",
+                "logic": ""
+            }
+        }
+    ],
+    "edges": [
+        {
+            "id": 5,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 4,
+                "demo_1": 6
+            },
+            "condition": {
+                "info": "The passing path or shooting angle is established and the teammate is ready to pass.",
+                "logic": "(A1 AND A2)",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasPathToPass",
+                        "args": {
+                            "passer": "Coach",
+                            "receiver": "teammate",
+                            "radius": {
+                                "avg": 0.06862761841259545,
+                                "std": 0.0613215939770897
+                            }
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 6,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 6
+            },
+            "condition": {
+                "info": "The Coach receives the ball from the teammate and the opponent is chasing the teammate.",
+                "logic": "(A1 AND A2)",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "MovingTowards",
+                        "args": {
+                            "obj": "Opponent",
+                            "ref": "Teammate"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 7,
+            "prev": "1",
+            "next": "4",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 10
+            },
+            "condition": {
+                "info": "The Coach receives the ball from the teammate and the teammate is moving into space.",
+                "logic": "(A1 AND A2)",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "MovingTowards",
+                        "args": {
+                            "obj": "Teammate",
+                            "ref": "Coach"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 8,
+            "prev": "2",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 18
+            },
+            "condition": {
+                "info": "The Coach has dribbled the ball upwards and is in a position for a shot.",
+                "logic": "A1 AND A2",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "MovingTowards",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "goal"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

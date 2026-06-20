@@ -1,0 +1,63 @@
+{
+  "states": [
+    {
+      "id": 1,
+      "name": "MoveTo(\u03bb_target0(), True)",
+      "description": "Move 9 meters above teammate, open 1 m lane, 6 m from opponent. Call pass."
+    },
+    {
+      "id": 2,
+      "name": "StopAndReceiveBall()",
+      "description": "Stop and receive the pass cleanly."
+    },
+    {
+      "id": 3,
+      "name": "Pass(teammate)",
+      "description": "Pass back to teammate into space."
+    }
+  ],
+  "transitions": [
+    {
+      "id": 1001,
+      "from": 0,
+      "to": 1,
+      "condition": "after 3 seconds",
+      "description": "Initial Transition"
+    },
+    {
+      "id": 1002,
+      "from": 1,
+      "to": 2,
+      "condition": "\u03bb_precondition_0()",
+      "description": "Wait until teammate passes toward me."
+    },
+    {
+      "id": 1003,
+      "from": 2,
+      "to": 3,
+      "condition": "\u03bb_precondition_1()",
+      "description": "Wait until I have ball possession."
+    },
+    {
+      "id": 1004,
+      "from": 2,
+      "to": 3,
+      "condition": "\u03bb_precondition_2()",
+      "description": "Wait for defender pressure and teammate running toward goal."
+    },
+    {
+      "id": 1005,
+      "from": 3,
+      "to": 3,
+      "condition": "\u03bb_precondition_3()",
+      "description": "Wait until teammate controls the ball."
+    },
+    {
+      "id": 1006,
+      "from": 3,
+      "to": 3,
+      "condition": true,
+      "description": true
+    }
+  ]
+}

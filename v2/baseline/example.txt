@@ -1,0 +1,48 @@
+### The following is an example Scenic program for you to reference
+
+A = DistanceTo({
+    'from': 'coach',
+    'to': 'opponent',
+    'min': {
+        'avg': 0.0
+    },
+    'max': {
+        'avg': 0.5
+    },
+    'operator': 'less_than',
+})
+
+
+B = HasBallPossession({
+    'player': 'coach'
+})
+
+
+def target_1(scene, sample):
+    return A(scene, sample) and B(scene, sample)
+
+def termination_1(scene):
+    return B(scene, None)
+
+behavior CoachBehavior():
+    do MoveTo(target_1) until termination_1(simulation()) # Note that this line will terminate if either \
+    # MoveTo(target_1) terminates or termination_1(simulation()) is satisfied
+    do GetBall()
+    do Wait() until termination_2(simulation())
+
+
+### Behaviors that may change depending on conditions can be modeled in the following way
+
+def precondition1(scene):
+    return A(scene, None)
+
+def precondition2(scene):
+    return B(scene, None)
+
+behavior CoachBehavior():
+    do MoveTo(target_1)
+    do Idle() until (precondition1(simulation()) or precondition2(simulation()))
+    if precondition1(simulation()):
+        do MoveTo(target_1)
+    elif precondition2(simulation()): 
+        do Pass(opponent)

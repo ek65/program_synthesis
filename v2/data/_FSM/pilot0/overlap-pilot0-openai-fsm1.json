@@ -1,0 +1,54 @@
+{
+  "states": [
+    {
+      "id": 1,
+      "name": "MoveTo(\u03bb_target0(), True)",
+      "description": "Move to overlap position: 40 deg angle, 5m from ball, and move up the field by 4m"
+    },
+    {
+      "id": 2,
+      "name": "Shoot('goal')",
+      "description": "Path to goal is clear and you have the ball; shoot at goal"
+    },
+    {
+      "id": 3,
+      "name": "Pass('teammate')",
+      "description": "No clear shot to goal, but path to teammate is open; pass to teammate"
+    },
+    {
+      "id": 4,
+      "name": "StopAndReceiveBall()",
+      "description": "No clear path to shoot or pass, stop and receive ball, take possession"
+    }
+  ],
+  "transitions": [
+    {
+      "id": 1001,
+      "from": 0,
+      "to": 1,
+      "condition": "after 3 seconds",
+      "description": "Initial Transition"
+    },
+    {
+      "id": 1002,
+      "from": 1,
+      "to": 2,
+      "condition": "\u03bb_precondition_shot()",
+      "description": "Path to goal is clear and you have the ball; shoot at goal"
+    },
+    {
+      "id": 1003,
+      "from": 1,
+      "to": 3,
+      "condition": "\u03bb_precondition_teammate_shot()",
+      "description": "No clear shot to goal, but path to teammate is open; pass to teammate"
+    },
+    {
+      "id": 1004,
+      "from": 1,
+      "to": 4,
+      "condition": "else",
+      "description": "No clear path to shoot or pass, stop and receive ball, take possession"
+    }
+  ]
+}

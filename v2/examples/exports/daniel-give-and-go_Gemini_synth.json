@@ -1,0 +1,511 @@
+{
+    "nodes": [
+        {
+            "target": {
+                "info": "Move to an open position to make self available for a pass from the pressured teammate, creating an optimal passing angle.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "DistanceTo",
+                        "args": {
+                            "from": "opponent",
+                            "to": "Coach",
+                            "min": {
+                                "avg": 6.399477695297064,
+                                "std": 0.8416729364595561
+                            },
+                            "max": null,
+                            "operator": "greater_than"
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition requires that the Coach moves to an open position where he is available to receive a pass, especially when his teammate is under pressure. An open position implies that the Coach is sufficiently away from the opponent to avoid pressure and create a clear passing angle. Using the DistanceTo API with the operator 'greater_than' ensures that the Coach is far enough from the opponent. This simple constraint directly captures the physical condition that must be satisfied at the destination."
+            },
+            "id": "0",
+            "action": "MoveTo",
+            "info": "Move to an open position to make self available for a pass from the pressured teammate, creating an optimal passing angle.",
+            "t": {
+                "demo_0": 18,
+                "demo_1": 11,
+                "demo_2": 12,
+                "demo_3": 15
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Coach reaches an optimal position to receive a pass.",
+                "logic": "(A1 AND A2)",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "DistanceTo",
+                        "args": {
+                            "from": "opponent",
+                            "to": "Coach",
+                            "min": {
+                                "avg": 6.399477695297064,
+                                "std": 0.8416729364595561
+                            },
+                            "max": null,
+                            "operator": "greater_than"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HasPath",
+                        "args": {
+                            "obj1": "Teammate",
+                            "obj2": "Coach",
+                            "path_width": {
+                                "avg": 0.043342957402023236,
+                                "std": 0.04454568506693753
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition 'Coach reaches an optimal position to receive a pass' implies two critical physical states. Firstly, the 'optimal position' suggests that the Coach should be in an open space, free from immediate pressure by an opponent. This is effectively captured by using the 'DistanceTo' API (A1), ensuring the Coach is 'greater_than' a certain distance from the 'opponent'. Secondly, being 'available for a pass' and 'creating an optimal passing angle' explicitly means that there must be a clear and unobstructed path for the ball to travel from the 'Teammate' (who is under pressure and needs to pass) to the 'Coach'. The 'HasPath' API (A2) is perfectly suited for this, as it verifies an unobstructed path between two players. Both conditions are necessary for the Coach to be in an 'optimal position to receive a pass', thus they are logically composed with an 'AND' operator."
+            }
+        },
+        {
+            "id": "1",
+            "action": "GetBallPossession",
+            "info": "Receive the ball from the teammate.",
+            "t": {
+                "demo_0": 24,
+                "demo_1": 17,
+                "demo_2": 16,
+                "demo_3": 27
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Coach gains possession of the ball.",
+                "logic": null,
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            }
+        },
+        {
+            "target": {
+                "info": "Move away from the opponent to create space and avoid pressure.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "DistanceTo",
+                        "args": {
+                            "from": "Coach",
+                            "to": "opponent",
+                            "min": {
+                                "avg": 6.172259899611368,
+                                "std": 0.0
+                            },
+                            "max": null,
+                            "operator": "greater_than"
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition for node 2 requires that the Coach has moved away from the opponent to create space and avoid pressure. We directly capture this by checking that the distance between the Coach and the opponent is greater than a learned threshold, which is modeled using the DistanceTo API with the 'greater_than' operator. This single API effectively encapsulates the needed physical condition without requiring additional constraints."
+            },
+            "id": "2",
+            "action": "MoveTo",
+            "info": "Move away from the opponent to create space and avoid pressure.",
+            "t": 46,
+            "synthesized": true,
+            "termination": {
+                "info": "Coach has created sufficient space from the opponent's pressure.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "DistanceTo",
+                        "args": {
+                            "from": "Coach",
+                            "to": "opponent",
+                            "min": {
+                                "avg": 6.172259899611368,
+                                "std": 0.0
+                            },
+                            "max": null,
+                            "operator": "greater_than"
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition 'Coach has created sufficient space from the opponent's pressure' directly implies that the distance between the Coach and the opponent must be greater than a certain threshold. The 'DistanceTo' API is the most appropriate tool to model this physical condition. By setting the 'from' parameter to 'Coach' and the 'to' parameter to 'opponent', we specify the two entities whose distance is being measured. The 'operator' is set to 'greater_than' to reflect the requirement for 'sufficient space', meaning the Coach has moved far enough away from the opponent. The specific numerical threshold for this distance will be learned from demonstrations, hence 'min' is not explicitly set in the parameters."
+            }
+        },
+        {
+            "target": {
+                "player": "teammate",
+                "info": ""
+            },
+            "id": "3",
+            "action": "Pass",
+            "info": "Pass the ball to the teammate who has a clear line of shot to the goal.",
+            "t": 37,
+            "synthesized": true,
+            "termination": {
+                "info": "Ball is successfully passed to the teammate.",
+                "logic": null,
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            }
+        },
+        {
+            "target": {
+                "player": "Teammate",
+                "info": ""
+            },
+            "id": "4",
+            "action": "Pass",
+            "info": "Make a through pass to the teammate moving towards the goal for a scoring opportunity.",
+            "t": 53,
+            "synthesized": true,
+            "termination": {
+                "info": "Ball is successfully passed to the teammate.",
+                "logic": null,
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            }
+        },
+        {
+            "target": {
+                "info": "Approach the Goal while maintaining possession of the ball.",
+                "logic": "(A1 AND A2)",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "DistanceTo",
+                        "args": {
+                            "from": "Coach",
+                            "to": "goal",
+                            "min": null,
+                            "max": {
+                                "avg": 5.025909493366715,
+                                "std": 0.015410097852564864
+                            },
+                            "operator": "less_than"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "ball",
+                            "max": {
+                                "avg": 11.941602839093648,
+                                "std": 0.01539784416917822
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "To fulfill the termination condition of Node ID 5, the coach must be near the goal while keeping possession of the ball. We ensure the coach is approaching the goal by checking that his distance to the goal is less than a learned threshold using the DistanceTo API (A1). In parallel, we ensure he maintains possession by ensuring the ball remains very close to him via the CloseTo API (A2). Both conditions must be met concurrently, hence the use of an AND operator."
+            },
+            "id": "5",
+            "action": "MoveTo",
+            "info": "Approach the Goal while maintaining possession of the ball.",
+            "t": {
+                "demo_1": 36,
+                "demo_2": 26
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Coach is in a clear shooting position with an open opportunity.",
+                "logic": "(A1 AND A2 AND A3)",
+                "map": [
+                    "A1",
+                    "A2",
+                    "A3"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "DistanceTo",
+                        "args": {
+                            "from": "Coach",
+                            "to": "goal",
+                            "min": null,
+                            "max": {
+                                "avg": 5.025909493366715,
+                                "std": 0.015410097852564864
+                            },
+                            "operator": "less_than"
+                        }
+                    },
+                    {
+                        "id": "A3",
+                        "constraint": "HasPath",
+                        "args": {
+                            "obj1": "Coach",
+                            "obj2": "goal",
+                            "path_width": {
+                                "avg": 2.0,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition 'Coach is in a clear shooting position with an open opportunity' implies three key physical conditions that must be met simultaneously. First, the Coach must possess the ball to be able to take a shot, which is captured by the 'HasBallPossession' API (A1). Second, the Coach must be within an effective shooting range of the goal, which is modeled by checking if the 'DistanceTo' the goal is 'less_than' a certain threshold (A2). This threshold will be learned from the demonstrations. Third, for the opportunity to be 'clear' and 'open', there must be no opponents obstructing the path from the Coach to the goal, which is effectively modeled by the 'HasPath' API (A3). The 'path_width' parameter for A3 will be learned from the demonstrations to define what constitutes a sufficiently 'open' path. All three conditions are necessary for a successful shot, thus they are combined with a logical AND operator."
+            }
+        },
+        {
+            "id": "6",
+            "action": "Shoot",
+            "info": "Shoot the ball towards the goal.",
+            "t": {
+                "demo_1": 37,
+                "demo_2": 27
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Ball is shot towards the goal.",
+                "logic": null,
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            }
+        }
+    ],
+    "edges": [
+        {
+            "id": 0,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 20,
+                "demo_1": 14,
+                "demo_2": 13,
+                "demo_3": 16
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "Teammate passes the ball to Coach.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "MakePass",
+                        "args": {
+                            "player": "teammate"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 1,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": 26,
+            "synthesized": true,
+            "condition": {
+                "info": "Opponent is pressuring Coach after Coach receives the ball, and Coach has space to move away (as shown in demo_0).",
+                "logic": "(A1 AND NOT(A2))",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "Pressure",
+                        "args": {
+                            "player1": "opponent",
+                            "player2": "Coach"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent",
+                            "max": {
+                                "avg": 7.551545991065808,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "prev": "1",
+            "next": "3",
+            "priority": "precondition",
+            "t": 30,
+            "synthesized": true,
+            "condition": {
+                "info": "Opponent is pressuring Coach after Coach receives the ball, and teammate is open for an immediate pass (as shown in demo_3).",
+                "logic": "(A1 AND A2)",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "Pressure",
+                        "args": {
+                            "player1": "opponent",
+                            "player2": "Coach"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HasPath",
+                        "args": {
+                            "obj1": "Coach",
+                            "obj2": "teammate",
+                            "path_width": {
+                                "avg": 0.11392247846714056,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "prev": "1",
+            "next": "5",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 17,
+                "demo_2": 16
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "Coach is not being pressured by an opponent after receiving the ball.",
+                "logic": "NOT(A1)",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "Pressure",
+                        "args": {
+                            "player1": "opponent",
+                            "player2": "Coach"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 4,
+            "prev": "2",
+            "next": "4",
+            "priority": "precondition",
+            "t": 47,
+            "synthesized": true,
+            "condition": {
+                "info": "Teammate makes himself available by moving towards the goal.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "MovingTowards",
+                        "args": {
+                            "obj": "Teammate",
+                            "ref": "goal"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 5,
+            "prev": "5",
+            "next": "6",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 36,
+                "demo_2": 26
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "Coach is in a clear shooting position.",
+                "logic": "(A1 AND A2 AND A3)",
+                "map": [
+                    "A1",
+                    "A2",
+                    "A3"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "DistanceTo",
+                        "args": {
+                            "from": "goal",
+                            "to": "Coach",
+                            "min": null,
+                            "max": {
+                                "avg": 5.025909493366715,
+                                "std": 0.015410097852564864
+                            },
+                            "operator": "less_than"
+                        }
+                    },
+                    {
+                        "id": "A3",
+                        "constraint": "HasPath",
+                        "args": {
+                            "obj1": "Coach",
+                            "obj2": "goal",
+                            "path_width": {
+                                "avg": 2.0,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

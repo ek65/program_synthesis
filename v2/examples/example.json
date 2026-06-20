@@ -1,0 +1,136 @@
+{
+  "nodes": [
+    {
+      "target": {
+        "info": "Move to an open space to be available for a pass from the teammate.",
+        "logic": "A1",
+        "map": [
+          "A1"
+        ],
+        "constraints": [
+          {
+            "id": "A1",
+            "constraint": "DistanceTo",
+            "args": {
+              "from": "opponent",
+              "to": "Coach",
+              "min": {
+                "avg": 5.921706745077121,
+                "std": 0.18424753231768948
+              },
+              "max": null,
+              "operator": "greater_than"
+            }
+          }
+        ],
+        "reasoning": "To be in an open space for receiving a pass, the coach must avoid the opponent\u2019s defensive pressure. In soccer, an 'open space' typically means that the coach is positioned far enough away from the opponent so that they are not immediately marked. Thus, we select the DistanceTo API with the 'greater_than' operator to ensure that the distance between the Coach and the Opponent is larger than a learned threshold, providing a safe zone for receiving a pass from the teammate."
+      },
+      "id": "0",
+      "action": "MoveTo",
+      "info": "Move to an open space to be available for a pass from the teammate.",
+      "t": {
+        "demo_0": 20,
+        "demo_1": 4,
+        "demo_2": 11
+      },
+      "synthesized": true,
+      "termination": {
+        "info": "Coach is in a suitable position to receive a pass from the teammate.",
+        "logic": "A1",
+        "map": [
+          "A1"
+        ],
+        "constraints": [
+          {
+            "id": "A1",
+            "constraint": "DistanceTo",
+            "args": {
+              "from": "opponent",
+              "to": "Coach",
+              "min": {
+                "avg": 5.921706745077121,
+                "std": 0.18424753231768948
+              },
+              "max": null,
+              "operator": "greater_than"
+            }
+          }
+        ],
+        "reasoning": "The termination condition 'Coach is in a suitable position to receive a pass from the teammate' implies that the Coach has moved to an open space. In soccer, an 'open space' often means being positioned far enough from an opponent to avoid defensive pressure and allow for an uncontested pass reception. Therefore, the DistanceTo API is selected to model the distance between the Coach and the Opponent. The 'greater_than' operator is used to ensure that the Coach is beyond a certain minimum distance from the opponent, signifying an open and suitable position. This aligns with the visual context in the provided images where the Coach is visibly separated from the Opponent at the point of termination."
+      }
+    },
+    {
+      "id": "1",
+      "action": "GetBallPossession",
+      "info": "Receive the ball passed by the teammate.",
+      "t": {
+        "demo_0": 21,
+        "demo_1": 10,
+        "demo_2": 15
+      },
+      "synthesized": true,
+      "termination": {
+        "info": "Coach gains possession of the ball.",
+        "logic": null,
+        "map": [],
+        "constraints": [],
+        "reasoning": ""
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": 0,
+      "prev": "0",
+      "next": "1",
+      "priority": "precondition",
+      "t": {
+        "demo_0": 20,
+        "demo_1": 5,
+        "demo_2": 13
+      },
+      "synthesized": true,
+      "condition": {
+        "info": "Teammate passes the ball to Coach.",
+        "logic": "A1",
+        "map": [
+          "A1"
+        ],
+        "constraints": [
+          {
+            "id": "A1",
+            "constraint": "MakePass",
+            "args": {
+              "player": "teammate"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": 1,
+      "prev": "1",
+      "next": "2",
+      "priority": "precondition",
+      "t": 22,
+      "synthesized": true,
+      "condition": {
+        "info": "Opponent starts pressuring Coach after receiving the ball.",
+        "logic": "A1",
+        "map": [
+          "A1"
+        ],
+        "constraints": [
+          {
+            "id": "A1",
+            "constraint": "Pressure",
+            "args": {
+              "player1": "opponent",
+              "player2": "Coach"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

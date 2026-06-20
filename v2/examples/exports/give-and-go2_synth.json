@@ -1,0 +1,255 @@
+{
+    "nodes": [
+        {
+            "id": "0",
+            "action": "GetBallPossession",
+            "info": "Coach gains possession of the ball.",
+            "t": {
+                "demo_0": 22.0,
+                "demo_1": 15.0,
+                "demo_2": 5.0
+            },
+            "termination": {
+                "info": "Coach has possession of the ball.",
+                "logic": ""
+            }
+        },
+        {
+            "target": {
+                "obj": "teammate",
+                "through": false,
+                "info": "Coach decides to pass the ball to the teammate."
+            },
+            "id": "1",
+            "action": "Pass",
+            "info": "Coach decides to pass the ball to the teammate.",
+            "t": {
+                "demo_0": 39.0,
+                "demo_1": 18.0,
+                "demo_2": 8.0
+            },
+            "termination": {
+                "info": "Ball is successfully passed to the teammate.",
+                "logic": ""
+            }
+        },
+        {
+            "target": {
+                "info": "Coach moves strategically, either around the opponent, directly in front of the goal, or to a specified position.",
+                "logic": "A OR B OR C OR D",
+                "map": [
+                    "D",
+                    "B",
+                    "A",
+                    "C"
+                ],
+                "constraints": [
+                    {
+                        "id": "A",
+                        "constraint": "horizontal_relation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent",
+                            "relation": "left",
+                            "x_threshold": [
+                                2.499841022754915,
+                                2.0417904778681737
+                            ]
+                        }
+                    },
+                    {
+                        "id": "B",
+                        "constraint": "horizontal_relation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent",
+                            "relation": "right",
+                            "x_threshold": [
+                                2.499841022754915,
+                                2.0417904778681737
+                            ]
+                        }
+                    },
+                    {
+                        "id": "C",
+                        "constraint": "close_to",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "goal",
+                            "max": {
+                                "avg": 7.109267003208873,
+                                "std": 4.759365984718307
+                            }
+                        }
+                    },
+                    {
+                        "id": "D",
+                        "constraint": "in_zone",
+                        "args": {
+                            "obj": "coach",
+                            "zone": [
+                                "B3",
+                                "C5",
+                                "C4"
+                            ]
+                        }
+                    }
+                ],
+                "reasoning": "The coach is required to reposition to one of three strategic locations. The first option is to maneuver around the opponent, which can be interpreted as moving either to the left (constraint A) or to the right (constraint B) of the opponent. The second option is to position directly in front of the goal; we model this by requiring the coach to be 'close to' the goal (constraint C) within a threshold distance (here set arbitrarily to 5.0 units). Finally, the coach may move to a specified position that is defined by a field zone \u2013 this is captured using the in_zone API (constraint D). The overall logical composition is an OR among all these alternatives, meaning that if any one of these conditions is satisfied, the constraint on the destination position is met."
+            },
+            "id": "2",
+            "action": "MoveTo",
+            "info": "Coach moves strategically, either behind the opponent or in front of the goal.",
+            "t": {
+                "demo_0": 43.0,
+                "demo_1": 20.0,
+                "demo_2": 11.0
+            },
+            "termination": {
+                "info": "Coach is in position to receive the ball back.",
+                "logic": "A",
+                "map": [
+                    "A"
+                ],
+                "constraints": [
+                    {
+                        "id": "A",
+                        "constraint": "has_angle_of_pass",
+                        "args": {
+                            "passer": "teammate",
+                            "receiver": "Coach",
+                            "radius": {
+                                "avg": 2.090515419462196,
+                                "std": 1.1945753551178213
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "To determine that the Coach is in position to receive the ball back, we want to verify that there exists a clear and valid passing angle from the teammate (who received the ball after the initial pass) to the Coach. The has_angle_of_pass API directly tests if the passing lane between these two players is unobstructed (i.e. not crossing any circle of a given radius around an opponent). Using this API captures the strategic positioning of the Coach for the give-and-go play. Thus, we compose the condition using only this API."
+            }
+        },
+        {
+            "id": "3",
+            "action": "Wait",
+            "info": "Coach receives the ball back from the teammate.",
+            "t": {
+                "demo_0": 43.0,
+                "demo_1": 20.0,
+                "demo_2": 11.0
+            },
+            "termination": {
+                "info": "Coach has possession of the ball again.",
+                "logic": ""
+            }
+        }
+    ],
+    "edges": [
+        {
+            "id": 4,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 36.0,
+                "demo_1": 16.0,
+                "demo_2": 6.0
+            },
+            "condition": {
+                "info": "Opponent starts pressuring the coach or Coach has possession of the ball.",
+                "logic": "A OR B",
+                "map": [
+                    "B",
+                    "A"
+                ],
+                "constraints": [
+                    {
+                        "id": "A",
+                        "constraint": "moving_towards",
+                        "args": {
+                            "obj": "opponent",
+                            "ref": "Coach"
+                        }
+                    },
+                    {
+                        "id": "B",
+                        "constraint": "has_ball_possession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 5,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 39.0,
+                "demo_1": 18.0,
+                "demo_2": 8.0
+            },
+            "condition": {
+                "info": "Teammate has possession of the ball after coach's pass.",
+                "logic": "A",
+                "map": [
+                    "A"
+                ],
+                "constraints": [
+                    {
+                        "id": "A",
+                        "constraint": "has_ball_possession",
+                        "args": {
+                            "player": "teammate"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 6,
+            "prev": "2",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 43.0,
+                "demo_1": 20.0,
+                "demo_2": 11.0
+            },
+            "condition": {
+                "info": "Teammate passes the ball back to the coach and coach is in position.",
+                "logic": "A AND B",
+                "map": [
+                    "B",
+                    "A"
+                ],
+                "constraints": [
+                    {
+                        "id": "A",
+                        "constraint": "has_angle_of_pass",
+                        "args": {
+                            "passer": "teammate",
+                            "receiver": "Coach",
+                            "radius": {
+                                "avg": 2.0644150112284034,
+                                "std": 0.48919839968471346
+                            }
+                        }
+                    },
+                    {
+                        "id": "B",
+                        "constraint": "in_zone",
+                        "args": {
+                            "obj": "coach",
+                            "zone": [
+                                "C3",
+                                "C5"
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

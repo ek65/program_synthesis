@@ -1,0 +1,380 @@
+{
+    "outline": "Coach initially moves laterally to create a passing angle and support the teammate. Once a pass is received, there are two alternative strategies. In one strategy (demonstrated in demo_0 and demo_1), after receiving the pass, Coach advances with the ball toward the goal to take a shot; in demo_0 the coach explicitly secures possession before dribbling upward while in demo_1 the coach moves directly upward. In an alternative strategy (demo_2), when under strong opponent pressure at the moment of receiving, Coach opts to pass the ball back to the teammate to advance play.",
+    "nodes": [
+        {
+            "target": {
+                "info": "Move laterally to create a passing angle and support position for teammate. Move either to the left or the right of the teammate by at least 5 meters and you are close enough to the teammate. ",
+                "logic": "A1 AND (A2 OR A3) AND A4",
+                "map": [
+                    "A4",
+                    "A2",
+                    "A1",
+                    "A3"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasPath",
+                        "args": {
+                            "obj1": "teammate",
+                            "obj2": "Coach",
+                            "path_width": {
+                                "avg": 1.0,
+                                "std": 0.0
+                            }
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate",
+                            "relation": "left",
+                            "horizontal_threshold": {
+                                "avg": 5.0,
+                                "std": 0.0
+                            }
+                        }
+                    },
+                    {
+                        "id": "A3",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate",
+                            "relation": "right",
+                            "horizontal_threshold": {
+                                "avg": 5.0,
+                                "std": 0.0
+                            }
+                        }
+                    },
+                    {
+                        "id": "A4",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate",
+                            "max": {
+                                "avg": 10.0,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "Based on the termination condition for Node 0, the Coach must move laterally relative to the teammate to create a passing angle and maintain a supportive position. The HasPath API (A1) ensures there is an unobstructed path between the teammate and the Coach. The HorizontalRelation constraints (A2 and A3) enforce that the Coach is at least 5 meters to the left or right of the teammate, creating the needed lateral separation. Finally, the CloseTo constraint (A4) guarantees that the Coach remains within 10 meters of the teammate, maintaining effective support. These parameters are consistent with the demonstration image from demo 1 and the overall domain knowledge of soccer support positioning."
+            },
+            "id": "0",
+            "action": "MoveTo",
+            "info": "Move laterally to create a passing angle and support position for teammate. Move either to the left or the right of the teammate by at least 5 meters and you are close enough to the teammate. ",
+            "t": {
+                "demo_0": 23,
+                "demo_1": 21,
+                "demo_2": 17
+            },
+            "termination": {
+                "info": "",
+                "logic": "A1 AND (A2 OR A3) AND A4",
+                "map": [
+                    "A4",
+                    "A2",
+                    "A1",
+                    "A3"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasPath",
+                        "args": {
+                            "obj1": "teammate",
+                            "obj2": "Coach",
+                            "path_width": {
+                                "avg": 1.0,
+                                "std": 0.0
+                            }
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate",
+                            "relation": "left",
+                            "horizontal_threshold": {
+                                "avg": 5.0,
+                                "std": 0.0
+                            }
+                        }
+                    },
+                    {
+                        "id": "A3",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate",
+                            "relation": "right",
+                            "horizontal_threshold": {
+                                "avg": 5.0,
+                                "std": 0.0
+                            }
+                        }
+                    },
+                    {
+                        "id": "A4",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate",
+                            "max": {
+                                "avg": 10.0,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "For node 0, the termination condition is that the Coach has repositioned to create an effective passing angle and support position relative to the teammate. This is achieved when there is a clear, unobstructed path between the teammate and the Coach (A1), the Coach is laterally at least 5 meters away from the teammate (either to the left via A2 or right via A3), and the Coach remains close enough to support the teammate within 10 meters (A4). The parameters are consistent with the demonstration data from demo 1."
+            }
+        },
+        {
+            "id": "1",
+            "action": "GetBallPossession",
+            "info": "Receive the pass from teammate and secure ball possession.",
+            "t": {
+                "demo_0": 17
+            },
+            "termination": {
+                "info": "Stop when possession is secured.",
+                "logic": ""
+            }
+        },
+        {
+            "target": {
+                "info": "Dribble upward with ball possession toward the goal.",
+                "logic": "A1 AND A2",
+                "map": [
+                    "A2",
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "ball",
+                            "max": {
+                                "avg": 2.0,
+                                "std": 0.0
+                            }
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "goal",
+                            "max": {
+                                "avg": 4.764296603169317,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "For Node 2, the termination condition requires the Coach to dribble upward toward the goal with secure ball possession. Maintaining possession is ensured by keeping the Coach within 2.0 meters of the ball (A1). The action should terminate when the Coach is sufficiently near the goal; the threshold of approximately 4.76 meters (A2) was derived from demonstration data and fits the observed behavior in demo_1. Together, these constraints capture both the ball control and the proximity to goal necessary for successful upward dribbling."
+            },
+            "id": "2",
+            "action": "MoveTo",
+            "info": "Dribble upward with ball possession toward the goal.",
+            "t": {
+                "demo_0": 39,
+                "demo_1": 28
+            },
+            "termination": {
+                "info": "Stop when close enough to the goal.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "goal",
+                            "max": {
+                                "avg": 4.764296603169317,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition for Node 2 is met when the Coach is close enough to the goal. In demonstration 1, this occurs approximately when the Coach is within 4.76 units of the goal. Therefore, we utilize the CloseTo API, checking if the Coach is within 4.764296603169317 of the goal."
+            }
+        },
+        {
+            "id": "3",
+            "action": "Shoot",
+            "info": "Make a shot toward the goal.",
+            "t": {
+                "demo_0": 44,
+                "demo_1": 30
+            },
+            "termination": {
+                "info": "",
+                "logic": ""
+            }
+        },
+        {
+            "target": {
+                "player": "teammate",
+                "info": "Pass the ball to teammate to move the ball up the field."
+            },
+            "id": "6",
+            "action": "Pass",
+            "info": "Pass the ball to teammate to move the ball up the field. Make sure you have an angle of pass before executing the pass. ",
+            "t": {
+                "demo_2": 27
+            },
+            "termination": {
+                "info": "",
+                "logic": ""
+            }
+        }
+    ],
+    "edges": [
+        {
+            "id": 0,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 23,
+                "demo_1": 21,
+                "demo_2": 17
+            },
+            "condition": {
+                "info": "Teammate passes the ball to Coach.",
+                "logic": "A1 AND A2",
+                "map": [
+                    "A2",
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "MakePass",
+                        "args": {
+                            "player": "teammate"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 4,
+            "prev": "2",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 41,
+                "demo_1": 29
+            },
+            "condition": {
+                "info": "Player is close enough to the goal.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "goal",
+                            "max": {
+                                "avg": 4.764296603169317,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 5,
+            "prev": "1",
+            "next": "6",
+            "priority": "precondition",
+            "t": "",
+            "condition": {
+                "info": "opponent chases coach and the teammate is within 10 meters from the goal post",
+                "logic": "(A1 AND A2)",
+                "map": [
+                    "A2",
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "Pressure",
+                        "args": {
+                            "player1": "opponent",
+                            "player2": "Coach"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "DistanceTo",
+                        "args": {
+                            "from": "teammate",
+                            "to": "goal",
+                            "min": null,
+                            "max": {
+                                "avg": 10,
+                                "std": 0.0
+                            },
+                            "operator": "less_than"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 6,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": "",
+            "condition": {
+                "info": "opponent chases the teammate",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "Pressure",
+                        "args": {
+                            "player1": "opponent",
+                            "player2": "teammate"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "id": "synthesized-real-give-and-go2-1"
+}

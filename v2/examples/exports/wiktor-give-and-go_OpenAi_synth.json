@@ -1,0 +1,364 @@
+{
+    "nodes": [
+        {
+            "target": {
+                "info": "Move to either left or right to create an angle for a pass from the teammate under pressure.",
+                "logic": "(A1 OR A2)",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate",
+                            "relation": "left",
+                            "horizontal_threshold": {
+                                "avg": -0.00143131172092637,
+                                "std": 0.001060117143515197
+                            }
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate",
+                            "relation": "right",
+                            "horizontal_threshold": {
+                                "avg": NaN,
+                                "std": NaN
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "For node 0, the coach must move laterally (either left or right) relative to the teammate to create a favorable passing angle under pressure. Using the HorizontalRelation API captures this requirement by ensuring that the coach is positioned to the left (A1) OR right (A2) of the teammate. This minimal composition directly enforces the desired spatial configuration for a clear passing angle."
+            },
+            "id": "0",
+            "action": "MoveTo",
+            "info": "Move to either left or right to create an angle for a pass from the teammate under pressure.",
+            "t": {
+                "demo_0": 6,
+                "demo_1": 34,
+                "demo_2": 8,
+                "demo_3": 8
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop when in position with a clear passing angle.",
+                "logic": "A1 OR A2",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate",
+                            "relation": "left",
+                            "horizontal_threshold": {
+                                "avg": -0.00143131172092637,
+                                "std": 0.001060117143515197
+                            }
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate",
+                            "relation": "right",
+                            "horizontal_threshold": {
+                                "avg": NaN,
+                                "std": NaN
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "To ensure a clear passing angle, the Coach must be positioned laterally relative to the teammate. This can be achieved when the Coach is either to the left or to the right of the teammate, as indicated by the HorizontalRelation API. Thus, using the logical composition 'A1 OR A2' correctly captures the termination condition: stop when the coach is in a position that creates a clear passing angle."
+            }
+        },
+        {
+            "id": "1",
+            "action": "Wait",
+            "info": "Wait for the pass from the teammate.",
+            "t": {
+                "demo_0": 38,
+                "demo_1": 0,
+                "demo_3": 29
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Continue waiting until the teammate passes the ball.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "MakePass",
+                        "args": {
+                            "player": "teammate"
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition for node ID 1 is 'Continue waiting until the teammate passes the ball.' To detect when the teammate has executed a pass, we use the MakePass API. This API returns True when the teammate passes, thereby satisfying the termination condition."
+            }
+        },
+        {
+            "id": "2",
+            "action": "GetBallPossession",
+            "info": "Receive the ball from the teammate.",
+            "t": {
+                "demo_0": 63,
+                "demo_1": 61,
+                "demo_2": 39,
+                "demo_3": 54
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop when the ball is successfully received.",
+                "logic": ""
+            }
+        },
+        {
+            "id": "3",
+            "action": "Wait",
+            "info": "Wait for the opponent's decision to determine next action.",
+            "t": {
+                "demo_3": 67
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop when opponent's decision is clear.",
+                "logic": "(A1 OR A2)",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "Pressure",
+                        "args": {
+                            "player1": "opponent",
+                            "player2": "Coach"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "Pressure",
+                        "args": {
+                            "player1": "opponent",
+                            "player2": "teammate"
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition for node 3 is to stop waiting when it is clear what decision the opponent makes. In soccer, the opponent can either pressure the coach (which would trigger a pass action) or stay with the teammate (which would trigger a shooting action). To capture this clarity, we use the Pressure API twice: one to check if the opponent is pressuring the coach (A1) and another to check if the opponent is pressuring the teammate (A2). The clear decision is modeled as either one of these conditions being true, hence the logical OR composition."
+            }
+        },
+        {
+            "id": "4",
+            "action": "Shoot",
+            "info": "Shoot for the goal if the opponent remains with the teammate.",
+            "t": {
+                "demo_0": 109,
+                "demo_3": 85
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop when shooting action is completed.",
+                "logic": ""
+            }
+        },
+        {
+            "target": {
+                "player": "teammate",
+                "info": ""
+            },
+            "id": "5",
+            "action": "Pass",
+            "info": "Pass the ball back to the teammate if the opponent pressures the Coach.",
+            "t": {
+                "demo_1": 102,
+                "demo_2": 48
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop when the ball is successfully passed to the teammate.",
+                "logic": ""
+            }
+        }
+    ],
+    "edges": [
+        {
+            "id": 0,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 38,
+                "demo_3": 8
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "Teammate is ready to pass to the Coach.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "teammate"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 1,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 63,
+                "demo_1": 41,
+                "demo_2": 9,
+                "demo_3": 29
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "Teammate passes the ball to the Coach.",
+                "logic": "(A1 AND A2)",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "MakePass",
+                        "args": {
+                            "player": "teammate"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "prev": "2",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 63,
+                "demo_3": 54
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "Coach waits for the opponent's decision post-receiving.",
+                "logic": "(A1 AND NOT(A2))",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "Pressure",
+                        "args": {
+                            "player1": "opponent",
+                            "player2": "Coach"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "prev": "2",
+            "next": "5",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 84,
+                "demo_2": 47
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "Opponent pressures Coach.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "Pressure",
+                        "args": {
+                            "player1": "opponent",
+                            "player2": "Coach"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 4,
+            "prev": "3",
+            "next": "4",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 109,
+                "demo_3": 67
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "Opponent stays with the teammate.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "opponent",
+                            "ref": "teammate",
+                            "max": {
+                                "avg": 5.416767178434526,
+                                "std": 0.9239124360985786
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

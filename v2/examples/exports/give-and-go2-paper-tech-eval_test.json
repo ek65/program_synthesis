@@ -1,0 +1,474 @@
+{
+    "outline": "",
+    "nodes": [
+        {
+            "target": {
+                "info": "Move to the side to create a passing option and shooting angle while the teammate is in possession and pressed by the opponent.",
+                "logic": "(A1 AND A2) AND A3",
+                "map": [
+                    "A2",
+                    "A3",
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "teammate"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "teammate",
+                            "ref": "opponent",
+                            "max": {
+                                "avg": 5.0,
+                                "std": 0.0
+                            }
+                        }
+                    },
+                    {
+                        "id": "A3",
+                        "constraint": "HasPathToPass",
+                        "args": {
+                            "passer": "Coach",
+                            "receiver": "teammate",
+                            "radius": {
+                                "avg": 0.06862761841259545,
+                                "std": 0.0613215939770897
+                            }
+                        }
+                    }
+                ],
+                "reasoning": ""
+            },
+            "id": "0",
+            "action": "MoveTo",
+            "info": "Move to the side to create a passing option and shooting angle while the teammate is in possession and pressed by the opponent.",
+            "t": {
+                "demo_0": 3,
+                "demo_1": 4
+            },
+            "termination": {
+                "info": "Stop when in a suitable position to receive a pass from the teammate.",
+                "logic": "(A1 AND A2 AND A3)",
+                "map": [
+                    "A2",
+                    "A3",
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "teammate"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate",
+                            "max": {
+                                "avg": 5.0,
+                                "std": 0.0
+                            }
+                        }
+                    },
+                    {
+                        "id": "A3",
+                        "constraint": "HasPathToPass",
+                        "args": {
+                            "passer": "teammate",
+                            "receiver": "Coach",
+                            "radius": {
+                                "avg": 0.06862761841259545,
+                                "std": 0.06132159397708971
+                            }
+                        }
+                    }
+                ],
+                "reasoning": ""
+            }
+        },
+        {
+            "id": "1",
+            "action": "Wait",
+            "info": "Wait for the teammate to pass the ball under opponent pressure.",
+            "t": {
+                "demo_0": 6
+            },
+            "termination": {
+                "info": "Stop waiting once the ball is passed from the teammate.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "MovingTowards",
+                        "args": {
+                            "obj": "teammate",
+                            "ref": "Coach"
+                        }
+                    }
+                ],
+                "reasoning": ""
+            }
+        },
+        {
+            "id": "2",
+            "action": "GetBall",
+            "info": "Receive the ball passed by the teammate.",
+            "t": {
+                "demo_0": 9,
+                "demo_1": 10
+            },
+            "termination": {
+                "info": "Stop upon gaining possession of the ball from the pass.",
+                "logic": ""
+            }
+        },
+        {
+            "target": {
+                "info": "Dribble the ball upwards as the opponent is distracted.",
+                "logic": "A1 AND A2",
+                "map": [
+                    "A2",
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "MovingTowards",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "Opponent"
+                        }
+                    }
+                ],
+                "reasoning": ""
+            },
+            "id": "3",
+            "action": "MoveTo",
+            "info": "Dribble the ball upwards as the opponent is distracted.",
+            "t": {
+                "demo_0": 13
+            },
+            "termination": {
+                "info": "Stop when in a better position to take a shot.",
+                "logic": "(A1 AND A2 AND A3)",
+                "map": [
+                    "A2",
+                    "A3",
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "MovingTowards",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "Opponent"
+                        }
+                    },
+                    {
+                        "id": "A3",
+                        "constraint": "DistanceTo",
+                        "args": {
+                            "from": "Coach",
+                            "to": "goal",
+                            "min": null,
+                            "max": {
+                                "avg": 25.0,
+                                "std": 0.0
+                            },
+                            "operator": "less_than"
+                        }
+                    }
+                ],
+                "reasoning": ""
+            }
+        },
+        {
+            "id": "4",
+            "action": "Shoot",
+            "info": "Take a shot towards the goal.",
+            "t": {
+                "demo_0": 19
+            },
+            "termination": {
+                "info": "Complete after the ball is shot.",
+                "logic": ""
+            }
+        },
+        {
+            "target": {
+                "obj": "teammate",
+                "through": true,
+                "info": "Pass the ball to the teammate ahead of their current position to facilitate forward movement."
+            },
+            "id": "5",
+            "action": "Pass",
+            "info": "Pass the ball to the teammate ahead of their current position to facilitate forward movement.",
+            "t": {
+                "demo_1": 13
+            },
+            "termination": {
+                "info": "Complete the pass to the teammate.",
+                "logic": ""
+            }
+        }
+    ],
+    "edges": [
+        {
+            "id": 6,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 3
+            },
+            "condition": {
+                "info": "Positioned to receive a pass from the teammate.",
+                "logic": "(A1 AND A2 AND A3)",
+                "map": [
+                    "A2",
+                    "A3",
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "teammate"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate",
+                            "max": {
+                                "avg": 5.0,
+                                "std": 0.0
+                            }
+                        }
+                    },
+                    {
+                        "id": "A3",
+                        "constraint": "HasPathToPass",
+                        "args": {
+                            "passer": "teammate",
+                            "receiver": "Coach",
+                            "radius": {
+                                "avg": 0.007306024435505746,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 7,
+            "prev": "0",
+            "next": "2",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 10
+            },
+            "condition": {
+                "info": "Positioned to receive a pass from the teammate.",
+                "logic": "A1 AND A2 AND A3",
+                "map": [
+                    "A2",
+                    "A3",
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "teammate"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate",
+                            "max": {
+                                "avg": 3.0,
+                                "std": 0.0
+                            }
+                        }
+                    },
+                    {
+                        "id": "A3",
+                        "constraint": "HasPathToPass",
+                        "args": {
+                            "passer": "teammate",
+                            "receiver": "Coach",
+                            "radius": {
+                                "avg": 0.12994921238968515,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 8,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 6
+            },
+            "condition": {
+                "info": "Teammate starts to pass the ball.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "teammate"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 9,
+            "prev": "2",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 9
+            },
+            "condition": {
+                "info": "Coach gains possession of the ball and the opponent is distracted.",
+                "logic": "A1 AND A2",
+                "map": [
+                    "A2",
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "MovingTowards",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "Opponent"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 10,
+            "prev": "3",
+            "next": "4",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 15
+            },
+            "condition": {
+                "info": "Coach dribbles upwards and is in optimal position for a shot.",
+                "logic": "(A1 AND A2)",
+                "map": [
+                    "A2",
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "MovingTowards",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 11,
+            "prev": "2",
+            "next": "5",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 10
+            },
+            "condition": {
+                "info": "Coach gains possession of the ball and chooses to pass ahead to the teammate.",
+                "logic": "A1 AND A2",
+                "map": [
+                    "A2",
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "MovingTowards",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

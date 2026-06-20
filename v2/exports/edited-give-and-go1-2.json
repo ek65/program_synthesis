@@ -1,0 +1,127 @@
+{
+    "outline": "Execute a give-and-go movement to acquire possession of the ball, pass to a teammate, and position oneself effectively to receive a return pass back from the teammate.",
+    "nodes": [
+        {
+            "id": "0",
+            "action": "GetBallPossession",
+            "info": "Get possession of the ball.",
+            "t": {
+                "demo_0": 2,
+                "demo_1": 0,
+                "demo_2": 5
+            },
+            "termination": {
+                "info": "Stop when the Coach has the ball.",
+                "logic": ""
+            }
+        },
+        {
+            "target": {
+                "obj": null,
+                "through": false,
+                "info": "Pass the ball to the teammate, located on the left side."
+            },
+            "id": "1",
+            "action": "Pass",
+            "info": "Pass the ball to the teammate, located on the left side.",
+            "t": {
+                "demo_0": 12,
+                "demo_1": 6,
+                "demo_2": 9
+            },
+            "termination": {
+                "info": "Stop once the ball is successfully passed to the teammate.",
+                "logic": ""
+            }
+        },
+        {
+            "target": {
+                "info": "Position oneself in front of the goal post for the return pass.",
+                "logic": null,
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            },
+            "id": "2",
+            "action": "MoveTo",
+            "info": "Position oneself in front of the goal post for the return pass.",
+            "t": {
+                "demo_1": 12,
+                "demo_0": 18,
+                "demo_2": 12
+            },
+            "termination": {
+                "info": "Stop when in position in front of the goal post.",
+                "logic": ""
+            }
+        },
+        {
+            "id": "3",
+            "action": "GetBallPossession",
+            "info": "Receive the ball back from the teammate.",
+            "t": {
+                "demo_0": 24,
+                "demo_1": 18,
+                "demo_2": 15
+            },
+            "termination": {
+                "info": "Stop when the Coach has possession of the ball from the teammate.",
+                "logic": ""
+            }
+        }
+    ],
+    "edges": [
+        {
+            "id": 4,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 6,
+                "demo_1": 0,
+                "demo_2": 5
+            },
+            "condition": {
+                "info": "The Coach has successfully acquired the ball.",
+                "logic": null,
+                "map": [],
+                "constraints": []
+            }
+        },
+        {
+            "id": 5,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 15,
+                "demo_1": 6,
+                "demo_2": 10
+            },
+            "condition": {
+                "info": "The ball is successfully passed to the teammate.",
+                "logic": null,
+                "map": [],
+                "constraints": []
+            }
+        },
+        {
+            "id": 6,
+            "prev": "2",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 25,
+                "demo_1": 12,
+                "demo_2": 12
+            },
+            "condition": {
+                "info": "The Coach has moved into position to receive the return pass.",
+                "logic": null,
+                "map": [],
+                "constraints": []
+            }
+        }
+    ],
+    "id": "combined-give-and-go1-2"
+}

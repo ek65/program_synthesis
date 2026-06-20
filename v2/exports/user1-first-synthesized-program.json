@@ -1,0 +1,303 @@
+{
+    "outline": "Coach moves to the side to create a favorable passing angle. In some situations, he positions himself to receive a pass, then under opponent pressure he dribbles upward and shoots when near the goal. In other situations, upon moving to the side and observing strong opponent pressure after teammate\u2019s pass, he instead passes the ball back to his teammate to help relieve the pressure and advance the play.",
+    "nodes": [
+        {
+            "target": {
+                "info": "Move to the side to create a favorable angle for receiving a pass or to support teammate under opponent pressure. Move to the left or right by more than 5 meter.",
+                "logic": "A1 OR A2",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": null,
+                            "relation": "left",
+                            "horizontal_threshold": {
+                                "avg": 5,
+                                "std": 0.0
+                            }
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": null,
+                            "relation": "right",
+                            "horizontal_threshold": {
+                                "avg": 5,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "The task requires the Coach to move laterally (to the side) by more than 5 meters in order to create a favorable angle either for receiving a pass or supporting a teammate under pressure. This lateral movement can occur in either the left or right direction. The HorizontalRelation API is used to check the Coach's horizontal displacement relative to an implicit reference point. By setting the horizontal_threshold to 5, we ensure the Coach's new target position is more than 5 meters away in the chosen direction. Using a logical OR between A1 (moving left) and A2 (moving right) covers both possibilities."
+            },
+            "id": "0",
+            "action": "MoveTo",
+            "info": "Move to the side to create a favorable angle for receiving a pass or to support teammate under opponent pressure. Move to the left or right by more than 5 meter.",
+            "t": {
+                "demo_0": 20,
+                "demo_1": 18,
+                "demo_2": 14
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop moving when the pass event is initiated.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "MakePass",
+                        "args": {
+                            "player": "teammate"
+                        }
+                    }
+                ],
+                "reasoning": "The FSM indicates that this node\u2019s movement should stop when a pass event is initiated. In the edge from node 0 to node 1, the condition is 'Teammate passes the ball to Coach.' The MakePass API detects when a player executes a pass. By using MakePass with the teammate as the player, we capture the event when the teammate initiates the pass, thus satisfying the termination condition for node 0."
+            }
+        },
+        {
+            "id": "1",
+            "action": "GetBallPossession",
+            "info": "Receive the pass from your teammate.",
+            "t": {
+                "demo_2": 29
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop once possession is gained.",
+                "logic": ""
+            }
+        },
+        {
+            "target": {
+                "info": "Dribble upward with the ball in possession to reach shooting position.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "goal",
+                            "max": {
+                                "avg": 4.937129569846508,
+                                "std": 0.16371462664283953
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "For Node ID 2, the Coach must dribble upward until he reaches a shooting position, which is achieved when he is close enough to the goal. The CloseTo API checks if the Coach is within a threshold distance of the goal\u2014a condition that, when satisfied, triggers the termination of the dribbling action. This aligns with the demonstration image where the Coach, in possession of the ball, has advanced near the goal. By using CloseTo with 'Coach' as the moving agent and 'goal' as the reference object, we capture the key aspect of the termination condition with a single API and minimal logical composition."
+            },
+            "id": "2",
+            "action": "MoveTo",
+            "info": "Dribble upward with the ball in possession to reach shooting position.",
+            "t": {
+                "demo_0": 40,
+                "demo_1": 27
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop dribbling when the shooting position is reached (i.e. when close enough to the goal).",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "goal",
+                            "max": {
+                                "avg": 4.937129569846508,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition for Node ID 2 requires the Coach to stop dribbling once he has reached the shooting position, defined as being close enough to the goal. The CloseTo API directly models this by comparing the distance between the Coach and the goal against a maximum threshold. We use the provided threshold (4.937129569846508) as the 'max' parameter, which was learned from demonstration data and represents the close enough condition observed in the image."
+            }
+        },
+        {
+            "id": "3",
+            "action": "Shoot",
+            "info": "Take a shot towards the goal.",
+            "t": {
+                "demo_0": 53,
+                "demo_1": 25
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop when the shot is executed.",
+                "logic": ""
+            }
+        },
+        {
+            "target": {
+                "player": "teammate",
+                "info": ""
+            },
+            "id": "4",
+            "action": "Pass",
+            "info": "Pass the ball to your teammate to help move the ball up the field and relieve pressure.",
+            "t": {
+                "demo_2": 27
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop when the pass is executed.",
+                "logic": ""
+            }
+        }
+    ],
+    "edges": [
+        {
+            "id": 0,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 20,
+                "demo_1": 20
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "Teammate passes the ball to Coach.",
+                "logic": "(A1 AND A2)",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "MakePass",
+                        "args": {
+                            "player": "teammate"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 1,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 25,
+                "demo_1": 19
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "Opponent pressures Coach ",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "Pressure",
+                        "args": {
+                            "player1": "opponent",
+                            "player2": "Coach"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "prev": "2",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 40,
+                "demo_1": 27
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "Coach is close enough to the goal.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "goal",
+                            "max": {
+                                "avg": 4.937129569846508,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 4,
+            "prev": "1",
+            "next": "4",
+            "priority": "precondition",
+            "t": {
+                "demo_2": "24"
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "opponent presses the coach and the teammate is close to the goal within 10 meters.",
+                "logic": "A1 AND A2",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "Pressure",
+                        "args": {
+                            "player1": "opponent",
+                            "player2": "Coach"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "teammate",
+                            "ref": "goal",
+                            "max": 10
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "id": "user1-first-synthesized-program"
+}

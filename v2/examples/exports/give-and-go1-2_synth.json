@@ -1,0 +1,595 @@
+{
+    "nodes": [
+        {
+            "id": "0",
+            "action": "GetBallPossession",
+            "info": "Coach gains possession of the ball.",
+            "t": {
+                "demo_0": 4,
+                "demo_1": 2,
+                "demo_2": 0
+            },
+            "termination": {
+                "info": "Coach has control of the ball.",
+                "logic": ""
+            }
+        },
+        {
+            "target": {
+                "obj": "teammate",
+                "through": false,
+                "info": "Coach passes the ball to the teammate."
+            },
+            "id": "1",
+            "action": "Pass",
+            "info": "Coach passes the ball to the teammate.",
+            "t": {
+                "demo_0": 14,
+                "demo_1": 10,
+                "demo_2": 2
+            },
+            "termination": {
+                "info": "Ball is successfully passed to the teammate.",
+                "logic": ""
+            }
+        },
+        {
+            "target": {
+                "info": "Coach moves around the opponent.",
+                "logic": "A AND B AND C",
+                "map": [
+                    "C",
+                    "B",
+                    "A"
+                ],
+                "constraints": [
+                    {
+                        "id": "A",
+                        "constraint": "close_to",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent",
+                            "max": {
+                                "avg": 4.161751144442495,
+                                "std": 0.0
+                            }
+                        }
+                    },
+                    {
+                        "id": "B",
+                        "constraint": "distance_to",
+                        "args": {
+                            "from": "Coach",
+                            "to": "opponent",
+                            "min": null,
+                            "max": {
+                                "avg": 1.0,
+                                "std": 0.0
+                            },
+                            "operator": "less_than"
+                        }
+                    },
+                    {
+                        "id": "C",
+                        "constraint": "horizontal_relation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent",
+                            "relation": "left",
+                            "x_threshold": [
+                                -0.023557485899999994,
+                                0.0
+                            ]
+                        }
+                    }
+                ],
+                "reasoning": "The Coach needs to successfully move around the opponent to be in a clear position to receive the ball back. Thus, the Coach initially needs to be close to the opponent. Then, the Coach must move to bypass the opponent, ensuring they are positioned to the left side of the opponent. The combination of these constraints ensures the Coach moves around the opponent."
+            },
+            "id": "2",
+            "action": "MoveTo",
+            "info": "Coach moves around the opponent.",
+            "t": {
+                "demo_0": 32
+            },
+            "termination": {
+                "info": "Coach is in a clear position to receive the ball from the teammate.",
+                "logic": "A AND B",
+                "map": [
+                    "B",
+                    "A"
+                ],
+                "constraints": [
+                    {
+                        "id": "A",
+                        "constraint": "has_angle_of_pass",
+                        "args": {
+                            "passer": "teammate",
+                            "receiver": "Coach",
+                            "radius": {
+                                "avg": 2.5536134109131168,
+                                "std": 0.0
+                            }
+                        }
+                    },
+                    {
+                        "id": "B",
+                        "constraint": "distance_to",
+                        "args": {
+                            "from": "Coach",
+                            "to": "teammate",
+                            "min": {
+                                "avg": 1.0,
+                                "std": 0.0
+                            },
+                            "max": null,
+                            "operator": "greater_than"
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition requires the Coach to be in a clear position to receive the ball after moving around the opponent. This means the teammate should have a clear line of sight for passing the ball back, which we check using the 'HasAngleOfPass' API. Additionally, the Coach should not be too close to the teammate, allowing sufficient distance for an effective pass. This is checked with the 'DistanceTo' API."
+            }
+        },
+        {
+            "target": {
+                "info": "Coach moves to a position near the right goal post.",
+                "logic": "A AND B",
+                "map": [
+                    "B",
+                    "A"
+                ],
+                "constraints": [
+                    {
+                        "id": "A",
+                        "constraint": "distance_to",
+                        "args": {
+                            "from": "Coach",
+                            "to": "goal_rightpost",
+                            "min": null,
+                            "max": {
+                                "avg": 2.0,
+                                "std": 0.0
+                            },
+                            "operator": "less_than"
+                        }
+                    },
+                    {
+                        "id": "B",
+                        "constraint": "horizontal_relation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "goal_rightpost",
+                            "relation": "left",
+                            "x_threshold": [
+                                3.4196107,
+                                0.0
+                            ]
+                        }
+                    }
+                ],
+                "reasoning": "The aim is for the Coach to move to a position near the right goal post. To model this condition, the Coach should be positioned at a distance less than a certain threshold (e.g., 2 meters) from the right goal post to be considered 'near'. Additionally, based on soccer strategy and typical field layout, it's often desirable for the Coach to approach the goal from a specific direction, often from the left, to create optimal passes or spaces. Therefore, it's critical to ensure the Coach is positioned to the left of the goal post to satisfy the condition."
+            },
+            "id": "3",
+            "action": "MoveTo",
+            "info": "Coach moves to a position near the right goal post.",
+            "t": {
+                "demo_1": 26
+            },
+            "termination": {
+                "info": "Coach is near the goal ready to receive the ball back.",
+                "logic": "A AND B",
+                "map": [
+                    "B",
+                    "A"
+                ],
+                "constraints": [
+                    {
+                        "id": "A",
+                        "constraint": "distance_to",
+                        "args": {
+                            "from": "Coach",
+                            "to": "goal_rightpost",
+                            "min": null,
+                            "max": {
+                                "avg": 2.0,
+                                "std": 0.0
+                            },
+                            "operator": "less_than"
+                        }
+                    },
+                    {
+                        "id": "B",
+                        "constraint": "horizontal_relation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "goal_rightpost",
+                            "relation": "left",
+                            "x_threshold": [
+                                3.4196107,
+                                0.0
+                            ]
+                        }
+                    }
+                ],
+                "reasoning": "To model the termination condition 'Coach is near the goal ready to receive the ball back', we need to determine if the Coach is positioned near the right goal post. This involves two constraints: first, the Coach should be within a certain distance (less than 2 meters) from the right goal post, ensuring proximity which is relevant for receiving a pass. Secondly, the Coach should be positioned to the left of the right goal post, likely as part of a strategic play positioning. Combining these spatial constraints using AND ensures the Coach is optimally positioned near the goal to receive the ball back, as described in the FSM termination condition."
+            }
+        },
+        {
+            "target": {
+                "info": "Coach positions around to receive the ball.",
+                "logic": "(A AND B) AND C",
+                "map": [
+                    "C",
+                    "B",
+                    "A"
+                ],
+                "constraints": [
+                    {
+                        "id": "A",
+                        "constraint": "moving_towards",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate"
+                        }
+                    },
+                    {
+                        "id": "B",
+                        "constraint": "distance_to",
+                        "args": {
+                            "from": "Coach",
+                            "to": "teammate",
+                            "min": null,
+                            "max": {
+                                "avg": 5.0,
+                                "std": 0.0
+                            },
+                            "operator": "less_than"
+                        }
+                    },
+                    {
+                        "id": "C",
+                        "constraint": "has_angle_of_pass",
+                        "args": {
+                            "passer": "teammate",
+                            "receiver": "Coach",
+                            "radius": {
+                                "avg": 0.33007330051899664,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "To satisfy the termination condition 'Coach positions around to receive the ball', the Coach needs to be moving towards the teammate to be ready to receive a pass back (constraint A). Furthermore, the coach needs to maintain a close enough distance (less than 5 meters, typical of effective positioning in soccer) to the teammate to ensure they can communicate and prepare for the pass (constraint B). Lastly, an open angle for a pass must exist between the teammate (passer) and the Coach (receiver), meaning the passing lane must be clear without opponents obstructing it (constraint C). These conditions together ensure that the Coach is effectively positioned to receive the ball."
+            },
+            "id": "4",
+            "action": "MoveTo",
+            "info": "Coach positions around to receive the ball.",
+            "t": {
+                "demo_2": 10
+            },
+            "termination": {
+                "info": "Coach is in position at (3.24477053, 10.0046186).",
+                "logic": "A AND B AND C",
+                "map": [
+                    "C",
+                    "B",
+                    "A"
+                ],
+                "constraints": [
+                    {
+                        "id": "A",
+                        "constraint": "distance_to",
+                        "args": {
+                            "from": "Coach",
+                            "to": "goal",
+                            "min": {
+                                "avg": 0,
+                                "std": 0.0
+                            },
+                            "max": {
+                                "avg": 2,
+                                "std": 0.0
+                            },
+                            "operator": "within"
+                        }
+                    },
+                    {
+                        "id": "B",
+                        "constraint": "horizontal_relation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "goal_rightpost",
+                            "relation": "left",
+                            "x_threshold": [
+                                4.90978976,
+                                0.0
+                            ]
+                        }
+                    },
+                    {
+                        "id": "C",
+                        "constraint": "height_relation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate",
+                            "relation": "ahead",
+                            "height_threshold": {
+                                "avg": -0.29198250999999953,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition requires the Coach to be in a specific position on the soccer field. The image shows the Coach near the right goal post to receive the ball, indicating they must be close to the goal but still slightly ahead of the teammate, who has the ball. Also, to create an opportunity to receive the ball, the Coach has to be placed in a clear position with respect to other players, hence being horizontally left to the goal post."
+            }
+        },
+        {
+            "id": "5",
+            "action": "GetBallPossession",
+            "info": "Coach receives the ball from the teammate.",
+            "t": {
+                "demo_0": 40,
+                "demo_1": 42
+            },
+            "termination": {
+                "info": "Coach regains possession of the ball.",
+                "logic": ""
+            }
+        }
+    ],
+    "edges": [
+        {
+            "id": 6,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 2,
+                "demo_2": 2
+            },
+            "condition": {
+                "info": "Coach has possession of the ball.",
+                "logic": "A",
+                "map": [
+                    "A"
+                ],
+                "constraints": [
+                    {
+                        "id": "A",
+                        "constraint": "has_ball_possession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 7,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 12
+            },
+            "condition": {
+                "info": "The opponent starts pressuring the coach.",
+                "logic": "A AND B AND C",
+                "map": [
+                    "C",
+                    "B",
+                    "A"
+                ],
+                "constraints": [
+                    {
+                        "id": "A",
+                        "constraint": "close_to",
+                        "args": {
+                            "obj": "opponent",
+                            "ref": "Coach",
+                            "max": {
+                                "avg": 1.5,
+                                "std": 0.0
+                            }
+                        }
+                    },
+                    {
+                        "id": "B",
+                        "constraint": "moving_towards",
+                        "args": {
+                            "obj": "opponent",
+                            "ref": "Coach"
+                        }
+                    },
+                    {
+                        "id": "C",
+                        "constraint": "height_relation",
+                        "args": {
+                            "obj": "opponent",
+                            "ref": "Coach",
+                            "relation": "ahead",
+                            "height_threshold": {
+                                "avg": 1.0,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 8,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 22
+            },
+            "condition": {
+                "info": "The teammate receives the ball from the coach.",
+                "logic": "A",
+                "map": [
+                    "A"
+                ],
+                "constraints": [
+                    {
+                        "id": "A",
+                        "constraint": "has_ball_possession",
+                        "args": {
+                            "player": "teammate"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 9,
+            "prev": "1",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 12
+            },
+            "condition": {
+                "info": "Ball is passed to the teammate.",
+                "logic": "A",
+                "map": [
+                    "A"
+                ],
+                "constraints": [
+                    {
+                        "id": "A",
+                        "constraint": "has_ball_possession",
+                        "args": {
+                            "player": "teammate"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 10,
+            "prev": "1",
+            "next": "4",
+            "priority": "precondition",
+            "t": {
+                "demo_2": 6
+            },
+            "condition": {
+                "info": "Ball is successfully passed to the teammate.",
+                "logic": "A",
+                "map": [
+                    "A"
+                ],
+                "constraints": [
+                    {
+                        "id": "A",
+                        "constraint": "has_ball_possession",
+                        "args": {
+                            "player": "teammate"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 11,
+            "prev": "2",
+            "next": "5",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 36
+            },
+            "condition": {
+                "info": "The coach is in a clear position to receive the ball back from the teammate.",
+                "logic": "(A AND B) AND C",
+                "map": [
+                    "C",
+                    "B",
+                    "A"
+                ],
+                "constraints": [
+                    {
+                        "id": "A",
+                        "constraint": "moving_towards",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate"
+                        }
+                    },
+                    {
+                        "id": "B",
+                        "constraint": "distance_to",
+                        "args": {
+                            "from": "Coach",
+                            "to": "teammate",
+                            "min": null,
+                            "max": {
+                                "avg": 5.0,
+                                "std": 0.0
+                            },
+                            "operator": "less_than"
+                        }
+                    },
+                    {
+                        "id": "C",
+                        "constraint": "has_angle_of_pass",
+                        "args": {
+                            "passer": "teammate",
+                            "receiver": "Coach",
+                            "radius": {
+                                "avg": 2.5536134109131168,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 12,
+            "prev": "3",
+            "next": "5",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 28
+            },
+            "condition": {
+                "info": "Coach is positioned near the goal for receiving ball back.",
+                "logic": "A AND B",
+                "map": [
+                    "B",
+                    "A"
+                ],
+                "constraints": [
+                    {
+                        "id": "A",
+                        "constraint": "distance_to",
+                        "args": {
+                            "from": "Coach",
+                            "to": "goal_rightpost",
+                            "min": null,
+                            "max": {
+                                "avg": 2.0,
+                                "std": 0.0
+                            },
+                            "operator": "less_than"
+                        }
+                    },
+                    {
+                        "id": "B",
+                        "constraint": "horizontal_relation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "goal_rightpost",
+                            "relation": "left",
+                            "x_threshold": [
+                                2.1551840540000002,
+                                0.0
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

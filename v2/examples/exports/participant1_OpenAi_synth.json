@@ -1,0 +1,316 @@
+{
+    "nodes": [
+        {
+            "target": {
+                "info": "Move to the side to create an angle for a pass.",
+                "logic": "A1 OR A2",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "ball",
+                            "relation": "left",
+                            "horizontal_threshold": {
+                                "avg": NaN,
+                                "std": NaN
+                            }
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "ball",
+                            "relation": "right",
+                            "horizontal_threshold": {
+                                "avg": 0.1923799165,
+                                "std": 0.00562007149999999
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "To create a passing angle, the coach must move laterally (to the side) relative to the ball. This can be modeled by checking that the coach's horizontal position is offset from the ball, either to its left or right. Using the HorizontalRelation API with the ball as the reference, we cover both possible lateral directions by composing two constraints (one for 'left' and one for 'right') with an OR operator. This minimal set of APIs captures the idea of moving to the side, which is the termination condition for the MoveTo action."
+            },
+            "id": "0",
+            "action": "MoveTo",
+            "info": "Move to the side to create an angle for a pass.",
+            "t": {
+                "demo_0": 1,
+                "demo_1": 3
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop when a clear passing angle has been formed.",
+                "logic": "A1 OR A2",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "ball",
+                            "relation": "left",
+                            "horizontal_threshold": {
+                                "avg": NaN,
+                                "std": NaN
+                            }
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "ball",
+                            "relation": "right",
+                            "horizontal_threshold": {
+                                "avg": 0.1923799165,
+                                "std": 0.00562007149999999
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "To form a clear passing angle, the coach needs to be positioned laterally relative to the ball. This can happen either by moving to the left or to the right of the ball. We use the HorizontalRelation API in two configurations\u2014one checking if the coach is to the left of the ball (A1) and the other checking if the coach is to the right of the ball (A2). The termination condition is achieved when either condition is satisfied, hence our logic 'A1 OR A2'."
+            }
+        },
+        {
+            "id": "1",
+            "action": "GetBallPossession",
+            "info": "Receive the ball from the teammate.",
+            "t": {
+                "demo_0": 5,
+                "demo_2": 2
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop when possession of the ball is secured.",
+                "logic": ""
+            }
+        },
+        {
+            "id": "2",
+            "action": "Wait",
+            "info": "Wait for the teammate to be in position for a pass or until an opportunity to shoot arises.",
+            "t": {
+                "demo_1": 10,
+                "demo_2": 6
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop when the teammate is in position or there is an open goal.",
+                "logic": "A1 OR A2",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "InZone",
+                        "args": {
+                            "obj": "coach",
+                            "zone": [
+                                "C5",
+                                "C5"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HasPath",
+                        "args": {
+                            "obj1": "Coach",
+                            "obj2": "goal",
+                            "path_width": {
+                                "avg": 2.0,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition for Node 2 requires that the behavior stops when either the teammate is in position or there is an open goal. We model 'teammate is in position' using the InZone API by checking if the teammate is in a passing position (represented here with zone 'B2', which will be learned from demonstration). 'Open goal' is modeled by ensuring there is an unobstructed path from the Coach to the goal using the HasPath API. Since either condition satisfies the termination, we combine these with an OR operator."
+            }
+        },
+        {
+            "target": {
+                "player": "teammate",
+                "info": ""
+            },
+            "id": "3",
+            "action": "Pass",
+            "info": "Pass the ball to the teammate.",
+            "t": {
+                "demo_1": 12,
+                "demo_2": 10
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop when the pass has been made to the teammate.",
+                "logic": ""
+            }
+        },
+        {
+            "id": "4",
+            "action": "Shoot",
+            "info": "Shoot at the open goal.",
+            "t": {
+                "demo_0": 10
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop when the ball is shot towards the goal.",
+                "logic": ""
+            }
+        }
+    ],
+    "edges": [
+        {
+            "id": 0,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 4,
+                "demo_2": 3
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "Teammate passes the ball to the coach.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 1,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 3,
+                "demo_2": 3
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "Coach has possession of the ball.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "prev": "2",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 10,
+                "demo_2": 6
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "The teammate is in position and the goal is open.",
+                "logic": "A1 AND A2",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "InZone",
+                        "args": {
+                            "obj": "coach",
+                            "zone": [
+                                "C5",
+                                "C5"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HasPath",
+                        "args": {
+                            "obj1": "teammate",
+                            "obj2": "goal",
+                            "path_width": {
+                                "avg": 0.12739879122352266,
+                                "std": 0.014703974570608527
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "prev": "2",
+            "next": "4",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 9
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "Coach has the ball and sees an open goal.",
+                "logic": "A1 AND A2",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HasPath",
+                        "args": {
+                            "obj1": "Coach",
+                            "obj2": "goal",
+                            "path_width": {
+                                "avg": 2.0,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

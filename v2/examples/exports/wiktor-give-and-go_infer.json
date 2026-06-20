@@ -1,0 +1,127 @@
+{
+    "outline": "The coach positions to receive a pass from a teammate under opponent pressure. Depending on the opponent's actions, the coach either passes back to the teammate if pressured or moves to score if the opponent remains with the teammate.",
+    "nodes": [
+        {
+            "target": {
+                "info": "Move to a position providing a clear passing angle from the teammate under pressure.",
+                "logic": "",
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            },
+            "id": "0",
+            "action": "MoveTo",
+            "info": "Move to a position providing a clear passing angle from the teammate under pressure.",
+            "t": {
+                "demo_0": 1,
+                "demo_1": 1,
+                "demo_2": 1,
+                "demo_3": 1
+            },
+            "synthesized": false,
+            "termination": "Stop when in a good position to receive the ball from the teammate."
+        },
+        {
+            "id": "1",
+            "action": "Wait",
+            "info": "Wait to receive the ball from the teammate.",
+            "t": {
+                "demo_0": 3,
+                "demo_3": 2
+            },
+            "synthesized": false,
+            "termination": "Stop when the teammate passes the ball to the coach."
+        },
+        {
+            "id": "2",
+            "action": "GetBallPossession",
+            "info": "Receive possession of the ball from the teammate.",
+            "t": {
+                "demo_0": 3,
+                "demo_1": 1,
+                "demo_2": 2,
+                "demo_3": 2
+            },
+            "synthesized": false,
+            "termination": "Stop when possession of the ball is gained."
+        },
+        {
+            "target": {
+                "player": "",
+                "info": ""
+            },
+            "id": "3",
+            "action": "Pass",
+            "info": "Pass the ball to the teammate.",
+            "t": {
+                "demo_0": -1,
+                "demo_1": 5,
+                "demo_2": 2
+            },
+            "synthesized": false,
+            "termination": "Complete the pass to the teammate."
+        },
+        {
+            "id": "4",
+            "action": "Shoot",
+            "info": "Shoot the ball towards the goal.",
+            "t": {
+                "demo_0": 5,
+                "demo_3": 3
+            },
+            "synthesized": false,
+            "termination": "Complete the shot."
+        }
+    ],
+    "edges": [
+        {
+            "id": 0,
+            "prev": "0",
+            "next": "2",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 1,
+                "demo_1": 2,
+                "demo_2": 1
+            },
+            "synthesized": false,
+            "condition": "Teammate passes to coach."
+        },
+        {
+            "id": 1,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": {
+                "demo_3": 2
+            },
+            "synthesized": false,
+            "condition": "Teammate passes the ball to the coach."
+        },
+        {
+            "id": 2,
+            "prev": "2",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_0": -1,
+                "demo_1": 4,
+                "demo_2": 2
+            },
+            "synthesized": false,
+            "condition": "Opponent is pressuring coach."
+        },
+        {
+            "id": 3,
+            "prev": "2",
+            "next": "4",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 5,
+                "demo_3": 3
+            },
+            "synthesized": false,
+            "condition": "Opponent remains with the teammate."
+        }
+    ]
+}

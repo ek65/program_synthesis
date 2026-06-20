@@ -1,0 +1,2772 @@
+{
+  "scene": {
+    "timeSeries": [
+      {
+        "timestep": 0,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.226575971,
+              "y": 0.821977258
+            },
+            "rot": {
+              "angle": 325.5152
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -2.69135165,
+              "y": 5.529106
+            },
+            "rot": {
+              "angle": 214.842789
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.685999E-05,
+              "y": 0.4922969
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.125032,
+              "y": 4.63793945
+            },
+            "rot": {
+              "angle": 206.758545
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 1,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.226576343,
+              "y": 0.8219769
+            },
+            "rot": {
+              "angle": 325.5152
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -2.711127,
+              "y": 5.501643
+            },
+            "rot": {
+              "angle": 215.755264
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.72150166E-05,
+              "y": 0.492296576
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.13778853,
+              "y": 4.60721874
+            },
+            "rot": {
+              "angle": 206.758514
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 2,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.226576686,
+              "y": 0.8219768
+            },
+            "rot": {
+              "angle": 325.5152
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -2.73088765,
+              "y": 5.474195
+            },
+            "rot": {
+              "angle": 215.74559
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.75632876E-05,
+              "y": 0.4922965
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.14320683,
+              "y": 4.573403
+            },
+            "rot": {
+              "angle": 205.688522
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 3,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.226576686,
+              "y": 0.8219768
+            },
+            "rot": {
+              "angle": 325.5152
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -2.750649,
+              "y": 5.44674635
+            },
+            "rot": {
+              "angle": 215.7458
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.75632876E-05,
+              "y": 0.4922965
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.14774013,
+              "y": 4.539521
+            },
+            "rot": {
+              "angle": 204.2466
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 4,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.226576343,
+              "y": 0.821977
+            },
+            "rot": {
+              "angle": 325.5152
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -2.76943827,
+              "y": 5.420209
+            },
+            "rot": {
+              "angle": 215.294037
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.7201094E-05,
+              "y": 0.492296755
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.15102673,
+              "y": 4.50664043
+            },
+            "rot": {
+              "angle": 203.231476
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 5,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.226576358,
+              "y": 0.821977
+            },
+            "rot": {
+              "angle": 325.5152
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -2.78822827,
+              "y": 5.393671
+            },
+            "rot": {
+              "angle": 215.294312
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.7201094E-05,
+              "y": 0.492296755
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.153295,
+              "y": 4.473709
+            },
+            "rot": {
+              "angle": 201.862991
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 6,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.226576373,
+              "y": 0.821977
+            },
+            "rot": {
+              "angle": 325.5152
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -2.80701923,
+              "y": 5.367133
+            },
+            "rot": {
+              "angle": 215.294617
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.7201094E-05,
+              "y": 0.492296755
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.15441966,
+              "y": 4.44067669
+            },
+            "rot": {
+              "angle": 200.905457
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 7,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.226576835,
+              "y": 0.8219768
+            },
+            "rot": {
+              "angle": 325.5152
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -2.824669,
+              "y": 5.34125328
+            },
+            "rot": {
+              "angle": 214.287415
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.764136E-05,
+              "y": 0.4922965
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.15553665,
+              "y": 4.40857029
+            },
+            "rot": {
+              "angle": 200.398209
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 8,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.226576835,
+              "y": 0.8219768
+            },
+            "rot": {
+              "angle": 325.5152
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -2.84231949,
+              "y": 5.315373
+            },
+            "rot": {
+              "angle": 214.287857
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.764136E-05,
+              "y": 0.4922965
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.15657878,
+              "y": 4.3766923
+            },
+            "rot": {
+              "angle": 200.295441
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 9,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.226576835,
+              "y": 0.8219768
+            },
+            "rot": {
+              "angle": 325.5152
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -2.85997081,
+              "y": 5.28949261
+            },
+            "rot": {
+              "angle": 214.288315
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.764136E-05,
+              "y": 0.4922965
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.157545,
+              "y": 4.34511566
+            },
+            "rot": {
+              "angle": 199.847137
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 10,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.226576433,
+              "y": 0.8219771
+            },
+            "rot": {
+              "angle": 325.5152
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -2.87645459,
+              "y": 5.26388
+            },
+            "rot": {
+              "angle": 212.757751
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.72274948E-05,
+              "y": 0.492296755
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.15855527,
+              "y": 4.314367
+            },
+            "rot": {
+              "angle": 199.818024
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 11,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.226576433,
+              "y": 0.8219771
+            },
+            "rot": {
+              "angle": 325.5152
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -2.892939,
+              "y": 5.23826647
+            },
+            "rot": {
+              "angle": 212.758163
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.72274948E-05,
+              "y": 0.492296755
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.159462,
+              "y": 4.28401136
+            },
+            "rot": {
+              "angle": 199.4433
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 12,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.226576433,
+              "y": 0.8219771
+            },
+            "rot": {
+              "angle": 325.5152
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -2.9094243,
+              "y": 5.21265268
+            },
+            "rot": {
+              "angle": 212.75853
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.72274948E-05,
+              "y": 0.492296755
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.16028643,
+              "y": 4.25394964
+            },
+            "rot": {
+              "angle": 199.098083
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 13,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.22657688,
+              "y": 0.8219768
+            },
+            "rot": {
+              "angle": 325.5152
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -2.9238956,
+              "y": 5.18834639
+            },
+            "rot": {
+              "angle": 210.760712
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.76671955E-05,
+              "y": 0.4922965
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.1611166,
+              "y": 4.225619
+            },
+            "rot": {
+              "angle": 199.184341
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 14,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.22657688,
+              "y": 0.8219768
+            },
+            "rot": {
+              "angle": 325.5152
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -2.93836737,
+              "y": 5.164041
+            },
+            "rot": {
+              "angle": 210.761047
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.76671955E-05,
+              "y": 0.4922965
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.1618576,
+              "y": 4.19780731
+            },
+            "rot": {
+              "angle": 198.918533
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 15,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.22657688,
+              "y": 0.8219768
+            },
+            "rot": {
+              "angle": 325.5152
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -2.95283937,
+              "y": 5.139735
+            },
+            "rot": {
+              "angle": 210.761246
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.76671955E-05,
+              "y": 0.4922965
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.16253,
+              "y": 4.170258
+            },
+            "rot": {
+              "angle": 199.024963
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 16,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.226576447,
+              "y": 0.821977139
+            },
+            "rot": {
+              "angle": 325.5152
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -2.9650197,
+              "y": 5.117497
+            },
+            "rot": {
+              "angle": 208.700027
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.72351273E-05,
+              "y": 0.492296815
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.16332,
+              "y": 4.14515162
+            },
+            "rot": {
+              "angle": 198.833878
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 17,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.226576447,
+              "y": 0.821977139
+            },
+            "rot": {
+              "angle": 325.5152
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -2.9772,
+              "y": 5.09525871
+            },
+            "rot": {
+              "angle": 208.700165
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.72351273E-05,
+              "y": 0.492296815
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.16401148,
+              "y": 4.120472
+            },
+            "rot": {
+              "angle": 198.631058
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 18,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.226576447,
+              "y": 0.821977139
+            },
+            "rot": {
+              "angle": 325.5152
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -2.98938084,
+              "y": 5.073021
+            },
+            "rot": {
+              "angle": 208.700226
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.72351273E-05,
+              "y": 0.492296815
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.164629,
+              "y": 4.095982
+            },
+            "rot": {
+              "angle": 198.772324
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 19,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.226576447,
+              "y": 0.821977139
+            },
+            "rot": {
+              "angle": 325.5152
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.001562,
+              "y": 5.05078363
+            },
+            "rot": {
+              "angle": 208.700241
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.72351273E-05,
+              "y": 0.492296815
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.16518521,
+              "y": 4.07163954
+            },
+            "rot": {
+              "angle": 198.598679
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 20,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.226575956,
+              "y": 0.8219775
+            },
+            "rot": {
+              "angle": 325.5152
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.01169729,
+              "y": 5.03073025
+            },
+            "rot": {
+              "angle": 206.833481
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.67406169E-05,
+              "y": 0.492297173
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.16568637,
+              "y": 4.049255
+            },
+            "rot": {
+              "angle": 198.8178
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 21,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.226575956,
+              "y": 0.8219775
+            },
+            "rot": {
+              "angle": 325.5152
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.021833,
+              "y": 5.01067734
+            },
+            "rot": {
+              "angle": 206.797577
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.67406169E-05,
+              "y": 0.492297173
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.166115,
+              "y": 4.02751446
+            },
+            "rot": {
+              "angle": 205.896
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 22,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.226575062,
+              "y": 0.821978152
+            },
+            "rot": {
+              "angle": 325.5152
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.03031445,
+              "y": 4.9922514
+            },
+            "rot": {
+              "angle": 205.518692
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.58548054E-05,
+              "y": 0.492297828
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.16647387,
+              "y": 4.00669146
+            },
+            "rot": {
+              "angle": 198.6655
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 23,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.226575062,
+              "y": 0.821978152
+            },
+            "rot": {
+              "angle": 325.5152
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.038796,
+              "y": 4.97382641
+            },
+            "rot": {
+              "angle": 204.6951
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.58548054E-05,
+              "y": 0.492297828
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.1667738,
+              "y": 3.98689127
+            },
+            "rot": {
+              "angle": 191.4381
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 24,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.330611229,
+              "y": 0.9733944
+            },
+            "rot": {
+              "angle": 325.5157
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.04727769,
+              "y": 4.955402
+            },
+            "rot": {
+              "angle": 204.694687
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.58548054E-05,
+              "y": 0.492297828
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.16698861,
+              "y": 3.96734
+            },
+            "rot": {
+              "angle": 184.208572
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 25,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.4427543,
+              "y": 1.13660955
+            },
+            "rot": {
+              "angle": 325.516144
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.05575967,
+              "y": 4.936978
+            },
+            "rot": {
+              "angle": 204.694214
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.58548054E-05,
+              "y": 0.492297828
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.16703153,
+              "y": 3.94788265
+            },
+            "rot": {
+              "angle": 176.980179
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 26,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.5550008,
+              "y": 1.29997528
+            },
+            "rot": {
+              "angle": 325.516785
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.061055,
+              "y": 4.92171574
+            },
+            "rot": {
+              "angle": 204.33316
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.41077461E-05,
+              "y": 0.49229905
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.16543031,
+              "y": 3.936428
+            },
+            "rot": {
+              "angle": 169.77977
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 27,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.6657576,
+              "y": 1.46117294
+            },
+            "rot": {
+              "angle": 325.517822
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.06634927,
+              "y": 4.906461
+            },
+            "rot": {
+              "angle": 190.237183
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.41077461E-05,
+              "y": 0.49229905
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.163847,
+              "y": 3.91574812
+            },
+            "rot": {
+              "angle": 162.837692
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 28,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.7747136,
+              "y": 1.61974967
+            },
+            "rot": {
+              "angle": 325.5198
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.07164454,
+              "y": 4.891198
+            },
+            "rot": {
+              "angle": 176.5451
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.41077461E-05,
+              "y": 0.49229905
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.16206861,
+              "y": 3.904699
+            },
+            "rot": {
+              "angle": 161.859253
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 29,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.881814063,
+              "y": 1.77562582
+            },
+            "rot": {
+              "angle": 325.523529
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.07481623,
+              "y": 4.88121367
+            },
+            "rot": {
+              "angle": 162.853012
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.75698323E-05,
+              "y": 0.492296726
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.156615,
+              "y": 3.89542556
+            },
+            "rot": {
+              "angle": 154.6653
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 30,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -0.987055659,
+              "y": 1.92879653
+            },
+            "rot": {
+              "angle": 325.531433
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.077135,
+              "y": 4.87390041
+            },
+            "rot": {
+              "angle": 135.468811
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.75698323E-05,
+              "y": 0.492296726
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.1511066,
+              "y": 3.88637829
+            },
+            "rot": {
+              "angle": 147.464447
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 31,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -1.090445,
+              "y": 2.07927155
+            },
+            "rot": {
+              "angle": 325.558
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.07713628,
+              "y": 4.87388659
+            },
+            "rot": {
+              "angle": 121.776718
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.75698323E-05,
+              "y": 0.492296726
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.14547253,
+              "y": 3.87870717
+            },
+            "rot": {
+              "angle": 141.820068
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 32,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -1.191991,
+              "y": 2.22706342
+            },
+            "rot": {
+              "angle": 145.111176
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.07723832,
+              "y": 4.8683486
+            },
+            "rot": {
+              "angle": 108.08461
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.318779E-05,
+              "y": 0.4922998
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.136188,
+              "y": 3.87044883
+            },
+            "rot": {
+              "angle": 134.618912
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 33,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -1.29170263,
+              "y": 2.37218571
+            },
+            "rot": {
+              "angle": 145.4672
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.07727742,
+              "y": 4.86623
+            },
+            "rot": {
+              "angle": 94.39251
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.318779E-05,
+              "y": 0.4922998
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.12689877,
+              "y": 3.86225867
+            },
+            "rot": {
+              "angle": 131.402512
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 34,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -1.389589,
+              "y": 2.51465154
+            },
+            "rot": {
+              "angle": 145.485962
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.07727742,
+              "y": 4.86622953
+            },
+            "rot": {
+              "angle": 80.7004242
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.318779E-05,
+              "y": 0.4922998
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.1176095,
+              "y": 3.85406876
+            },
+            "rot": {
+              "angle": 131.402512
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 35,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -1.48565924,
+              "y": 2.65447426
+            },
+            "rot": {
+              "angle": 145.492386
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.07668161,
+              "y": 4.86540937
+            },
+            "rot": {
+              "angle": 53.316227
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.34559076E-05,
+              "y": 0.492299646
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.1039238,
+              "y": 3.84476
+            },
+            "rot": {
+              "angle": 124.225258
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 36,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -1.57992256,
+              "y": 2.79166722
+            },
+            "rot": {
+              "angle": 145.495514
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.07608581,
+              "y": 4.86458874
+            },
+            "rot": {
+              "angle": 39.6241264
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.34559076E-05,
+              "y": 0.492299646
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.090238,
+              "y": 3.83545113
+            },
+            "rot": {
+              "angle": 124.225296
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 37,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -1.672388,
+              "y": 2.92624331
+            },
+            "rot": {
+              "angle": 145.49736
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.07549,
+              "y": 4.863768
+            },
+            "rot": {
+              "angle": 39.6241264
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.34559076E-05,
+              "y": 0.492299646
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.07655239,
+              "y": 3.82614231
+            },
+            "rot": {
+              "angle": 124.225349
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 38,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -1.7630645,
+              "y": 3.05821562
+            },
+            "rot": {
+              "angle": 145.4985
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.0759294,
+              "y": 4.86446762
+            },
+            "rot": {
+              "angle": 39.62413
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.3135198E-05,
+              "y": 0.492299855
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.060335,
+              "y": 3.813817
+            },
+            "rot": {
+              "angle": 127.235992
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 39,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -1.824812,
+              "y": 3.145312
+            },
+            "rot": {
+              "angle": 146.45723
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.07636881,
+              "y": 4.865167
+            },
+            "rot": {
+              "angle": 39.62413
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.3135198E-05,
+              "y": 0.492299855
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.04411745,
+              "y": 3.80149174
+            },
+            "rot": {
+              "angle": 127.236015
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 40,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -1.88612282,
+              "y": 3.2317915
+            },
+            "rot": {
+              "angle": 146.707245
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.07680845,
+              "y": 4.86586666
+            },
+            "rot": {
+              "angle": 39.6241264
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.3135198E-05,
+              "y": 0.492299855
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.0279,
+              "y": 3.78916645
+            },
+            "rot": {
+              "angle": 127.236046
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 41,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -1.9471271,
+              "y": 3.31783843
+            },
+            "rot": {
+              "angle": 146.996567
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.07741213,
+              "y": 4.866099
+            },
+            "rot": {
+              "angle": 39.6241264
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.340383E-05,
+              "y": 0.492299676
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -3.00865912,
+              "y": 3.774807
+            },
+            "rot": {
+              "angle": 126.734955
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 42,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -2.00782633,
+              "y": 3.40345526
+            },
+            "rot": {
+              "angle": 147.3444
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.07741213,
+              "y": 4.866099
+            },
+            "rot": {
+              "angle": 39.6241264
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.340383E-05,
+              "y": 0.492299676
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -2.98941827,
+              "y": 3.7604475
+            },
+            "rot": {
+              "angle": 126.734978
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 43,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -2.068222,
+              "y": 3.488644
+            },
+            "rot": {
+              "angle": 147.781387
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.07741213,
+              "y": 4.866099
+            },
+            "rot": {
+              "angle": 39.6241264
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.340383E-05,
+              "y": 0.492299676
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -2.97017741,
+              "y": 3.74608755
+            },
+            "rot": {
+              "angle": 126.734993
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 44,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -2.12831569,
+              "y": 3.5734067
+            },
+            "rot": {
+              "angle": 148.360916
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.07741213,
+              "y": 4.866099
+            },
+            "rot": {
+              "angle": 39.6241264
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.340383E-05,
+              "y": 0.492299676
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -2.95093656,
+              "y": 3.731728
+            },
+            "rot": {
+              "angle": 126.734993
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 45,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -2.188109,
+              "y": 3.6577456
+            },
+            "rot": {
+              "angle": 149.186157
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.07725,
+              "y": 4.866005
+            },
+            "rot": {
+              "angle": 39.6241264
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.369997E-05,
+              "y": 0.492299527
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -2.93014812,
+              "y": 3.71239614
+            },
+            "rot": {
+              "angle": 132.9214
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 46,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -2.24760318,
+              "y": 3.74166274
+            },
+            "rot": {
+              "angle": 150.486908
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.07725,
+              "y": 4.866005
+            },
+            "rot": {
+              "angle": 39.6241264
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.369997E-05,
+              "y": 0.492299527
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -2.90935969,
+              "y": 3.69306421
+            },
+            "rot": {
+              "angle": 132.921432
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 47,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -2.63371944,
+              "y": 3.46769381
+            },
+            "rot": {
+              "angle": 117.403183
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.07705045,
+              "y": 4.865897
+            },
+            "rot": {
+              "angle": 39.62413
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.41846457E-05,
+              "y": 0.492299259
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -2.90512,
+              "y": 3.672491
+            },
+            "rot": {
+              "angle": 127.037979
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 48,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -2.60349822,
+              "y": 3.45817852
+            },
+            "rot": {
+              "angle": 115.07843
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.07705045,
+              "y": 4.865897
+            },
+            "rot": {
+              "angle": 39.62413
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.41846457E-05,
+              "y": 0.492299259
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -2.88298273,
+              "y": 3.65179825
+            },
+            "rot": {
+              "angle": 124.713219
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 49,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -2.57373714,
+              "y": 3.44898248
+            },
+            "rot": {
+              "angle": 112.753662
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.07705045,
+              "y": 4.865897
+            },
+            "rot": {
+              "angle": 39.62413
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.41846457E-05,
+              "y": 0.492299259
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -2.86084557,
+              "y": 3.631106
+            },
+            "rot": {
+              "angle": 122.388451
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 50,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -2.53778172,
+              "y": 3.45216227
+            },
+            "rot": {
+              "angle": 108.104118
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.07705045,
+              "y": 4.865897
+            },
+            "rot": {
+              "angle": 39.62413
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.41846457E-05,
+              "y": 0.492299259
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -2.8387084,
+              "y": 3.610413
+            },
+            "rot": {
+              "angle": 117.738914
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      },
+      {
+        "timestep": 51,
+        "objects": [
+          {
+            "objectName": "Ball",
+            "pos": {
+              "x": -2.507702,
+              "y": 3.4415803
+            },
+            "rot": {
+              "angle": 105.779343
+            },
+            "action": "None",
+            "behavior": "None"
+          },
+          {
+            "objectName": "opponent",
+            "pos": {
+              "x": -3.07669544,
+              "y": 4.86570549
+            },
+            "rot": {
+              "angle": 39.62413
+            },
+            "action": "MoveToPos",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "teammate",
+            "pos": {
+              "x": -5.5091954E-05,
+              "y": 0.492298633
+            },
+            "rot": {
+              "angle": 325.507538
+            },
+            "action": "No Action",
+            "behavior": "Idle"
+          },
+          {
+            "objectName": "Coach",
+            "pos": {
+              "x": -2.81480026,
+              "y": 3.58749413
+            },
+            "rot": {
+              "angle": 115.414146
+            },
+            "action": "MoveToPos",
+            "behavior": null
+          }
+        ]
+      }
+    ],
+    "stoppedTimes": [
+      {
+        "timestopped": 52,
+        "narration": "[0][1][2]Now, I will wait for my teammate to make the pass. (sniffs) I see the pass coming. I will move to get possession of the ball. All right. Uh, so this is feedback, and we just received the ball. Uh, we want to change the coach's behavior a bit so that, um, after receiving the ball, we want to always pass the ball back to the teammate. Uh, don't go for a goal even if opponent is not pressuring you."
+      },
+      {
+        "timestopped": 52,
+        "narration": "[0][1][2]Now, I will wait for my teammate to make the pass. (sniffs) I see the pass coming. I will move to get possession of the ball. All right. Uh, so this is feedback, and we just received the ball. Uh, we want to change the coach's behavior a bit so that, um, after receiving the ball, we want to always pass the ball back to the teammate. Uh, don't go for a goal even if opponent is not pressuring you."
+      }
+    ]
+  }
+}

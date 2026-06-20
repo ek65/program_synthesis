@@ -1,0 +1,348 @@
+{
+  "scene": {
+    "id": 0,
+    "language": "[0](gentle music) [1][2]All right, so, uh, after the pass happened, the coach should have run to the supporting position for the left winger, like[3] to this area [4]or this area, but he's not moving.",
+    "step": 0.02,
+    "objects": [
+      {
+        "id": "LeftWinger",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "RightWinger",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "LeftStriker",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "RightStriker",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender1",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender2",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender3",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender4",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender5",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "Coach",
+        "type": "Coach",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "expert",
+        "orientation": []
+      },
+      {
+        "id": "ball",
+        "type": "Ball",
+        "position": [],
+        "velocity": [],
+        "orientation": []
+      },
+      {
+        "id": "goal",
+        "type": "Goal",
+        "position": [],
+        "velocity": [],
+        "orientation": []
+      }
+    ],
+    "annotations": [
+      {
+        "id": "0",
+        "type": "ReceiveBall",
+        "player": "Coach"
+      },
+      {
+        "id": "1",
+        "type": "ReceiveBall",
+        "player": "LeftWinger"
+      },
+      {
+        "id": "2",
+        "type": "PauseAction"
+      },
+      {
+        "id": "3",
+        "type": "Point",
+        "point": {
+          "x": 3.71111178,
+          "y": 4.93333244
+        }
+      },
+      {
+        "id": "4",
+        "type": "Point",
+        "point": {
+          "x": 6.244444,
+          "y": -3.155556
+        }
+      }
+    ],
+    "tokens": {
+      "0": [
+        "[0]"
+      ],
+      "0.099": [
+        "(gentle music)"
+      ],
+      "46.54": [
+        " "
+      ],
+      "46.74088": [
+        "[1]"
+      ],
+      "49.7569427": [
+        "[2]"
+      ],
+      "50.86": [
+        "All"
+      ],
+      "51.04": [
+        " ",
+        "right,"
+      ],
+      "51.259": [
+        " "
+      ],
+      "51.299": [
+        "so,"
+      ],
+      "51.639": [
+        " "
+      ],
+      "51.899": [
+        "uh,"
+      ],
+      "52.059": [
+        " "
+      ],
+      "52.18": [
+        "after"
+      ],
+      "52.459": [
+        " "
+      ],
+      "52.479": [
+        "the"
+      ],
+      "52.579": [
+        " ",
+        "pass"
+      ],
+      "52.84": [
+        " "
+      ],
+      "52.86": [
+        "happened,"
+      ],
+      "53.299": [
+        " "
+      ],
+      "53.68": [
+        "the"
+      ],
+      "53.779": [
+        " "
+      ],
+      "53.84": [
+        "coach"
+      ],
+      "54.099": [
+        " ",
+        "should"
+      ],
+      "54.259": [
+        " "
+      ],
+      "54.279": [
+        "have"
+      ],
+      "54.459": [
+        " "
+      ],
+      "54.479": [
+        "run"
+      ],
+      "54.84": [
+        " ",
+        "to"
+      ],
+      "54.979": [
+        " "
+      ],
+      "55": [
+        "the"
+      ],
+      "55.139": [
+        " "
+      ],
+      "55.159": [
+        "supporting"
+      ],
+      "55.659": [
+        " ",
+        "position"
+      ],
+      "56.159": [
+        " "
+      ],
+      "56.399": [
+        "for"
+      ],
+      "56.54": [
+        " "
+      ],
+      "56.579": [
+        "the"
+      ],
+      "56.639": [
+        " "
+      ],
+      "56.68": [
+        "left"
+      ],
+      "56.86": [
+        " "
+      ],
+      "56.899": [
+        "winger,"
+      ],
+      "57.339": [
+        " "
+      ],
+      "57.819": [
+        "like"
+      ],
+      "58.023613": [
+        "[3]"
+      ],
+      "58.039": [
+        " "
+      ],
+      "58.279": [
+        "to"
+      ],
+      "58.399": [
+        " ",
+        "this"
+      ],
+      "58.639": [
+        " ",
+        "area"
+      ],
+      "59.079": [
+        " "
+      ],
+      "59.5569458": [
+        "[4]"
+      ],
+      "59.599": [
+        "or"
+      ],
+      "59.72": [
+        " "
+      ],
+      "59.739": [
+        "this"
+      ],
+      "60": [
+        " ",
+        "area,"
+      ],
+      "60.419": [
+        " "
+      ],
+      "61.479": [
+        "but"
+      ],
+      "61.719": [
+        " "
+      ],
+      "61.799": [
+        "he's"
+      ],
+      "62": [
+        " "
+      ],
+      "62.02": [
+        "not"
+      ],
+      "62.159": [
+        " "
+      ],
+      "62.199": [
+        "moving."
+      ]
+    },
+    "clickTimes": {
+      "0": 0.0,
+      "1": 46.74088,
+      "2": 49.7569427,
+      "3": 58.023613,
+      "4": 59.5569458
+    }
+  }
+}

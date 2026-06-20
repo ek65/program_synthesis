@@ -1,0 +1,16 @@
+__pycache__
+.vscode
+.DS_Store
+output_segments
+combined_reports
+simulations
+scenicCode
+out
+
+*.mp4
+caca.ipynb
+
+*.jpg
+
+v2/apiKey.py
+.ipynb_checkpoints/

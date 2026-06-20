@@ -1,0 +1,287 @@
+{
+  "scene": {
+    "id": 0,
+    "language": "[0][1]This is completely incorrect. The coach cannot be going directly towards the teammate. The coach should have went either [2]into this area or [3]this area, not [4]straight to the teammate. This is incorrect.",
+    "step": 0.02,
+    "objects": [
+      {
+        "id": "teammate",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "opponent",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "Coach",
+        "type": "Coach",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "expert",
+        "orientation": []
+      },
+      {
+        "id": "ball",
+        "type": "Ball",
+        "position": [],
+        "velocity": [],
+        "orientation": []
+      },
+      {
+        "id": "goal",
+        "type": "Goal",
+        "position": [],
+        "velocity": [],
+        "orientation": []
+      }
+    ],
+    "annotations": [
+      {
+        "id": "0",
+        "type": "ReceiveBall",
+        "player": "teammate"
+      },
+      {
+        "id": "1",
+        "type": "PauseAction"
+      },
+      {
+        "id": "2",
+        "type": "Point",
+        "point": {
+          "x": -6.22222233,
+          "y": 2.48888755
+        }
+      },
+      {
+        "id": "3",
+        "type": "Point",
+        "point": {
+          "x": 6.11111259,
+          "y": 2.933332
+        }
+      },
+      {
+        "id": "4",
+        "type": "Reference",
+        "obj": "teammate"
+      }
+    ],
+    "tokens": {
+      "0": [
+        "[0]"
+      ],
+      "18.1369553": [
+        "[1]"
+      ],
+      "18.92": [
+        "This"
+      ],
+      "19.34": [
+        " "
+      ],
+      "19.379": [
+        "is"
+      ],
+      "19.659": [
+        " "
+      ],
+      "19.68": [
+        "completely"
+      ],
+      "20.119": [
+        " "
+      ],
+      "20.139": [
+        "incorrect."
+      ],
+      "20.579": [
+        " "
+      ],
+      "20.68": [
+        "The"
+      ],
+      "20.779": [
+        " "
+      ],
+      "20.799": [
+        "coach"
+      ],
+      "21.279": [
+        " "
+      ],
+      "21.319": [
+        "cannot"
+      ],
+      "21.859": [
+        " "
+      ],
+      "22.26": [
+        "be"
+      ],
+      "22.399": [
+        " "
+      ],
+      "22.42": [
+        "going"
+      ],
+      "22.719": [
+        " "
+      ],
+      "23.299": [
+        "directly"
+      ],
+      "23.72": [
+        " "
+      ],
+      "23.779": [
+        "towards"
+      ],
+      "24.019": [
+        " "
+      ],
+      "24.039": [
+        "the"
+      ],
+      "24.159": [
+        " ",
+        "teammate."
+      ],
+      "24.759": [
+        " "
+      ],
+      "25.26": [
+        "The"
+      ],
+      "25.34": [
+        " "
+      ],
+      "25.379": [
+        "coach"
+      ],
+      "25.559": [
+        " ",
+        "should"
+      ],
+      "25.68": [
+        " ",
+        "have"
+      ],
+      "25.799": [
+        " ",
+        "went"
+      ],
+      "25.979": [
+        " ",
+        "either"
+      ],
+      "26.3": [
+        " "
+      ],
+      "26.3702888": [
+        "[2]"
+      ],
+      "27.099": [
+        "into"
+      ],
+      "27.399": [
+        " ",
+        "this"
+      ],
+      "27.659": [
+        " "
+      ],
+      "27.979": [
+        "area"
+      ],
+      "28.42": [
+        " "
+      ],
+      "28.979": [
+        "or"
+      ],
+      "29.279": [
+        " "
+      ],
+      "29.836956": [
+        "[3]"
+      ],
+      "29.939": [
+        "this"
+      ],
+      "30.2": [
+        " "
+      ],
+      "30.279": [
+        "area,"
+      ],
+      "30.6": [
+        " "
+      ],
+      "31.619": [
+        "not"
+      ],
+      "31.879": [
+        " "
+      ],
+      "32.1036224": [
+        "[4]"
+      ],
+      "32.159": [
+        "straight"
+      ],
+      "32.44": [
+        " "
+      ],
+      "32.459": [
+        "to"
+      ],
+      "32.54": [
+        " ",
+        "the"
+      ],
+      "32.659": [
+        " "
+      ],
+      "32.68": [
+        "teammate."
+      ],
+      "33.219": [
+        " "
+      ],
+      "34.299": [
+        "This"
+      ],
+      "34.4": [
+        " "
+      ],
+      "34.459": [
+        "is"
+      ],
+      "34.56": [
+        " "
+      ],
+      "34.599": [
+        "incorrect."
+      ]
+    },
+    "clickTimes": {
+      "0": 0.0,
+      "1": 18.1369553,
+      "2": 26.3702888,
+      "3": 29.836956,
+      "4": 32.1036224
+    }
+  }
+}

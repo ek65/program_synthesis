@@ -1,0 +1,298 @@
+{
+    "nodes": [
+        {
+            "target": {
+                "info": "Coach moves to a position to create a favorable angle for receiving a pass from a teammate.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "InZone",
+                        "args": {
+                            "obj": "coach",
+                            "zone": [
+                                "C5",
+                                "C5"
+                            ]
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition for the MoveTo action is that the Coach moves into a tactical position\u2014a favorable zone for receiving a pass from a teammate. The demonstration images indicate that the Coach reaches a specific zone on the field where the angle for receiving a pass is optimal. We model this future condition using the InZone API by checking whether the Coach is in the 'FavorableZone', a zone value to be learned from demonstration data."
+            },
+            "id": "0",
+            "action": "MoveTo",
+            "info": "Coach moves to a position to create a favorable angle for receiving a pass from a teammate.",
+            "t": {
+                "demo_0": 10,
+                "demo_1": 5
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Coach has reached the target tactical position.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "InZone",
+                        "args": {
+                            "obj": "coach",
+                            "zone": [
+                                "C5",
+                                "C5"
+                            ]
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition for Node 0 is 'Coach has reached the target tactical position.' This implies the Coach needs to be in a specific area on the field. The `InZone` API is the most appropriate for modeling a player reaching a defined zone. The `player` parameter is clearly 'Coach' based on the FSM description. The 'zone' parameter is a critical component that defines the 'target tactical position'. As per the instructions and the context that this value is 'to be learned from demonstration data' (as stated in the previous reasoning), and to avoid using dummy values or incorrect data types (like `['C5', 'C5']` which is not a string as required by the `InZone` API documentation for `zone`), the 'zone' parameter is omitted. It is expected that the learning system will infer the specific zone from the provided demonstration frames."
+            }
+        },
+        {
+            "id": "1",
+            "action": "GetBallPossession",
+            "info": "Coach receives possession of the ball from a teammate.",
+            "t": {
+                "demo_0": 16,
+                "demo_1": 9,
+                "demo_2": 5
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Coach has gained possession of the ball.",
+                "logic": null,
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            }
+        },
+        {
+            "id": "2",
+            "action": "Shoot",
+            "info": "Coach shoots the ball towards the goal.",
+            "t": 22,
+            "synthesized": true,
+            "termination": {
+                "info": "Ball has been shot towards the goal.",
+                "logic": null,
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            }
+        },
+        {
+            "id": "3",
+            "action": "Wait",
+            "info": "Coach waits for a teammate to move into an open position near the goal.",
+            "t": {
+                "demo_1": 22,
+                "demo_2": 9
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Teammate is in an open position near the goal.",
+                "logic": "(A1 AND A2 AND A3)",
+                "map": [
+                    "A1",
+                    "A3",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "teammate",
+                            "ref": "goal",
+                            "max": {
+                                "avg": 17.61382602476891,
+                                "std": 0.04837727970416239
+                            }
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HasPath",
+                        "args": {
+                            "obj1": "Coach",
+                            "obj2": "teammate",
+                            "path_width": {
+                                "avg": 0.060529360381963285,
+                                "std": 0.05214726348522526
+                            }
+                        }
+                    },
+                    {
+                        "id": "A3",
+                        "constraint": "Pressure",
+                        "args": {
+                            "player1": "opponent",
+                            "player2": "teammate"
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition 'Teammate is in an open position near the goal' is composed of three key aspects:\n1.  **'near the goal'**: This implies that the teammate should be within a certain proximity to the opponent's goal. The `CloseTo` API is suitable for modeling this, checking if the 'teammate' is close to the 'goal'.\n2.  **'open position' for receiving a pass**: Given that the next action is 'Pass' to the teammate, there must be a clear path for the ball from the 'Coach' (who has possession) to the 'teammate'. The `HasPath` API can model this, ensuring an unobstructed line of sight/path between the 'Coach' and the 'teammate'.\n3.  **'open position' from defensive pressure**: An 'open' player is typically one not being tightly marked or pressured by an opponent. The `Pressure` API can check if an 'opponent' is pressuring the 'teammate'. To signify an 'open' position, this condition should be negated using `NOT`.\nAll three conditions must be simultaneously true for the teammate to be considered 'in an open position near the goal' in the context of preparing for a pass. Therefore, a logical AND composition is used."
+            }
+        },
+        {
+            "target": {
+                "player": "Teammate",
+                "info": ""
+            },
+            "id": "4",
+            "action": "Pass",
+            "info": "Coach passes the ball to the teammate.",
+            "t": {
+                "demo_1": 24,
+                "demo_2": 11
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Ball has been successfully passed to the teammate.",
+                "logic": null,
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            }
+        }
+    ],
+    "edges": [
+        {
+            "id": 0,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 12,
+                "demo_1": 6
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "Teammate passes the ball to the Coach.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "MakePass",
+                        "args": {
+                            "player": "teammate"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 1,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": 20,
+            "synthesized": true,
+            "condition": {
+                "info": "Coach has an open goal.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasPath",
+                        "args": {
+                            "obj1": "Coach",
+                            "obj2": "goal",
+                            "path_width": {
+                                "avg": 2.0,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "prev": "1",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 10,
+                "demo_2": 5
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "Coach does not have an immediate open goal and/or a teammate is not yet in an advantageous position.",
+                "logic": "NOT(A1)",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasPath",
+                        "args": {
+                            "obj1": "Coach",
+                            "obj2": "goal",
+                            "path_width": {
+                                "avg": 2.0,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "prev": "3",
+            "next": "4",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 23,
+                "demo_2": 9
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "Teammate is in an open position near the goal.",
+                "logic": "(A1 AND A2)",
+                "map": [
+                    "A1",
+                    "A2"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "teammate",
+                            "ref": "goal",
+                            "max": {
+                                "avg": 17.61382602476891,
+                                "std": 0.04837727970416239
+                            }
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HasPath",
+                        "args": {
+                            "obj1": "Coach",
+                            "obj2": "teammate",
+                            "path_width": {
+                                "avg": 0.060529360381963285,
+                                "std": 0.05214726348522526
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,401 @@
+{
+    "nodes": [
+        {
+            "target": {
+                "info": "Move to the side to create an angle of pass.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "ball",
+                            "relation": "left",
+                            "horizontal_threshold": {
+                                "avg": NaN,
+                                "std": NaN
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "Node 0 requires the coach to move laterally to create a passing angle. To capture the \u2018move to the side\u2019 condition, we use the HorizontalRelation API to ensure that the Coach is positioned to the left of the ball (as demonstrated in demonstration 1), thus creating an optimal passing angle."
+            },
+            "id": "0",
+            "action": "MoveTo",
+            "info": "Move to the side to create an angle of pass.",
+            "t": {
+                "demo_0": 3,
+                "demo_1": 6
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop once the passing angle is optimal.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "ball",
+                            "relation": "left",
+                            "horizontal_threshold": {
+                                "avg": NaN,
+                                "std": NaN
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition for node 0 states 'Stop once the passing angle is optimal.' From the demonstration and behavior description, this optimum is achieved when the Coach is positioned to the left of the ball. Thus, we use the HorizontalRelation API to check that the Coach is correctly placed relative to the ball. This single API captures the desired spatial relationship necessary for an optimal passing angle."
+            }
+        },
+        {
+            "target": {
+                "player": "teammate",
+                "info": ""
+            },
+            "id": "1",
+            "action": "Pass",
+            "info": "Pass the ball to the teammate to start creating an opening.",
+            "t": {
+                "demo_2": 1
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop after the ball is passed to the teammate.",
+                "logic": ""
+            }
+        },
+        {
+            "id": "2",
+            "action": "Wait",
+            "info": "Wait for the teammate to move into an open position.",
+            "t": {
+                "demo_2": 4
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop when the teammate is in an open position.",
+                "logic": "NOT(A1)",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "Pressure",
+                        "args": {
+                            "player1": "opponent",
+                            "player2": "teammate"
+                        }
+                    }
+                ],
+                "reasoning": "An 'open position' in soccer typically indicates that the teammate is not being closely marked or chased by an opponent. The Pressure API determines if an opponent is pressuring (i.e., chasing) the teammate. By applying a NOT to this API (i.e., NOT(Pressure(opponent, teammate))), we ensure that the termination condition is satisfied only when the opponent is not pressuring the teammate \u2014 meaning the teammate is free/open to receive the ball."
+            }
+        },
+        {
+            "id": "3",
+            "action": "GetBallPossession",
+            "info": "Receive the ball from teammate.",
+            "t": {
+                "demo_0": 6,
+                "demo_1": 7
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop after gaining possession.",
+                "logic": ""
+            }
+        },
+        {
+            "id": "4",
+            "action": "Wait",
+            "info": "Wait for the teammate to move in position and the opponent to press from the side.",
+            "t": {
+                "demo_1": 10
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop when the teammate is in position and the opponent is pressing.",
+                "logic": "A1 AND A2",
+                "map": [
+                    "A2",
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "InZone",
+                        "args": {
+                            "obj": "coach",
+                            "zone": [
+                                "C5"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "Pressure",
+                        "args": {
+                            "player1": "opponent",
+                            "player2": "teammate"
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition for Node 4 requires two conditions: that the teammate is in position and that the opponent is actively pressing. We capture the teammate being in position by utilizing the InZone API with the designated zone (to be determined from demonstration data) and check for pressing using the Pressure API with the opponent pressuring the teammate."
+            }
+        },
+        {
+            "target": {
+                "player": "teammate",
+                "info": ""
+            },
+            "id": "5",
+            "action": "Pass",
+            "info": "Pass the ball to the teammate who is now in an open position.",
+            "t": {
+                "demo_1": 13,
+                "demo_2": 5
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop after passing the ball to the teammate.",
+                "logic": ""
+            }
+        },
+        {
+            "id": "6",
+            "action": "Shoot",
+            "info": "Shoot the ball because there is an open goal.",
+            "t": {
+                "demo_0": 9
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop after the shot is taken.",
+                "logic": ""
+            }
+        }
+    ],
+    "edges": [
+        {
+            "id": 7,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_2": 1
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "The optimal passing angle is established.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "ball",
+                            "relation": "left",
+                            "horizontal_threshold": {
+                                "avg": NaN,
+                                "std": NaN
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 8,
+            "prev": "0",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 7,
+                "demo_0": 3
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "The passing angle is established and ready to receive the ball.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasPath",
+                        "args": {
+                            "obj1": "teammate",
+                            "obj2": "Coach",
+                            "path_width": {
+                                "avg": 0.060663930211119134,
+                                "std": 0.022430798738793244
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 9,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": {
+                "demo_2": 1
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "The ball has been passed to the teammate.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "teammate"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 10,
+            "prev": "2",
+            "next": "5",
+            "priority": "precondition",
+            "t": {
+                "demo_2": 4
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "The teammate is in an open position.",
+                "logic": "NOT(A1)",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "Pressure",
+                        "args": {
+                            "player1": "opponent",
+                            "player2": "teammate"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 11,
+            "prev": "3",
+            "next": "4",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 10
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "Possession of the ball is gained and waiting is required for optimal positioning.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 12,
+            "prev": "4",
+            "next": "5",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 12
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "The teammate is in position and opponent is pressing.",
+                "logic": "(A1 AND A2)",
+                "map": [
+                    "A2",
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "InZone",
+                        "args": {
+                            "obj": "coach",
+                            "zone": [
+                                "C5"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "Pressure",
+                        "args": {
+                            "player1": "opponent",
+                            "player2": "Coach"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 13,
+            "prev": "3",
+            "next": "6",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 6
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "The goal is open.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasPath",
+                        "args": {
+                            "obj1": "Coach",
+                            "obj2": "goal",
+                            "path_width": {
+                                "avg": 2.0,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

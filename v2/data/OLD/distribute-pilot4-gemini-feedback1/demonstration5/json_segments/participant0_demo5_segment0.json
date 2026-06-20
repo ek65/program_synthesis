@@ -1,0 +1,370 @@
+{
+  "scene": {
+    "id": 0,
+    "language": "[0]I have the ball. All my forward passing options are blocked. [1]All right, this is incorrect, 'cause, clearly, you can... The[2] coach can either pass to the left-winger[3] or the right-winger.[4] So, he should have passed there.",
+    "step": 0.02,
+    "objects": [
+      {
+        "id": "LeftWinger",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "RightWinger",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "LeftStriker",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "RightStriker",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender1",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender2",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender3",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender4",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "defender5",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "Coach",
+        "type": "Coach",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "expert",
+        "orientation": []
+      },
+      {
+        "id": "ball",
+        "type": "Ball",
+        "position": [],
+        "velocity": [],
+        "orientation": []
+      },
+      {
+        "id": "goal",
+        "type": "Goal",
+        "position": [],
+        "velocity": [],
+        "orientation": []
+      }
+    ],
+    "annotations": [
+      {
+        "id": "0",
+        "type": "ReceiveBall",
+        "player": "Coach"
+      },
+      {
+        "id": "1",
+        "type": "PauseAction"
+      },
+      {
+        "id": "2",
+        "type": "Reference",
+        "obj": "Coach"
+      },
+      {
+        "id": "3",
+        "type": "Reference",
+        "obj": "LeftWinger"
+      },
+      {
+        "id": "4",
+        "type": "Reference",
+        "obj": "RightWinger"
+      }
+    ],
+    "tokens": {
+      "0": [
+        "[0]"
+      ],
+      "7.339": [
+        "I"
+      ],
+      "7.439": [
+        " "
+      ],
+      "7.44": [
+        "have"
+      ],
+      "7.579": [
+        " "
+      ],
+      "7.599": [
+        "the"
+      ],
+      "7.659": [
+        " "
+      ],
+      "7.679": [
+        "ball."
+      ],
+      "8.1": [
+        " "
+      ],
+      "13.42": [
+        "All"
+      ],
+      "13.64": [
+        " "
+      ],
+      "13.679": [
+        "my"
+      ],
+      "13.779": [
+        " "
+      ],
+      "13.84": [
+        "forward"
+      ],
+      "14.14": [
+        " "
+      ],
+      "14.159": [
+        "passing"
+      ],
+      "14.5": [
+        " "
+      ],
+      "14.519": [
+        "options"
+      ],
+      "14.859": [
+        " "
+      ],
+      "14.88": [
+        "are"
+      ],
+      "14.96": [
+        " "
+      ],
+      "15": [
+        "blocked."
+      ],
+      "15.52": [
+        " "
+      ],
+      "17.6351318": [
+        "[1]"
+      ],
+      "18.059": [
+        "All"
+      ],
+      "18.199": [
+        " "
+      ],
+      "18.239": [
+        "right,"
+      ],
+      "18.399": [
+        " "
+      ],
+      "18.44": [
+        "this"
+      ],
+      "18.579": [
+        " "
+      ],
+      "18.639": [
+        "is"
+      ],
+      "18.819": [
+        " ",
+        "incorrect,"
+      ],
+      "19.439": [
+        " ",
+        "'cause,"
+      ],
+      "20.139": [
+        " "
+      ],
+      "20.319": [
+        "clearly,"
+      ],
+      "20.659": [
+        " "
+      ],
+      "20.68": [
+        "you"
+      ],
+      "20.779": [
+        " "
+      ],
+      "20.799": [
+        "can..."
+      ],
+      "21.22": [
+        " "
+      ],
+      "21.239": [
+        "The"
+      ],
+      "21.2684669": [
+        "[2]"
+      ],
+      "21.34": [
+        " ",
+        "coach"
+      ],
+      "21.579": [
+        " "
+      ],
+      "21.619": [
+        "can"
+      ],
+      "21.72": [
+        " "
+      ],
+      "21.739": [
+        "either"
+      ],
+      "21.959": [
+        " ",
+        "pass"
+      ],
+      "22.18": [
+        " ",
+        "to"
+      ],
+      "22.299": [
+        " ",
+        "the"
+      ],
+      "22.399": [
+        " "
+      ],
+      "22.42": [
+        "left-winger"
+      ],
+      "22.7684669": [
+        "[3]"
+      ],
+      "23.059": [
+        " "
+      ],
+      "23.719": [
+        "or"
+      ],
+      "24.26": [
+        " "
+      ],
+      "24.34": [
+        "the"
+      ],
+      "24.559": [
+        " "
+      ],
+      "24.68": [
+        "right-winger."
+      ],
+      "24.8684654": [
+        "[4]"
+      ],
+      "25.319": [
+        " "
+      ],
+      "27.939": [
+        "So,"
+      ],
+      "28.319": [
+        " "
+      ],
+      "28.779": [
+        "he"
+      ],
+      "28.879": [
+        " "
+      ],
+      "28.899": [
+        "should"
+      ],
+      "29.039": [
+        " "
+      ],
+      "29.059": [
+        "have"
+      ],
+      "29.179": [
+        " "
+      ],
+      "29.199": [
+        "passed"
+      ],
+      "29.42": [
+        " "
+      ],
+      "29.479": [
+        "there."
+      ]
+    },
+    "clickTimes": {
+      "0": 0.0,
+      "1": 17.6351318,
+      "2": 21.2684669,
+      "3": 22.7684669,
+      "4": 24.8684654
+    }
+  }
+}

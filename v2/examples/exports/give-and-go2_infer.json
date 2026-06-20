@@ -1,0 +1,97 @@
+{
+    "outline": "Execute an adaptable give-and-go movement. The coach starts by gaining possession of the ball, passes it to a teammate, and then moves to a strategic position to receive the ball back. Depending on their choice, the coach can pass to a teammate on either the left or the right side and will reposition accordingly.",
+    "nodes": [
+        {
+            "id": "0",
+            "action": "GetBallPossession",
+            "info": "Coach gains possession of the ball.",
+            "t": {
+                "demo_0": 4,
+                "demo_1": 4,
+                "demo_2": 0
+            },
+            "termination": "Coach has possession of the ball."
+        },
+        {
+            "target": {
+                "obj": null,
+                "through": false,
+                "info": "Coach decides to pass the ball to the teammate."
+            },
+            "id": "1",
+            "action": "Pass",
+            "info": "Coach decides to pass the ball to the teammate.",
+            "t": {
+                "demo_0": 14,
+                "demo_1": 10,
+                "demo_2": 4
+            },
+            "termination": "Ball is successfully passed to the teammate."
+        },
+        {
+            "target": {
+                "info": "Coach moves strategically, either around the opponent, directly in front of the goal, or to a specified position.",
+                "logic": null,
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            },
+            "id": "2",
+            "action": "MoveTo",
+            "info": "Coach moves strategically, either around the opponent, directly in front of the goal, or to a specified position.",
+            "t": {
+                "demo_0": 22,
+                "demo_1": 24,
+                "demo_2": 12
+            },
+            "termination": "Coach is in position to receive the ball back."
+        },
+        {
+            "id": "3",
+            "action": "GetBallPossession",
+            "info": "Coach receives the ball back from the teammate.",
+            "t": {
+                "demo_0": 28,
+                "demo_1": 38
+            },
+            "termination": "Coach has possession of the ball again."
+        }
+    ],
+    "edges": [
+        {
+            "id": 4,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 12,
+                "demo_1": 4,
+                "demo_2": 2
+            },
+            "condition": "Opponent starts pressuring the coach or Coach has possession of the ball."
+        },
+        {
+            "id": 5,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 16,
+                "demo_1": 12,
+                "demo_2": 8
+            },
+            "condition": "Teammate has possession of the ball after coach's pass."
+        },
+        {
+            "id": 6,
+            "prev": "2",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 26,
+                "demo_1": 30
+            },
+            "condition": "Teammate passes the ball back to the coach and coach is in position."
+        }
+    ]
+}

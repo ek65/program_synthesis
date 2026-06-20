@@ -1,0 +1,159 @@
+{
+    "outline": "The Coach's behavior in a soccer scenario is triggered when a teammate is pressured by an opponent. The Coach initiates by moving to an open position, strategically choosing either the left or right side of the field to create a clear passing angle. Upon reaching this position, the Coach either immediately receives the ball if the teammate passes quickly, or waits for the teammate to make the pass. Once the Coach has gained possession of the ball, they then evaluate the opponent's defensive strategy. If the opponent decides to stay with the teammate, the Coach proceeds to shoot the ball towards the goal. Conversely, if the opponent decides to pressure the Coach, the Coach passes the ball back to the teammate to maintain offensive pressure.",
+    "nodes": [
+        {
+            "target": {
+                "info": "Coach moves to an open position (either left or right side of the field as appropriate) to create a clear passing angle for the teammate.",
+                "logic": "",
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            },
+            "id": "0",
+            "action": "MoveTo",
+            "info": "Coach moves to an open position (either left or right side of the field as appropriate) to create a clear passing angle for the teammate.",
+            "t": {
+                "demo_0": 19,
+                "demo_1": 16,
+                "demo_2": 17,
+                "demo_3": 14
+            },
+            "synthesized": false,
+            "termination": "Coach reaches an open position suitable for receiving a pass."
+        },
+        {
+            "id": "1",
+            "action": "Wait",
+            "info": "Coach waits in the open position for the teammate to pass the ball.",
+            "t": {
+                "demo_0": 31,
+                "demo_1": 28,
+                "demo_3": 27
+            },
+            "synthesized": false,
+            "termination": "Teammate passes the ball to Coach."
+        },
+        {
+            "id": "2",
+            "action": "GetBallPossession",
+            "info": "Coach receives possession of the ball from the teammate.",
+            "t": {
+                "demo_0": 31,
+                "demo_1": 41,
+                "demo_2": 23,
+                "demo_3": 27
+            },
+            "synthesized": false,
+            "termination": "Coach has gained possession of the ball."
+        },
+        {
+            "id": "3",
+            "action": "Wait",
+            "info": "Coach waits and evaluates the opponent's defensive decision after receiving the ball.",
+            "t": 33,
+            "synthesized": false,
+            "termination": "Opponent reveals their defensive strategy (either pressures Coach or stays with teammate)."
+        },
+        {
+            "id": "4",
+            "action": "Shoot",
+            "info": "Coach shoots the ball towards the goal, aiming to score.",
+            "t": {
+                "demo_0": 103,
+                "demo_3": 41
+            },
+            "synthesized": false,
+            "termination": "Ball is successfully shot towards the goal."
+        },
+        {
+            "target": {
+                "player": "",
+                "info": ""
+            },
+            "id": "5",
+            "action": "Pass",
+            "info": "Coach passes the ball back to the teammate to create a scoring opportunity.",
+            "t": {
+                "demo_1": 46,
+                "demo_2": 29
+            },
+            "synthesized": false,
+            "termination": "Ball is successfully passed to the teammate."
+        }
+    ],
+    "edges": [
+        {
+            "id": 0,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 19,
+                "demo_1": 17,
+                "demo_3": 14
+            },
+            "synthesized": false,
+            "condition": "Coach is in the open position and awaiting the teammate's pass."
+        },
+        {
+            "id": 1,
+            "prev": "0",
+            "next": "2",
+            "priority": "precondition",
+            "t": 18,
+            "synthesized": false,
+            "condition": "Coach is in the open position and the teammate passes the ball immediately."
+        },
+        {
+            "id": 2,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 31,
+                "demo_1": 29,
+                "demo_3": 26
+            },
+            "synthesized": false,
+            "condition": "Teammate successfully passes the ball to Coach."
+        },
+        {
+            "id": 3,
+            "prev": "2",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 53,
+                "demo_1": 42,
+                "demo_2": 25,
+                "demo_3": 27
+            },
+            "synthesized": false,
+            "condition": "Coach has gained possession of the ball and is assessing the opponent's movements."
+        },
+        {
+            "id": 4,
+            "prev": "3",
+            "next": "4",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 53,
+                "demo_3": 38
+            },
+            "synthesized": false,
+            "condition": "Opponent decides to stay with the teammate (i.e., not pressure Coach)."
+        },
+        {
+            "id": 5,
+            "prev": "3",
+            "next": "5",
+            "priority": "precondition",
+            "t": {
+                "demo_1": 42,
+                "demo_2": 25
+            },
+            "synthesized": false,
+            "condition": "Opponent is actively pressuring Coach."
+        }
+    ]
+}

@@ -1,0 +1,238 @@
+{
+    "outline": "Coach initially moves laterally to create a passing angle and support the teammate. Once a pass is received, there are two alternative strategies. In one strategy (demonstrated in demo_0 and demo_1), after receiving the pass, Coach advances with the ball toward the goal to take a shot; in demo_0 the coach explicitly secures possession before dribbling upward while in demo_1 the coach moves directly upward. In an alternative strategy (demo_2), when under strong opponent pressure at the moment of receiving, Coach opts to pass the ball back to the teammate to advance play.",
+    "nodes": [
+        {
+            "target": {
+                "info": "Move laterally to create a passing angle and support position for teammate.",
+                "logic": "(A1 AND (A2 OR A3))",
+                "map": [
+                    "A2",
+                    "A1",
+                    "A3"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasPath",
+                        "args": {
+                            "obj1": "teammate",
+                            "obj2": "Coach",
+                            "path_width": {
+                                "avg": 1.0,
+                                "std": 0.0
+                            }
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate",
+                            "relation": "left",
+                            "horizontal_threshold": {
+                                "avg": -0.047132188766666666,
+                                "std": 0.046622037131346904
+                            }
+                        }
+                    },
+                    {
+                        "id": "A3",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate",
+                            "relation": "right",
+                            "horizontal_threshold": {
+                                "avg": -0.047132188766666666,
+                                "std": 0.046622037131346904
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "To create a valid passing angle and support position for the teammate, the Coach must move laterally so that an unobstructed pass is available. The HasPath API (A1) checks for a clear path from the teammate to the Coach, ensuring the ball can be passed without interception. Since moving laterally can occur to either the left or right relative to the teammate, we use the HorizontalRelation API twice (A2 for 'left' and A3 for 'right') and combine them with an OR. The final condition ensures both a clear passing lane and sufficient lateral offset, which matches the demonstration 1 scenario."
+            },
+            "id": "0",
+            "action": "MoveTo",
+            "info": "Move laterally to create a passing angle and support position for teammate.",
+            "t": {
+                "demo_0": 23,
+                "demo_1": 21,
+                "demo_2": 17
+            },
+            "termination": {
+                "info": "",
+                "logic": "(A1 AND (A2 OR A3))",
+                "map": [
+                    "A2",
+                    "A1",
+                    "A3"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HasPath",
+                        "args": {
+                            "obj1": "teammate",
+                            "obj2": "Coach",
+                            "path_width": {
+                                "avg": 1.0,
+                                "std": 0.0
+                            }
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate",
+                            "relation": "left",
+                            "horizontal_threshold": {
+                                "avg": -0.047132188766666666,
+                                "std": 0.0
+                            }
+                        }
+                    },
+                    {
+                        "id": "A3",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "teammate",
+                            "relation": "right",
+                            "horizontal_threshold": {
+                                "avg": -0.047132188766666666,
+                                "std": 0.0
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "The termination condition for node 0 is satisfied when the Coach successfully moves laterally to create an unobstructed passing angle and support position for the teammate. This is modeled by ensuring that there exists a clear path between the teammate and the Coach (using HasPath, A1) and that the Coach is laterally offset relative to the teammate (using HorizontalRelation, A2 for left or A3 for right). The provided demonstration image for demo_1 confirms that the Coach reaches a position where one of these horizontal relations holds in addition to having a clear passing lane, hence the logic (A1 AND (A2 OR A3))."
+            }
+        },
+        {
+            "id": "1",
+            "action": "GetBallPossession",
+            "info": "Receive the pass from teammate and secure ball possession.",
+            "t": {
+                "demo_0": 17
+            },
+            "termination": {
+                "info": "Stop when possession is secured.",
+                "logic": ""
+            }
+        },
+        {
+            "target": {
+                "info": "Dribble upward with ball possession toward the goal.",
+                "logic": null,
+                "map": [],
+                "constraints": [],
+                "reasoning": ""
+            },
+            "id": "2",
+            "action": "MoveTo",
+            "info": "Dribble upward with ball possession toward the goal.",
+            "t": {
+                "demo_0": 39,
+                "demo_1": 28
+            },
+            "termination": {
+                "info": "Stop when close enough to the goal.",
+                "logic": ""
+            }
+        },
+        {
+            "id": "3",
+            "action": "Shoot",
+            "info": "Make a shot toward the goal.",
+            "t": {
+                "demo_0": 44,
+                "demo_1": 30
+            },
+            "termination": {
+                "info": "",
+                "logic": ""
+            }
+        },
+        {
+            "target": {
+                "player": null,
+                "info": "Pass the ball to teammate to move the ball up the field."
+            },
+            "id": "6",
+            "action": "Pass",
+            "info": "Pass the ball to teammate to move the ball up the field.",
+            "t": {
+                "demo_2": 27
+            },
+            "termination": {
+                "info": "",
+                "logic": ""
+            }
+        }
+    ],
+    "edges": [
+        {
+            "id": 0,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 23,
+                "demo_1": 21,
+                "demo_2": 17
+            },
+            "condition": {
+                "info": "Teammate passes the ball to Coach.",
+                "logic": null,
+                "map": [],
+                "constraints": []
+            }
+        },
+        {
+            "id": 4,
+            "prev": "2",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 41,
+                "demo_1": 29
+            },
+            "condition": {
+                "info": "Player is close enough to the goal.",
+                "logic": null,
+                "map": [],
+                "constraints": []
+            }
+        },
+        {
+            "id": 5,
+            "prev": "1",
+            "next": "6",
+            "priority": "precondition",
+            "t": "",
+            "condition": {
+                "info": "opponent chases coach",
+                "logic": null,
+                "map": [],
+                "constraints": []
+            }
+        },
+        {
+            "id": 6,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": "",
+            "condition": {
+                "info": "opponent chases the teammate",
+                "logic": null,
+                "map": [],
+                "constraints": []
+            }
+        }
+    ],
+    "id": "edited-real-give-and-go2-1"
+}

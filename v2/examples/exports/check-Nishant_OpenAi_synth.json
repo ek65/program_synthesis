@@ -1,0 +1,357 @@
+{
+    "nodes": [
+        {
+            "target": {
+                "info": "Check at an angle away from opponent to create space for the teammate.",
+                "logic": "(A1 AND (A2 OR A3))",
+                "map": [
+                    "A2",
+                    "A1",
+                    "A3"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HeightRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent",
+                            "relation": "below",
+                            "height_threshold": {
+                                "avg": -3.8352904599999995,
+                                "std": 1.9173985995559617
+                            }
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent",
+                            "relation": "left",
+                            "horizontal_threshold": {
+                                "avg": -0.003190793626806085,
+                                "std": 0.003190793596762052
+                            }
+                        }
+                    },
+                    {
+                        "id": "A3",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent",
+                            "relation": "right",
+                            "horizontal_threshold": {
+                                "avg": 0.00011355556107532107,
+                                "std": 0.00016059147286031345
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "To check at an angle away from the opponent, the coach must position diagonally behind the defender. We require that the coach\u2019s y-coordinate be below (further from opponent) relative to the opponent (A1) and that the coach be offset horizontally either to the left (A2) or to the right (A3) of the opponent. Combining these ensures the target lies on an angled path away from the defender, opening space for the teammate."
+            },
+            "id": "0",
+            "action": "MoveTo",
+            "info": "Check at an angle away from opponent to create space for the teammate.",
+            "t": {
+                "demo_0": 19,
+                "demo_1": 62,
+                "demo_2": 16,
+                "demo_3": 20,
+                "demo_4": 7
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop when the coach is positioned to draw the defender away.",
+                "logic": "(A1 AND (A2 OR A3))",
+                "map": [
+                    "A2",
+                    "A1",
+                    "A3"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HeightRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent",
+                            "relation": "below",
+                            "height_threshold": {
+                                "avg": -3.8352904599999995,
+                                "std": 1.9173985995559617
+                            }
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent",
+                            "relation": "left",
+                            "horizontal_threshold": {
+                                "avg": -0.003190793626806085,
+                                "std": 0.003190793596762052
+                            }
+                        }
+                    },
+                    {
+                        "id": "A3",
+                        "constraint": "HorizontalRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": "opponent",
+                            "relation": "right",
+                            "horizontal_threshold": {
+                                "avg": 0.00011355556107532107,
+                                "std": 0.00016059147286031345
+                            }
+                        }
+                    }
+                ],
+                "reasoning": "To draw the defender away, the coach must position diagonally behind the opponent. We enforce that the coach be vertically behind (below) the opponent (A1) and offset horizontally either to the left (A2) or right (A3) of the opponent. Combining these ensures the coach has moved to an angled position that pulls the defender away."
+            }
+        },
+        {
+            "id": "1",
+            "action": "GetBallPossession",
+            "info": "Receive pass from teammate.",
+            "t": {
+                "demo_0": 46,
+                "demo_1": 76,
+                "demo_2": 29,
+                "demo_3": 28,
+                "demo_4": 16
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop when possession is gained.",
+                "logic": ""
+            }
+        },
+        {
+            "target": {
+                "player": "Coach",
+                "info": ""
+            },
+            "id": "2",
+            "action": "Pass",
+            "info": "Pass the ball back to the teammate.",
+            "t": {
+                "demo_0": 59,
+                "demo_1": -1,
+                "demo_2": 45
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop when the ball is successfully passed back to the teammate.",
+                "logic": ""
+            }
+        },
+        {
+            "target": {
+                "info": "Dribble forward into space.",
+                "logic": "A1 AND A2",
+                "map": [
+                    "A2",
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HeightRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": null,
+                            "relation": "above",
+                            "height_threshold": {
+                                "avg": 6.5,
+                                "std": 0.0
+                            }
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "DistanceTo",
+                        "args": {
+                            "from": "opponent",
+                            "to": "Coach",
+                            "min": {
+                                "avg": 5.536048504500264,
+                                "std": 0.31394888549973654
+                            },
+                            "max": null,
+                            "operator": "greater_than"
+                        }
+                    }
+                ],
+                "reasoning": "To dribble forward into space the coach\u2019s destination must lie closer to the opponent\u2019s goal (HeightRelation above) while also keeping a safe distance from the defender (DistanceTo greater_than), ensuring open space for the dribble."
+            },
+            "id": "3",
+            "action": "MoveTo",
+            "info": "Dribble forward into space.",
+            "t": {
+                "demo_3": 41,
+                "demo_4": 27
+            },
+            "synthesized": true,
+            "termination": {
+                "info": "Stop when reaching position or when space is fully maximized.",
+                "logic": "(A1 AND A2) OR A3",
+                "map": [
+                    "A2",
+                    "A1",
+                    "A3"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "HeightRelation",
+                        "args": {
+                            "obj": "Coach",
+                            "ref": null,
+                            "relation": "above",
+                            "height_threshold": {
+                                "avg": 6.5,
+                                "std": 0.0
+                            }
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "DistanceTo",
+                        "args": {
+                            "from": "Coach",
+                            "to": "opponent",
+                            "min": {
+                                "avg": 5.536048504500264,
+                                "std": 0.31394888549973654
+                            },
+                            "max": null,
+                            "operator": "greater_than"
+                        }
+                    },
+                    {
+                        "id": "A3",
+                        "constraint": "Pressure",
+                        "args": {
+                            "player1": "opponent",
+                            "player2": "Coach"
+                        }
+                    }
+                ],
+                "reasoning": "The dribble stops either when the coach has reached the desired forward space (height above the learned forward threshold AND keeping a safe distance from the defender) or when the defender begins to pressure the coach (space collapses), so we combine those two possibilities with an OR."
+            }
+        }
+    ],
+    "edges": [
+        {
+            "id": 0,
+            "prev": "0",
+            "next": "1",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 46,
+                "demo_1": 62,
+                "demo_2": 22,
+                "demo_3": 22,
+                "demo_4": 7
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "Teammate passes ball to Coach.",
+                "logic": "A1 AND A2",
+                "map": [
+                    "A2",
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "MakePass",
+                        "args": {
+                            "player": "Teammate"
+                        }
+                    },
+                    {
+                        "id": "A2",
+                        "constraint": "HasBallPossession",
+                        "args": {
+                            "player": "Coach"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 1,
+            "prev": "1",
+            "next": "2",
+            "priority": "precondition",
+            "t": {
+                "demo_0": 59,
+                "demo_1": 76,
+                "demo_2": 29
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "Opponent is close to the Coach.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "CloseTo",
+                        "args": {
+                            "obj": "opponent",
+                            "ref": "Coach",
+                            "max": {
+                                "avg": 2.5205154937987926,
+                                "std": 0.3245324784141452
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "prev": "1",
+            "next": "3",
+            "priority": "precondition",
+            "t": {
+                "demo_3": 28,
+                "demo_4": 16
+            },
+            "synthesized": true,
+            "condition": {
+                "info": "Opponent is far from the Coach.",
+                "logic": "A1",
+                "map": [
+                    "A1"
+                ],
+                "constraints": [
+                    {
+                        "id": "A1",
+                        "constraint": "DistanceTo",
+                        "args": {
+                            "from": "Coach",
+                            "to": "opponent",
+                            "min": {
+                                "avg": 5.536048504500264,
+                                "std": 0.31394888549973654
+                            },
+                            "max": null,
+                            "operator": "greater_than"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
