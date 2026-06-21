@@ -1,0 +1,596 @@
+{
+  "scene": {
+    "id": "distribute-pilot18",
+    "language": "[0]In this scenario, we find, we find ourselves in a five V five again. Uh, the incoming defender is blocking our path, but he's missing the left striker. Um, so the left striker's open, so he can find a pass to him and then move to[1] a supporting position over here. [2](sighs) And[3] then we can move here. (gasps) And we find ourselves supporting our teammate without the- the opponent in our way.[4] Pause.",
+    "step": 0.02,
+    "objects": [
+      {
+        "id": "LeftWinger",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "RightWinger",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "LeftStriker",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "RightStriker",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "Defender1",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "Defender2",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "Defender3",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "Defender4",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "Defender5",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "Coach",
+        "type": "Coach",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "expert",
+        "orientation": []
+      },
+      {
+        "id": "ball",
+        "type": "Ball",
+        "position": [],
+        "velocity": [],
+        "orientation": []
+      },
+      {
+        "id": "goal",
+        "type": "Goal",
+        "position": [],
+        "velocity": [],
+        "orientation": []
+      }
+    ],
+    "annotations": [
+      {
+        "id": "0",
+        "type": "ReceiveBall",
+        "player": "Coach"
+      },
+      {
+        "id": "1",
+        "type": "Point",
+        "point": {
+          "x": -4.833957,
+          "y": 5.835805
+        }
+      },
+      {
+        "id": "2",
+        "type": "Pass",
+        "from": "Coach",
+        "to": "LeftStriker"
+      },
+      {
+        "id": "3",
+        "type": "ReceiveBall",
+        "player": "LeftStriker"
+      },
+      {
+        "id": "4",
+        "type": "PauseAction"
+      }
+    ],
+    "tokens": {
+      "0": [
+        "[0]"
+      ],
+      "2": [
+        "In"
+      ],
+      "2.079": [
+        " "
+      ],
+      "2.119": [
+        "this"
+      ],
+      "2.219": [
+        " "
+      ],
+      "2.22": [
+        "scenario,"
+      ],
+      "2.539": [
+        " "
+      ],
+      "2.639": [
+        "we"
+      ],
+      "2.759": [
+        " ",
+        "find,"
+      ],
+      "2.959": [
+        " "
+      ],
+      "2.96": [
+        "we"
+      ],
+      "3.039": [
+        " "
+      ],
+      "3.099": [
+        "find"
+      ],
+      "3.259": [
+        " ",
+        "ourselves"
+      ],
+      "3.579": [
+        " ",
+        "in"
+      ],
+      "3.659": [
+        " "
+      ],
+      "3.699": [
+        "a"
+      ],
+      "3.779": [
+        " "
+      ],
+      "3.799": [
+        "five"
+      ],
+      "3.919": [
+        " "
+      ],
+      "4": [
+        "V"
+      ],
+      "4.139": [
+        " "
+      ],
+      "4.159": [
+        "five"
+      ],
+      "4.319": [
+        " "
+      ],
+      "4.36": [
+        "again."
+      ],
+      "4.859": [
+        " "
+      ],
+      "5.539": [
+        "Uh,"
+      ],
+      "5.679": [
+        " ",
+        "the"
+      ],
+      "5.739": [
+        " "
+      ],
+      "5.799": [
+        "incoming"
+      ],
+      "6.159": [
+        " "
+      ],
+      "6.199": [
+        "defender"
+      ],
+      "6.96": [
+        " "
+      ],
+      "7.099": [
+        "is"
+      ],
+      "7.839": [
+        " "
+      ],
+      "7.899": [
+        "blocking"
+      ],
+      "8.26": [
+        " "
+      ],
+      "8.279": [
+        "our"
+      ],
+      "8.42": [
+        " "
+      ],
+      "8.479": [
+        "path,"
+      ],
+      "8.819": [
+        " "
+      ],
+      "8.84": [
+        "but"
+      ],
+      "8.92": [
+        " "
+      ],
+      "8.94": [
+        "he's"
+      ],
+      "9.06": [
+        " "
+      ],
+      "9.199": [
+        "missing"
+      ],
+      "9.479": [
+        " "
+      ],
+      "9.5": [
+        "the"
+      ],
+      "9.579": [
+        " "
+      ],
+      "9.639": [
+        "left"
+      ],
+      "9.88": [
+        " "
+      ],
+      "10": [
+        "striker."
+      ],
+      "11.199": [
+        " "
+      ],
+      "11.3": [
+        "Um,"
+      ],
+      "11.519": [
+        " "
+      ],
+      "11.659": [
+        "so"
+      ],
+      "11.84": [
+        " "
+      ],
+      "11.96": [
+        "the"
+      ],
+      "12.019": [
+        " "
+      ],
+      "12.039": [
+        "left"
+      ],
+      "12.159": [
+        " "
+      ],
+      "12.199": [
+        "striker's"
+      ],
+      "12.639": [
+        " "
+      ],
+      "12.72": [
+        "open,"
+      ],
+      "13.1": [
+        " "
+      ],
+      "13.159": [
+        "so"
+      ],
+      "13.239": [
+        " "
+      ],
+      "13.259": [
+        "he"
+      ],
+      "13.319": [
+        " "
+      ],
+      "13.34": [
+        "can"
+      ],
+      "13.56": [
+        " "
+      ],
+      "13.619": [
+        "find"
+      ],
+      "13.939": [
+        " "
+      ],
+      "14.02": [
+        "a"
+      ],
+      "14.099": [
+        " "
+      ],
+      "14.139": [
+        "pass"
+      ],
+      "14.38": [
+        " "
+      ],
+      "14.399": [
+        "to"
+      ],
+      "14.5": [
+        " "
+      ],
+      "14.519": [
+        "him"
+      ],
+      "14.779": [
+        " "
+      ],
+      "14.92": [
+        "and"
+      ],
+      "14.98": [
+        " "
+      ],
+      "15": [
+        "then"
+      ],
+      "15.119": [
+        " "
+      ],
+      "15.159": [
+        "move"
+      ],
+      "15.399": [
+        " "
+      ],
+      "15.46": [
+        "to"
+      ],
+      "15.6239929": [
+        "[1]"
+      ],
+      "15.64": [
+        " "
+      ],
+      "15.699": [
+        "a"
+      ],
+      "15.779": [
+        " "
+      ],
+      "15.819": [
+        "supporting"
+      ],
+      "16.2": [
+        " "
+      ],
+      "16.239": [
+        "position"
+      ],
+      "17": [
+        " "
+      ],
+      "17.1": [
+        "over"
+      ],
+      "17.279": [
+        " "
+      ],
+      "17.319": [
+        "here."
+      ],
+      "21.439": [
+        " "
+      ],
+      "22.4603233": [
+        "[2]"
+      ],
+      "23.699": [
+        "(sighs)"
+      ],
+      "23.84": [
+        " "
+      ],
+      "23.88": [
+        "And"
+      ],
+      "23.9003563": [
+        "[3]"
+      ],
+      "23.959": [
+        " "
+      ],
+      "23.979": [
+        "then"
+      ],
+      "24.059": [
+        " "
+      ],
+      "24.079": [
+        "we"
+      ],
+      "24.14": [
+        " "
+      ],
+      "24.18": [
+        "can"
+      ],
+      "24.299": [
+        " "
+      ],
+      "24.359": [
+        "move"
+      ],
+      "24.739": [
+        " "
+      ],
+      "25.119": [
+        "here."
+      ],
+      "27.46": [
+        " "
+      ],
+      "28.879": [
+        "(gasps)",
+        " "
+      ],
+      "28.899": [
+        "And"
+      ],
+      "28.959": [
+        " "
+      ],
+      "28.979": [
+        "we"
+      ],
+      "29.039": [
+        " "
+      ],
+      "29.119": [
+        "find"
+      ],
+      "29.219": [
+        " "
+      ],
+      "29.26": [
+        "ourselves"
+      ],
+      "30.719": [
+        " "
+      ],
+      "30.84": [
+        "supporting"
+      ],
+      "31.239": [
+        " "
+      ],
+      "31.279": [
+        "our"
+      ],
+      "31.42": [
+        " "
+      ],
+      "31.44": [
+        "teammate"
+      ],
+      "31.86": [
+        " "
+      ],
+      "32.259": [
+        "without"
+      ],
+      "32.579": [
+        " "
+      ],
+      "32.598": [
+        "the-"
+      ],
+      "32.799": [
+        " "
+      ],
+      "32.84": [
+        "the"
+      ],
+      "32.9": [
+        " "
+      ],
+      "32.92": [
+        "opponent"
+      ],
+      "33.279": [
+        " "
+      ],
+      "33.34": [
+        "in"
+      ],
+      "33.42": [
+        " "
+      ],
+      "33.459": [
+        "our"
+      ],
+      "33.56": [
+        " "
+      ],
+      "33.58": [
+        "way."
+      ],
+      "35.1271362": [
+        "[4]"
+      ],
+      "35.22": [
+        " ",
+        "Pause."
+      ]
+    },
+    "clickTimes": {
+      "0": 0.0,
+      "1": 15.6239929,
+      "2": 22.4603233,
+      "3": 23.9003563,
+      "4": 35.1271362
+    }
+  }
+}

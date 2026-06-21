@@ -99,6 +99,14 @@ def generate_combined_program_from_demos(
     # Prepare header and paths
     header = "\n".join(HEADER_LINES)
     existing_path = os.path.join(tactical_mr_dir, f"Scenic-main/examples/unity/user-study-program-{user_study_program_name}.scenic")
+    if not os.path.exists(existing_path):
+        # Fall back to the scene-suffix templates bundled in this repo so synthesis
+        # runs standalone, without a local TacticalMR checkout.
+        existing_path = os.path.join(
+            os.path.dirname(os.path.abspath(__file__)),
+            "scenic_suffix",
+            f"user-study-program-{user_study_program_name}.scenic",
+        )
 
     if not isinstance(demos, Iterable):
         demos = [demos]

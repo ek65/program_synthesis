@@ -378,9 +378,15 @@ def copy_to_unity_repo(generated_files, pilot_name):
         generated_files: Dictionary with paths to generated files
         pilot_name: The pilot name for organizing files
     """
+    # Skip the Unity copy when TacticalMR isn't available (standalone runs).
+    if not os.path.isdir(TACTICAL_MR_DIR):
+        print(f"Note: TACTICAL_MR_DIR ('{TACTICAL_MR_DIR}') not found — skipping copy to "
+              f"the Unity project. Set TACTICAL_MR_DIR to enable Unity integration.")
+        return
+
     # Ensure Unity directory exists
     os.makedirs(UNITY_SYNTHESIZED_PROGRAM_DIR, exist_ok=True)
-    
+
     print(f"Copying latest file to Unity repo: {UNITY_SYNTHESIZED_PROGRAM_DIR}")
     
     # Find the latest generated file (prefer OpenAI over Gemini)

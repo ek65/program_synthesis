@@ -14,3 +14,6 @@ caca.ipynb
 
 v2/apiKey.py
 .ipynb_checkpoints/
+
+# Keep the bundled standalone example videos (so the repo runs without TacticalMR)
+!v2/data/_NARRATED_DEMOS/example/**/*.mp4

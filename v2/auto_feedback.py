@@ -884,9 +884,9 @@ def main():
     
     args = parser.parse_args()
     
-    # Validate pilot/participant name
-    if not (args.pilot_name.startswith("pilot") or args.pilot_name.startswith("participant")):
-        print("Error: Name must start with 'pilot' or 'participant' (e.g., pilot0, pilot13, participant0, participant12)")
+    # Validate pilot/participant name ("example" is the bundled standalone sample)
+    if not (args.pilot_name.startswith("pilot") or args.pilot_name.startswith("participant") or args.pilot_name.startswith("example")):
+        print("Error: Name must start with 'pilot', 'participant', or 'example' (e.g., pilot0, participant13, example)")
         sys.exit(1)
     
     print(f"Processing pilot/participant: {args.pilot_name}")

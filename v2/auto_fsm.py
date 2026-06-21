@@ -165,6 +165,11 @@ def copy_to_unity_fsm(json_file_path):
         bool: True if successful, False otherwise
     """
     try:
+        # Skip the Unity copy when TacticalMR isn't available (standalone runs).
+        if not os.path.isdir(TACTICAL_MR_DIR):
+            print(f"Note: TACTICAL_MR_DIR ('{TACTICAL_MR_DIR}') not found — skipping copy "
+                  f"to the Unity project. Set TACTICAL_MR_DIR to enable Unity integration.")
+            return False
         # Ensure Unity FSM directory exists
         os.makedirs(UNITY_FSM_PATH, exist_ok=True)
         
@@ -241,7 +246,8 @@ def process_fsm_mode(pilot_name):
         print(f"\nFSM generation complete!")
         print(f"Generated: {output_filename}")
         print(f"Saved to: {designated_fsm_dir}")
-        print(f"Copied to Unity: {UNITY_FSM_PATH}")
+        if os.path.isdir(TACTICAL_MR_DIR):
+            print(f"Copied to Unity: {UNITY_FSM_PATH}")
     
     return success
 
@@ -300,7 +306,8 @@ def process_feedback_mode(pilot_name):
         print(f"\nFeedback FSM generation complete!")
         print(f"Generated: {output_filename}")
         print(f"Saved to: {designated_fsm_dir}")
-        print(f"Copied to Unity: {UNITY_FSM_PATH}")
+        if os.path.isdir(TACTICAL_MR_DIR):
+            print(f"Copied to Unity: {UNITY_FSM_PATH}")
 
     return success
 
@@ -349,7 +356,8 @@ def process_scenic_mode(pilot_name):
         print(f"\nScenic processing complete!")
         print(f"Generated: {output_filename}")
         print(f"Saved to: {designated_fsm_dir}")
-        print(f"Copied to Unity: {UNITY_FSM_PATH}")
+        if os.path.isdir(TACTICAL_MR_DIR):
+            print(f"Copied to Unity: {UNITY_FSM_PATH}")
     
     return success
 
@@ -362,9 +370,9 @@ def main():
     
     args = parser.parse_args()
     
-    # Validate pilot/participant name
-    if not (args.pilot_name.startswith("pilot") or args.pilot_name.startswith("participant")):
-        print("Error: Name must start with 'pilot' or 'participant' (e.g., pilot0, pilot13, participant0, participant13)")
+    # Validate pilot/participant name ("example" is the bundled standalone sample)
+    if not (args.pilot_name.startswith("pilot") or args.pilot_name.startswith("participant") or args.pilot_name.startswith("example")):
+        print("Error: Name must start with 'pilot', 'participant', or 'example' (e.g., pilot0, participant13, example)")
         sys.exit(1)
     
     print(f"Processing pilot/participant: {args.pilot_name}")

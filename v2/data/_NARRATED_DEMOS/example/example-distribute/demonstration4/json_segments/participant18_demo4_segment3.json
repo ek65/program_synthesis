@@ -1,0 +1,686 @@
+{
+  "scene": {
+    "id": "distribute-pilot18",
+    "language": "[0]In this scenario, let's say that both of our strikers are blocked. If both of our strikers are blocked, we should not risk a forward pass straight to our opponent. In this case, we should pick either of our supporting players beneath us or to the right or left of us, and pa- and lay the ball off to them. [1]Then...[2][3][4][5] Then, we can move to a supporting[6] position up here, higher up the field, where we can receive the ball and move forward later on.",
+    "step": 0.02,
+    "objects": [
+      {
+        "id": "LeftWinger",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "RightWinger",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "LeftStriker",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "RightStriker",
+        "type": "Teammate",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "Defender1",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "Defender2",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "Defender3",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "Defender4",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "Defender5",
+        "type": "Opponent",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "Idle",
+        "orientation": []
+      },
+      {
+        "id": "Coach",
+        "type": "Coach",
+        "position": [],
+        "velocity": [],
+        "ballPossession": [],
+        "behavior": "expert",
+        "orientation": []
+      },
+      {
+        "id": "ball",
+        "type": "Ball",
+        "position": [],
+        "velocity": [],
+        "orientation": []
+      },
+      {
+        "id": "goal",
+        "type": "Goal",
+        "position": [],
+        "velocity": [],
+        "orientation": []
+      }
+    ],
+    "annotations": [
+      {
+        "id": "0",
+        "type": "ReceiveBall",
+        "player": "Coach"
+      },
+      {
+        "id": "1",
+        "type": "Pass",
+        "from": "Coach",
+        "to": "LeftWinger"
+      },
+      {
+        "id": "2",
+        "type": "ReceiveBall",
+        "player": "LeftWinger"
+      },
+      {
+        "id": "3",
+        "type": "Point",
+        "point": {
+          "x": -3.13677955,
+          "y": 3.7277658
+        }
+      },
+      {
+        "id": "4",
+        "type": "PauseAction"
+      },
+      {
+        "id": "5",
+        "type": "PauseAction"
+      },
+      {
+        "id": "6",
+        "type": "Point",
+        "point": {
+          "x": -3.71146655,
+          "y": 4.302722
+        }
+      }
+    ],
+    "tokens": {
+      "0": [
+        "[0]"
+      ],
+      "2.079": [
+        "In"
+      ],
+      "2.159": [
+        " "
+      ],
+      "2.199": [
+        "this"
+      ],
+      "2.299": [
+        " "
+      ],
+      "2.339": [
+        "scenario,"
+      ],
+      "3.059": [
+        " "
+      ],
+      "3.079": [
+        "let's"
+      ],
+      "3.259": [
+        " ",
+        "say"
+      ],
+      "3.419": [
+        " "
+      ],
+      "3.439": [
+        "that"
+      ],
+      "3.599": [
+        " "
+      ],
+      "3.619": [
+        "both"
+      ],
+      "3.819": [
+        " "
+      ],
+      "3.839": [
+        "of"
+      ],
+      "3.939": [
+        " ",
+        "our"
+      ],
+      "4.078": [
+        " "
+      ],
+      "4.119": [
+        "strikers"
+      ],
+      "4.48": [
+        " "
+      ],
+      "4.5": [
+        "are"
+      ],
+      "4.619": [
+        " "
+      ],
+      "4.639": [
+        "blocked."
+      ],
+      "5.559": [
+        " "
+      ],
+      "5.599": [
+        "If"
+      ],
+      "5.719": [
+        " "
+      ],
+      "5.739": [
+        "both"
+      ],
+      "5.899": [
+        " "
+      ],
+      "5.92": [
+        "of"
+      ],
+      "6": [
+        " ",
+        "our"
+      ],
+      "6.099": [
+        " "
+      ],
+      "6.139": [
+        "strikers"
+      ],
+      "6.46": [
+        " "
+      ],
+      "6.5": [
+        "are"
+      ],
+      "6.619": [
+        " "
+      ],
+      "6.639": [
+        "blocked,"
+      ],
+      "7.42": [
+        " "
+      ],
+      "7.44": [
+        "we"
+      ],
+      "7.539": [
+        " "
+      ],
+      "7.559": [
+        "should"
+      ],
+      "7.719": [
+        " "
+      ],
+      "7.759": [
+        "not"
+      ],
+      "7.999": [
+        " "
+      ],
+      "8.02": [
+        "risk"
+      ],
+      "8.28": [
+        " ",
+        "a"
+      ],
+      "8.42": [
+        " ",
+        "forward"
+      ],
+      "8.659": [
+        " "
+      ],
+      "8.739": [
+        "pass"
+      ],
+      "9.159": [
+        " "
+      ],
+      "9.38": [
+        "straight"
+      ],
+      "9.6": [
+        " "
+      ],
+      "9.619": [
+        "to"
+      ],
+      "9.739": [
+        " ",
+        "our"
+      ],
+      "9.84": [
+        " "
+      ],
+      "9.859": [
+        "opponent."
+      ],
+      "10.96": [
+        " "
+      ],
+      "10.979": [
+        "In"
+      ],
+      "11.039": [
+        " "
+      ],
+      "11.079": [
+        "this"
+      ],
+      "11.219": [
+        " "
+      ],
+      "11.279": [
+        "case,"
+      ],
+      "11.56": [
+        " "
+      ],
+      "11.579": [
+        "we"
+      ],
+      "11.64": [
+        " "
+      ],
+      "11.659": [
+        "should"
+      ],
+      "11.819": [
+        " "
+      ],
+      "11.859": [
+        "pick"
+      ],
+      "12.119": [
+        " "
+      ],
+      "12.199": [
+        "either"
+      ],
+      "12.38": [
+        " "
+      ],
+      "12.48": [
+        "of"
+      ],
+      "12.6": [
+        " "
+      ],
+      "12.619": [
+        "our"
+      ],
+      "13.039": [
+        " "
+      ],
+      "13.1": [
+        "supporting"
+      ],
+      "13.56": [
+        " "
+      ],
+      "13.619": [
+        "players"
+      ],
+      "14.039": [
+        " "
+      ],
+      "14.399": [
+        "beneath"
+      ],
+      "14.739": [
+        " "
+      ],
+      "14.819": [
+        "us"
+      ],
+      "15.159": [
+        " "
+      ],
+      "15.26": [
+        "or"
+      ],
+      "15.339": [
+        " "
+      ],
+      "15.399": [
+        "to"
+      ],
+      "15.479": [
+        " "
+      ],
+      "15.5": [
+        "the"
+      ],
+      "15.579": [
+        " "
+      ],
+      "15.64": [
+        "right"
+      ],
+      "15.859": [
+        " "
+      ],
+      "15.899": [
+        "or"
+      ],
+      "16.02": [
+        " "
+      ],
+      "16.059": [
+        "left"
+      ],
+      "16.259": [
+        " "
+      ],
+      "16.299": [
+        "of"
+      ],
+      "16.379": [
+        " "
+      ],
+      "16.44": [
+        "us,"
+      ],
+      "16.68": [
+        " "
+      ],
+      "17.18": [
+        "and"
+      ],
+      "17.26": [
+        " "
+      ],
+      "17.319": [
+        "pa-"
+      ],
+      "17.539": [
+        " "
+      ],
+      "17.56": [
+        "and"
+      ],
+      "17.68": [
+        " "
+      ],
+      "17.719": [
+        "lay"
+      ],
+      "17.86": [
+        " "
+      ],
+      "17.88": [
+        "the"
+      ],
+      "17.98": [
+        " "
+      ],
+      "18.039": [
+        "ball"
+      ],
+      "18.319": [
+        " "
+      ],
+      "18.42": [
+        "off"
+      ],
+      "18.54": [
+        " "
+      ],
+      "18.6": [
+        "to"
+      ],
+      "18.719": [
+        " "
+      ],
+      "18.739": [
+        "them."
+      ],
+      "22.959": [
+        " "
+      ],
+      "25.6603966": [
+        "[1]"
+      ],
+      "27.479": [
+        "Then..."
+      ],
+      "27.54044": [
+        "[2]"
+      ],
+      "27.8400574": [
+        "[3]"
+      ],
+      "28.8506775": [
+        "[4]"
+      ],
+      "31.1736145": [
+        "[5]"
+      ],
+      "32.819": [
+        " "
+      ],
+      "32.88": [
+        "Then,"
+      ],
+      "33.1": [
+        " "
+      ],
+      "33.119": [
+        "we"
+      ],
+      "33.2": [
+        " "
+      ],
+      "33.22": [
+        "can"
+      ],
+      "33.299": [
+        " "
+      ],
+      "33.34": [
+        "move"
+      ],
+      "33.659": [
+        " "
+      ],
+      "33.759": [
+        "to"
+      ],
+      "34.279": [
+        " "
+      ],
+      "34.459": [
+        "a"
+      ],
+      "35.2": [
+        " "
+      ],
+      "35.28": [
+        "supporting"
+      ],
+      "35.6736755": [
+        "[6]"
+      ],
+      "35.68": [
+        " "
+      ],
+      "35.7": [
+        "position"
+      ],
+      "36.219": [
+        " "
+      ],
+      "36.299": [
+        "up"
+      ],
+      "36.44": [
+        " "
+      ],
+      "36.5": [
+        "here,"
+      ],
+      "37.439": [
+        " "
+      ],
+      "37.52": [
+        "higher"
+      ],
+      "37.739": [
+        " "
+      ],
+      "37.779": [
+        "up"
+      ],
+      "37.92": [
+        " "
+      ],
+      "37.939": [
+        "the"
+      ],
+      "38.02": [
+        " "
+      ],
+      "38.08": [
+        "field,"
+      ],
+      "39.359": [
+        " "
+      ],
+      "39.36": [
+        "where"
+      ],
+      "39.479": [
+        " ",
+        "we"
+      ],
+      "39.56": [
+        " "
+      ],
+      "39.58": [
+        "can"
+      ],
+      "39.72": [
+        " "
+      ],
+      "39.74": [
+        "receive"
+      ],
+      "40.099": [
+        " "
+      ],
+      "40.139": [
+        "the"
+      ],
+      "40.259": [
+        " "
+      ],
+      "40.279": [
+        "ball"
+      ],
+      "40.779": [
+        " "
+      ],
+      "40.819": [
+        "and"
+      ],
+      "40.899": [
+        " "
+      ],
+      "40.939": [
+        "move"
+      ],
+      "41.119": [
+        " "
+      ],
+      "41.159": [
+        "forward"
+      ],
+      "41.4": [
+        " "
+      ],
+      "41.439": [
+        "later"
+      ],
+      "41.68": [
+        " "
+      ],
+      "41.74": [
+        "on."
+      ]
+    },
+    "clickTimes": {
+      "0": 0.0,
+      "1": 25.6603966,
+      "2": 27.54044,
+      "3": 27.8400574,
+      "4": 28.8506775,
+      "5": 31.1736145,
+      "6": 35.6736755
+    }
+  }
+}
