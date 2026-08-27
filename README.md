@@ -206,3 +206,9 @@ syntax-check pass), and copy the result back into Unity.
 - **Model / cost** — the default model is `gpt-5` (`OPENAI_MODEL` near the top of
   `auto_synthesis.py` / `auto_feedback.py`). Each synthesis/feedback run makes real,
   billable API calls.
+
+---
+
+## License
+
+Released under the [MIT License](LICENSE).
